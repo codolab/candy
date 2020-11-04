@@ -1,0 +1,22 @@
+{
+  "name": "@candy/atomic",
+  "private": true,
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "browser": "dist/index.umd.js",
+  "scripts": {
+    "clean": "run-p clean:*",
+    "clean:node_modules": "rimraf node_modules",
+    "clean:build": "rimraf dist",
+    "build": "rollup -c --environment PRODUCTION",
+    "dev": "rollup -c -w --environment DEVELOPMENT",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@candy/utils": "0.1.0"
+  },
+  "author": "tranbathanhtung",
+  "license": "MIT"
+}

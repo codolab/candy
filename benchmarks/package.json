@@ -1,0 +1,27 @@
+{
+  "name": "benchmarks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "perf.js",
+  "scripts": {
+    "test": "node perf.js"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {
+    "@babel/register": "^7.12.1",
+    "@babel/standalone": "^7.12.4",
+    "babel-plugin-emotion": "^10.0.33",
+    "benchmark": "^2.1.4",
+    "browser-env": "^3.3.0",
+    "emotion": "^10.0.27",
+    "goober": "^2.0.9",
+    "otion": "^0.6.2",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "styled-components": "^5.2.0"
+  },
+  "author": "",
+  "license": "ISC"
+}

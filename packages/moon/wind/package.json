@@ -1,0 +1,7 @@
+{
+  "name": "@candy-moon/wind",
+  "private": true,
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "browser": "dist/index.umd.js"
+}
