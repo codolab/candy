@@ -6,6 +6,7 @@ import borderRadius from "./border-radius";
 import border from "./border";
 import boxAlignment from "./box-alignment";
 import flexBox from "./flex-box";
+import layout from "./layout";
 import typography from "./typography";
 
 export const processClassSystem = compose(
@@ -15,5 +16,6 @@ export const processClassSystem = compose(
   border,
   boxAlignment,
   flexBox,
+  layout,
   typography
 );
