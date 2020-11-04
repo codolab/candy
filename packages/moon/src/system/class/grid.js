@@ -67,7 +67,6 @@ export const config = {
     property: "grid-auto-rows",
     scale: "gridAutoRows",
   },
-  gap: true,
   gapX: {
     property: "column-gap",
     scale: "gap",

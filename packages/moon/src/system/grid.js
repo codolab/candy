@@ -1,6 +1,7 @@
 import { system } from "@candy/system";
 
 export const config = {
+  gap: true,
   gridGap: {
     property: "gridGap",
     scale: "space",
