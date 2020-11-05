@@ -4,7 +4,9 @@ const noop = () => null;
 
 const createLookup = (val) => val;
 
-export const createStyleParse = (
+const camelToKebab = (str) => str.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase();
+
+export const createStyleParser = (
   processSystem = noop,
   _lookupWithVariant = noop
 ) => {
@@ -18,7 +20,7 @@ export const createStyleParse = (
       const { theme } = config;
       if (property.startsWith("_")) {
         const processedProperty = lookupWithVariant({
-          variant: property.slice(1),
+          variant: camelToKebab(property.slice(1)),
           config,
         });
         if (!processedProperty) return { [property]: translateStyles(value) };

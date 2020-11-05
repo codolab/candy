@@ -122,18 +122,61 @@
       //   },
       // };
 
-      const className1 = cx`border-1 border-primary`;
-      const className2 = sx({
-        borderWidth: "1",
-        borderColor: "primary",
-      });
+      const className1 = cx`border-1 border-red-500 border-opacity-50 ${
+        true && "border-8"
+      }`;
+      // const className2 = sx({
+      //   color: "blue.600",
+      //   _sm: {
+      //     color: "green.600"
+      //   },
+      //   _md: {
+      //     color: "indigo.600",
+      //   },
+      //   _lg: {
+      //     color: "red.600",
+      //   },
+      //   _xl: {
+      //     color: "gray.900"
+      //   }
+      // });
       // console.log(sheet.extractCSS());
 
       render(
         html`
-          <div>
-            <div class=${className1}>Class 1</div>
-            <div class=${className2}>Class 2</div>
+          <div
+            role="group"
+            class=${sx({
+              _hover: {
+                bg: "blue.500"
+              },
+              p: 4,
+              cursor: "pointer",
+              bg: "white",
+              maxW: "xs",
+              w: "full",
+              boxShadow: "lg",
+              select: "none",
+              overflow: "hidden",
+              mx: "auto"
+            })}
+          >
+            <p
+              class=${sx({
+                fontWeight: "semibold",
+                fontSize: "lg",
+                mb: 1,
+                color: "gray.900",
+                "_groupHover": {
+                  color: "white"
+                }
+              })}
+            >
+              New Project
+            </p>
+            <p class=${cx`text-gray-700 group-hover:text-white mb-2`}>
+              Create a new project from a variety of starting templates.
+            </p>
           </div>
         `,
         document.getElementById("root")

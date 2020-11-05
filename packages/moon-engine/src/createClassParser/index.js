@@ -13,7 +13,7 @@ const checkIsTag = (val, ...rest) =>
     rest.length + 1 === val.length
   );
 
-export const createClassParse = (
+export const createClassParser = (
   processSystem = noop,
   _lookupWithVariant = noop
 ) => {

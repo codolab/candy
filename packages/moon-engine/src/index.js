@@ -1,6 +1,6 @@
 export { default as configure } from "./configure";
-export * from "./createClassParse";
-export * from "./createStyleParse";
+export * from "./createClassParser";
+export * from "./createStyleParser";
 export * from "./configure";
 export * from "./system";
 export * from "./system/class";

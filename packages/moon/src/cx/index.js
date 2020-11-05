@@ -1,7 +1,7 @@
 import { createCompile, createCSS } from "@candy/atomic";
 import classic from "@candy/classic";
 import {
-  createClassParse,
+  createClassParser,
   setup,
   getDefaultConfig,
   globalTheme,
@@ -28,7 +28,7 @@ import { defaultVariants } from "../variant";
 
 const defaultConfig = getDefaultConfig(globalTheme);
 // create parse with variant
-const parse = createClassParse(processSystem, lookupWithVariant);
+const parse = createClassParser(processSystem, lookupWithVariant);
 // create css with sort function
 const css = createCSS(createCompile(sortStyles));
 

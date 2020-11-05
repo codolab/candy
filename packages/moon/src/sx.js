@@ -1,6 +1,6 @@
 import { css } from "@candy/atomic";
 import {
-  createStyleParse,
+  createStyleParser,
   setup,
   getDefaultConfig,
   globalTheme,
@@ -25,7 +25,7 @@ import { processVariant, defaultVariants } from "./variant";
 
 const defaultConfig = getDefaultConfig(globalTheme);
 // create parse with variant
-const parse = createStyleParse(processSystem, processVariant);
+const parse = createStyleParser(processSystem, processVariant);
 
 setup({
   theme: merge(defaultConfig.theme, {

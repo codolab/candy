@@ -7,7 +7,6 @@ let _configuration = {
   variants: {},
 };
 
-// author config
 export function setup(_config) {
   _configuration = merge(_configuration, _config, { clone: true });
 }

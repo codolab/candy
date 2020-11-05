@@ -1,6 +1,7 @@
 import babel from "@rollup/plugin-babel";
 import replace from "@rollup/plugin-replace";
 import commonjs from "@rollup/plugin-commonjs";
+import json from '@rollup/plugin-json';
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import { terser } from "rollup-plugin-terser";
 import filesize from "rollup-plugin-filesize";
@@ -22,6 +23,7 @@ export const getESM = (override) => ({ ...esm, ...override });
 const commonPlugins = [
   nodeResolve(),
   commonjs(),
+  json(),
   babel({
     exclude: /node_modules/,
     babelHelpers: "runtime",

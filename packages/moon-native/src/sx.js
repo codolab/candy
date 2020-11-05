@@ -1,23 +1,23 @@
 import {
-  createClassParser,
   setup,
   getDefaultConfig,
   globalTheme,
-  processClassSystem as processSystem,
+  processStyleSystem as processSystem,
+  createStyleParser,
 } from "@candy-moon/engine";
 import css2rn from "css-to-react-native";
 import css from "./css";
 
 const defaultConfig = getDefaultConfig(globalTheme);
-const parse = createClassParser(processSystem);
+const parse = createStyleParser(processSystem);
 
 setup({
   theme: defaultConfig.theme,
   variants: {},
 });
 
-const cx = (...args) => {
-  const parsed = parse(...args);
+const sx = (obj) => {
+  const parsed = parse(obj);
   const styles = Object.keys(parsed).reduce((acc, prop) => {
     const newVal = [prop, parsed[prop] + ""];
     acc.push(newVal);
@@ -25,7 +25,7 @@ const cx = (...args) => {
   }, []);
 
   const stylesRN = css2rn(styles);
-  const finalStyles = css(stylesRN);
+  // const styles = css(stylesRN);
   console.log({
     parsed,
     styles,
