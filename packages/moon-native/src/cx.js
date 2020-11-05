@@ -25,13 +25,12 @@ const cx = (...args) => {
   }, []);
 
   const stylesRN = css2rn(styles);
-  const finalStyles = css(stylesRN);
   console.log({
     parsed,
     styles,
     // stylesRN,
   });
-  return "";
+  return css(stylesRN);
 };
 
 export default cx;

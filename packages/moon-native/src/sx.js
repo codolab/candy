@@ -31,7 +31,7 @@ const sx = (obj) => {
     styles,
     // stylesRN,
   });
-  return "";
+  return css(stylesRN);
 };
 
 export default cx;
