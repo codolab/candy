@@ -21,7 +21,7 @@ import {
   animate,
 } from "./theme";
 import { processStyleSystem as processSystem } from "./system";
-import { processVariant } from "./variant";
+import { processVariant, defaultVariants } from "./variant";
 
 const defaultConfig = getDefaultConfig(globalTheme);
 // create parse with variant
@@ -41,7 +41,7 @@ setup({
     ...transition(),
     ...animate(),
   }),
-  variants: defaultConfig.variants,
+  variants: defaultVariants,
 });
 
 const sx = (obj) => {

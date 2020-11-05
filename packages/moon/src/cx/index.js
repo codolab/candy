@@ -1,7 +1,6 @@
 import { createCompile, createCSS } from "@candy/atomic";
 import classic from "@candy/classic";
 import {
-  // createParse,
   createClassParse,
   setup,
   getDefaultConfig,
@@ -25,6 +24,7 @@ import {
   transition,
   animate,
 } from "../theme";
+import { defaultVariants } from "../variant";
 
 const defaultConfig = getDefaultConfig(globalTheme);
 // create parse with variant
@@ -46,7 +46,7 @@ setup({
     ...transition(),
     ...animate(),
   }),
-  variants: defaultConfig.variants,
+  variants: defaultVariants,
 });
 
 const cx = (...args) => {

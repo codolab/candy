@@ -1,11 +1,8 @@
 import { defaultVariants } from "./variants";
 
 export const processVariant = ({ config, variant }) => {
-  const variants = {
-    ...defaultVariants,
-    ...config.variants,
-  };
-
+  const { variants } = config;
+  console.log(variants)
   const spittedVariant = variant.split(":");
   const foundVariant = [];
   spittedVariant.forEach((v, idx) => {
@@ -25,3 +22,5 @@ export const processVariant = ({ config, variant }) => {
 
   return null;
 };
+
+export { defaultVariants };
