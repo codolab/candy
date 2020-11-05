@@ -46,11 +46,27 @@ export function toRgba(color) {
   return [r, g, b, a === undefined && hasAlpha(color) ? 1 : a];
 }
 
-export function withAlphaVariable({ color, variable }) {
+function withAlphaVariable({ color, variable }) {
   try {
     const [r, g, b, a] = toRgba(color);
     return [`rgba(${r}, ${g}, ${b}, var(${variable}))`, a];
   } catch (e) {
     return [color, null];
   }
+}
+
+export function transformColor({ color: c, property, variable }) {
+  const [color, opacity] = withAlphaVariable({
+    color: c,
+    variable,
+  });
+
+  if (!opacity) {
+    return { [property]: c };
+  }
+
+  return {
+    [property]: color,
+    [variable]: opacity,
+  };
 }

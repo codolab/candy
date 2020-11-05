@@ -1,13 +1,11 @@
 import { system } from "@candy/system";
+import { getColorConfig } from "./util";
 
 export const config = {
   border: true,
   borderWidth: true,
   borderStyle: true,
-  borderColor: {
-    property: "borderColor",
-    scale: "colors",
-  },
+  borderColor: getColorConfig("borderColor"),
   //
   borderTop: true,
   borderTopWidth: {
@@ -15,10 +13,7 @@ export const config = {
     scale: "borderWidth",
   },
   borderTopStyle: true,
-  borderTopColor: {
-    property: "borderTopColor",
-    scale: "colors",
-  },
+  borderTopColor: getColorConfig("borderTopColor"),
   //
   borderRight: true,
   borderRightWidth: {
@@ -26,10 +21,7 @@ export const config = {
     scale: "borderWidth",
   },
   borderRightStyle: true,
-  borderRightColor: {
-    property: "borderRightColor",
-    scale: "colors",
-  },
+  borderRightColor: getColorConfig("borderRightColor"),
   //
   borderBottom: true,
   borderBottomWidth: {
@@ -37,10 +29,7 @@ export const config = {
     scale: "borderWidth",
   },
   borderBottomStyle: true,
-  borderBottomColor: {
-    property: "borderBottomColor",
-    scale: "colors",
-  },
+  borderBottomColor: getColorConfig("borderBottomColor"),
   //
   borderLeft: true,
   borderLeftWidth: {
@@ -48,16 +37,18 @@ export const config = {
     scale: "borderWidth",
   },
   borderLeftStyle: true,
-  borderLeftColor: {
-    property: "borderLeftColor",
-    scale: "colors",
-  },
+  borderLeftColor: getColorConfig("borderLeftColor"),
   //
   borderX: {
     properties: ["borderLeft", "borderRight"],
   },
   borderY: {
     properties: ["borderTop", "borderBottom"],
+  },
+  //
+  borderOpacity: {
+    property: "--border-opacity",
+    scale: "opacity",
   },
 };
 

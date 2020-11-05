@@ -1,7 +1,8 @@
 import { system, get, getValue } from "@candy/system";
-import { withAlphaVariable } from "../../util";
+import { transformColor } from "../../util";
 
 export const config = {
+  // handle font-weight, font-family
   font: {
     transform(value, _scale, _props) {
       const fontWeightScale = get(_props.theme, "fontWeight") || {};
@@ -91,18 +92,7 @@ export const config = {
     scale: "colors",
     transform(val, scale, _props) {
       const n = getValue(val, scale, _props);
-      const variable = "--placeholder-opacity";
-      const [color, opacity] = withAlphaVariable({
-        color: n,
-        variable,
-      });
-      if (!opacity) {
-        return { color: n };
-      }
-      return {
-        color,
-        [variable]: opacity,
-      };
+      return transformColor({ color: n, property: "color", variable: "--placeholder-opacity" });
     },
   },
   placeholderOpacity: {
@@ -116,11 +106,7 @@ export const config = {
       };
     },
   },
-  // text
-  color: {
-    property: "color",
-    scale: "colors",
-  },
+  // handle text-align, font-size, color
   text: {
     transform(value, _scale, _props) {
       switch (value) {
@@ -143,26 +129,11 @@ export const config = {
       }
 
       const textColor = getValue(value, get(_props.theme, "colors"), _props);
-      const variable = "--text-opacity";
-      const [color, opacity] = withAlphaVariable({
-        color: textColor,
-        variable,
-      });
-      if (!opacity) {
-        return { color: textColor };
-      }
-      return {
-        color,
-        [variable]: opacity,
-      };
+      return transformColor({ color: textColor, property: "color", variable: "--text-opacity" });
     },
     translate(val) {
       return val;
     },
-  },
-  textOpacity: {
-    property: "--text-opacity",
-    scale: "opacity",
   },
   textDecoration: {
     transform(value) {

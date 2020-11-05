@@ -1,5 +1,5 @@
 import { system, get, getValue } from "@candy/system";
-import { withAlphaVariable } from "../../util";
+import { transformColor } from "../../util";
 
 const borders = [
   { name: "borderT", prefix: "border-t", properties: ["borderTopWidth"] },
@@ -25,6 +25,7 @@ export const config = {
     };
   }, {}),
   border: {
+    // handle border-collapse, border-style, border-width, border-color
     transform(val, scale, _props) {
       const finalVal = val === "border" ? "base" : val;
       switch (finalVal) {
@@ -53,26 +54,15 @@ export const config = {
         get(_props.theme, "colors"),
         _props
       );
-      const variable = "--border-opacity";
-      const [color, opacity] = withAlphaVariable({
+      return transformColor({
         color: borderColor,
-        variable,
+        property: "borderColor",
+        variable: "--border-opacity",
       });
-      if (!opacity) {
-        return { borderColor: borderColor };
-      }
-      return {
-        borderColor: color,
-        [variable]: opacity,
-      };
     },
     translate(val) {
       return val;
     },
-  },
-  borderOpacity: {
-    property: "--border-opacity",
-    scale: "opacity",
   },
 };
 

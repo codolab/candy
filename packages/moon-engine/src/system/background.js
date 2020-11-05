@@ -1,14 +1,9 @@
 import { system } from "@candy/system";
+import { getColorConfig } from "./util";
 
 const config = {
-  bg: {
-    property: "background",
-    scale: "colors",
-  },
-  bgColor: {
-    property: "backgroundColor",
-    scale: "colors",
-  },
+  bg: getColorConfig("background"),
+  bgColor: getColorConfig("backgroundColor"),
   backgroundAttachment: true,
   bgAttachment: {
     property: "backgroundAttachment",
@@ -29,9 +24,14 @@ const config = {
   bgImage: {
     property: "backgroundImage",
   },
+  bgOpacity: {
+    property: "--bg-opacity",
+    scale: "opacity",
+  },
 };
 
 config.backgroundColor = config.bgColor;
+config.backgroundOpacity = config.bgOpacity;
 
 export const background = system(config);
 export default background;

@@ -1,6 +1,7 @@
 import { system, getValue, get } from "@candy/system";
 
 export const config = {
+  // handle flex-shrink, flex-grow, flex-direction, flex-wrap, flex
   flex: {
     scale: "flex",
     transform(val, scale, _props) {

@@ -1,5 +1,5 @@
-import { system, get, getValue } from "@candy/system";
-import { withAlphaVariable } from "@candy-moon/engine";
+import { system, getValue } from "@candy/system";
+import { transformColor } from "@candy-moon/engine";
 
 export const config = {
   divideX: {
@@ -24,7 +24,10 @@ export const config = {
       };
     },
   },
+  // handle divide-style divide-color
   divide: {
+    property: "& > :not(template) ~ :not(template)",
+    scale: "colors",
     transform(val, scale, _props) {
       switch (val) {
         case "solid":
@@ -32,35 +35,11 @@ export const config = {
         case "dotted":
         case "double":
         case "none":
-          return {
-            "& > :not(template) ~ :not(template)": {
-              borderStyle: val,
-            },
-          };
+          return { borderStyle: val };
       }
 
-      const divideColor = getValue(val, get(_props.theme, "colors"), _props);
-      const variable = "--divide-opacity";
-      const [color, opacity] = withAlphaVariable({
-        color: divideColor,
-        variable,
-      });
-      if (!opacity) {
-        return {
-          "& > :not(template) ~ :not(template)": {
-            borderColor: divideColor,
-          },
-        };
-      }
-      return {
-        "& > :not(template) ~ :not(template)": {
-          borderColor: color,
-          [variable]: opacity,
-        },
-      };
-    },
-    translate(val) {
-      return val;
+      const divideColor = getValue(val, scale, _props);
+      return transformColor({ color: divideColor, property: "borderColor", variable: "--divide-opacity" });
     },
   },
   divideOpacity: {

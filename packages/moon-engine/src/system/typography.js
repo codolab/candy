@@ -1,4 +1,5 @@
 import { system, getValue } from "@candy/system";
+import { getColorConfig } from "./util";
 
 export const config = {
   fontFamily: {
@@ -38,9 +39,10 @@ export const config = {
   listStylePosition: true,
   // text
   textAlign: true,
-  color: {
-    property: "color",
-    scale: "colors",
+  color: getColorConfig("color"),
+  textOpacity: {
+    property: "--text-opacity",
+    scale: "opacity",
   },
   textDecoration: true,
   textTransform: true,
