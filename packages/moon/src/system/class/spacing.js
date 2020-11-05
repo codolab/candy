@@ -1,8 +1,6 @@
 import { system, getValue } from "@candy/system";
 
 const config = {
-  // padding
-  // margin
   // space-between
   spaceX: {
     scale: "space",

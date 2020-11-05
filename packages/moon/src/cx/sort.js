@@ -20,11 +20,17 @@ function sortRule(a, b) {
 const pseudo = [
   "link",
   "visited",
+  "empty",
+  "first-child",
+  "last-child",
+  "odd-child",
+  "even-child",
   "hover",
   "focus-within",
-  "focus-visible",
   "focus",
+  "focus-visible",
   "active",
+  "disabled",
 ];
 
 const sortPseudo = (a, b) => {
