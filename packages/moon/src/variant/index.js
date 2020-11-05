@@ -2,9 +2,9 @@ import { defaultVariants } from "./variants";
 
 export const processVariant = ({ config, variant }) => {
   const { variants } = config;
-  console.log(variants)
   const spittedVariant = variant.split(":");
   const foundVariant = [];
+  
   spittedVariant.forEach((v, idx) => {
     const next = spittedVariant.push;
     const breakpoint = config.theme.screens[v];

@@ -8,6 +8,7 @@ const betweenVariant = "& > :not(template) ~ :not(template)";
 const placeholderVariant = "&::placeholder";
 const classic = "classic";
 
+// TODO: make it fast :(
 const mergeVariants = (obj, variants, translated, idx = 0) => {
   const variant = variants[idx];
   const last = idx === variants.length - 1;
@@ -15,6 +16,32 @@ const mergeVariants = (obj, variants, translated, idx = 0) => {
   const normalizedKey = Object.keys(out)[0] || variant;
   const path = [...variants.slice(0, idx), normalizedKey].join(".");
   const oldVal = get(obj, path, {});
+
+  // eg: md:placeholder-pink-500 md:divide-pink-500 md:placeholder-opacity-50 md:divide-opacity-50 md:divide-dashed
+  if (
+    last &&
+    (translated[betweenVariant] || translated[placeholderVariant]) &&
+    /^@/.test(variant)
+  ) {
+    const currentVariant = translated[betweenVariant]
+      ? betweenVariant
+      : placeholderVariant;
+    const nextPath = [
+      ...variants.slice(0, idx),
+      normalizedKey,
+      currentVariant,
+    ].join(".");
+    const nextOldVal = get(obj, nextPath, {});
+    return {
+      [normalizedKey]: {
+        ...oldVal,
+        [currentVariant]: {
+          ...nextOldVal,
+          ...translated[currentVariant],
+        },
+      },
+    };
+  }
 
   return {
     [normalizedKey]: {
