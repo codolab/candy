@@ -23,34 +23,30 @@
     ></script>
     <script
       type="text/javascript"
-      src="../packages/moon/wind/dist/index.umd.js"
-    ></script>
-    <script
-      type="text/javascript"
       src="../packages/moon-native/dist/index.umd.js"
     ></script>
     <script>
       const { h, render } = preact;
-      // const { configure, sheet, css } = CandyMoon;
-      console.log({ cx, sx, atomic, classic });
+      const { Configuration, configure, sheet, css, cx, sx } = moon;
+      console.log({ moon, atomic, classic });
       // const { configure, cx } = CandyMoonRN;
       const html = htm.bind(h);
       const counter = Math.random();
 
-      // configure({
-      //   theme: {
-      //     colors: {
-      //       primary: "var(--primary-color)",
-      //     },
-      //     zIndex: {
-      //       hide: -1,
-      //     }
-      //   },
-      //   variants: {
-      //     dark: ".mode-dark &",
-      //     "dark:hover": ".mode-dark &:hover",
-      //   },
-      // });
+      configure({
+        theme: {
+          colors: {
+            primary: "var(--primary-color)",
+          },
+          zIndex: {
+            hide: -1,
+          }
+        },
+        variants: {
+          dark: ".mode-dark &",
+          "dark:hover": ".mode-dark &:hover",
+        },
+      });
       // const className = css`
       //   display: inline-block;
       //   transform: scale(1.1) translate(10px);
@@ -125,21 +121,21 @@
       const className1 = cx`border-1 border-red-500 border-opacity-50 ${
         true && "border-8"
       }`;
-      // const className2 = sx({
-      //   color: "blue.600",
-      //   _sm: {
-      //     color: "green.600"
-      //   },
-      //   _md: {
-      //     color: "indigo.600",
-      //   },
-      //   _lg: {
-      //     color: "red.600",
-      //   },
-      //   _xl: {
-      //     color: "gray.900"
-      //   }
-      // });
+      const className2 = sx({
+        color: "primary",
+        _sm: {
+          color: "green.600"
+        },
+        _md: {
+          color: "indigo.600",
+        },
+        _lg: {
+          color: "red.600",
+        },
+        _xl: {
+          color: "gray.900"
+        }
+      });
       // console.log(sheet.extractCSS());
 
       render(
@@ -181,7 +177,7 @@
         `,
         document.getElementById("root")
       );
-
+      // console.log(Configuration.get())
       // render(
       //   html`
       //     <section className=${cx`bg-white`}>

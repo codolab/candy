@@ -1,53 +1,15 @@
 import { createCompile, createCSS } from "@candy/atomic";
 import classic from "@candy/classic";
-import {
-  createClassParser,
-  setup,
-  getDefaultConfig,
-  globalTheme,
-  merge,
-} from "@candy-moon/engine";
+import { createClassParser } from "@candy-moon/engine";
 
 import { lookupWithVariant } from "./lookupWithVariant";
 import sortStyles from "./sort";
 import { processClassSystem as processSystem } from "../system/class";
-import {
-  backgroundGradient,
-  boxShadow,
-  outline,
-  fill,
-  objectPosition,
-  stroke,
-  strokeWidth,
-  grid,
-  transform,
-  transition,
-  animate,
-} from "../theme";
-import { defaultVariants } from "../variant";
 
-const defaultConfig = getDefaultConfig(globalTheme);
 // create parse with variant
 const parse = createClassParser(processSystem, lookupWithVariant);
 // create css with sort function
 const css = createCSS(createCompile(sortStyles));
-
-setup({
-  theme: merge(defaultConfig.theme, {
-    ...backgroundGradient(),
-    boxShadow,
-    fill,
-    objectPosition,
-    outline,
-    stroke,
-    strokeWidth,
-    ...grid(),
-    ...transform(),
-    ...transition(),
-    ...animate(),
-  }),
-  variants: defaultVariants,
-});
 
 const cx = (...args) => {
   const styles = parse(...args);

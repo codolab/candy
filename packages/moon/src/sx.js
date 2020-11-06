@@ -1,48 +1,10 @@
 import { css } from "@candy/atomic";
-import {
-  createStyleParser,
-  setup,
-  getDefaultConfig,
-  globalTheme,
-  merge,
-} from "@candy-moon/engine";
+import { createStyleParser } from "@candy-moon/engine";
 
-import {
-  backgroundGradient,
-  boxShadow,
-  outline,
-  fill,
-  objectPosition,
-  stroke,
-  strokeWidth,
-  grid,
-  transform,
-  transition,
-  animate,
-} from "./theme";
 import { processStyleSystem as processSystem } from "./system";
-import { processVariant, defaultVariants } from "./variant";
-
-const defaultConfig = getDefaultConfig(globalTheme);
+import { processVariant } from "./variant";
 // create parse with variant
 const parse = createStyleParser(processSystem, processVariant);
-
-setup({
-  theme: merge(defaultConfig.theme, {
-    ...backgroundGradient(),
-    boxShadow,
-    fill,
-    objectPosition,
-    outline,
-    stroke,
-    strokeWidth,
-    ...grid(),
-    ...transform(),
-    ...transition(),
-    ...animate(),
-  }),
-  variants: defaultVariants,
-});
 
 const sx = (obj) => {
   const styles = parse(obj);
