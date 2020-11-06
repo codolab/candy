@@ -43,5 +43,7 @@ export const config = {
   },
 };
 
+config.zIndex = config.z;
+
 export const layout = system(config);
 export default layout;

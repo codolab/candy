@@ -16,7 +16,7 @@ export const defaultVariants = {
   first: generatePseudoClassVariant("first-child"),
   last: generatePseudoClassVariant("last-child"),
   odd: generatePseudoClassVariant("nth-of-type(odd)"),
-  odd: generatePseudoClassVariant("nth-child(even)"),
+  even: generatePseudoClassVariant("nth-child(even)"),
   //
   "group-hover": "[role=group]:hover &",
   "group-focus": "[role=group]:focus &",
