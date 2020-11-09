@@ -1,13 +1,12 @@
 import pkg from "./package.json";
-import { getUMDConfig, getBrowserConfig } from "../../rollup.common";
+import { createUMDConfig, createCoreConfig } from "../../rollup.common";
 
-const { PRODUCTION } = process.env;
+const umd = createUMDConfig({
+  input: "src/index-standalone",
+  pkg,
+  name: "atomic",
+});
 
-const umdConfig = {
-  ...getUMDConfig(pkg, "atomic", PRODUCTION),
-  input: "src/index-standalone"
-};
+const core = createCoreConfig({ pkg });
 
-const browserConfig = getBrowserConfig(pkg);
-
-export default [umdConfig, browserConfig];
+export default [umd, core];

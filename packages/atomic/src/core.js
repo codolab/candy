@@ -63,7 +63,6 @@ export const createCompile = (sort = noop) => (obj, parent = "", media = null) =
         className,
         val: normalizedVal,
       });
-      // console.log(cache);
       sheet.insert(rule);
       return className;
     })
