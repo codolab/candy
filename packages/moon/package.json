@@ -17,9 +17,10 @@
   "author": "tranbathanhtung",
   "license": "MIT",
   "dependencies": {
-    "@candy/classic": "0.1.0",
+    "@candy-moon/engine": "0.1.0",
     "@candy/atomic": "0.1.0",
+    "@candy/classic": "0.1.0",
     "@candy/system": "0.1.0",
-    "@candy-moon/engine": "0.1.0"
+    "fast-memoize": "^2.5.2"
   }
 }

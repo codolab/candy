@@ -1,6 +1,7 @@
 import { createCompile, createCSS } from "@candy/atomic";
 import classic from "@candy/classic";
 import { createClassParser } from "@candy-moon/engine";
+import memoize from "fast-memoize";
 
 import { lookupWithVariant } from "./lookupWithVariant";
 import sortStyles from "./sort";
@@ -11,14 +12,20 @@ const parse = createClassParser(processSystem, lookupWithVariant);
 // create css with sort function
 const css = createCSS(createCompile(sortStyles));
 
-const cx = (...args) => {
-  const styles = parse(...args);
-  const { classic: c = {}, ...finalStyles } = styles;
-  let classicClass = "";
-  for (let i in c) {
-    classicClass += classic(c[i], i) + " ";
+// experiment with memoize
+const cx = memoize(
+  (...args) => {
+    const styles = parse(...args);
+    const { classic: c = {}, ...finalStyles } = styles;
+    let classicClass = "";
+    for (let i in c) {
+      classicClass += classic(c[i], i) + " ";
+    }
+    return (classicClass || "") + css(finalStyles);
+  },
+  {
+    strategy: memoize.strategies.variadic,
   }
-  return (classicClass || "") + css(finalStyles);
-};
+);
 
 export default cx;
