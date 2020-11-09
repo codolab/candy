@@ -13,7 +13,6 @@ const css = createCSS(createCompile(sortStyles));
 
 const cx = (...args) => {
   const styles = parse(...args);
-  console.log("cx", styles);
   const { classic: c = {}, ...finalStyles } = styles;
   let classicClass = "";
   for (let i in c) {

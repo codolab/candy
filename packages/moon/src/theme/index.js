@@ -1,6 +1,6 @@
 import {
   colors as defaultColors,
-  spacing as defaultSpacing,
+  space as defaultSpace,
   negative,
 } from "@candy-moon/engine";
 
@@ -69,8 +69,8 @@ export const strokeWidth = {
   2: "2",
 };
 
-export const grid = (spacing = defaultSpacing) => ({
-  gap: spacing,
+export const grid = (space = defaultSpace) => ({
+  gap: space,
   gridTemplateColumns: {
     none: "none",
     1: "repeat(1, minmax(0, 1fr))",
@@ -187,7 +187,7 @@ export const grid = (spacing = defaultSpacing) => ({
   },
 });
 
-export const transform = (spacing = defaultSpacing) => ({
+export const transform = (space = defaultSpace) => ({
   transformOrigin: {
     center: "center",
     top: "top",
@@ -231,8 +231,8 @@ export const transform = (spacing = defaultSpacing) => ({
     180: "180deg",
   },
   translate: {
-    ...spacing,
-    ...negative(spacing),
+    ...space,
+    ...negative(space),
     "1/2": "50%",
     "1/3": "33.333333%",
     "2/3": "66.666667%",

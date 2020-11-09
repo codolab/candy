@@ -5,7 +5,6 @@ import accessibility from "./accessibility";
 import background from "./background";
 import backgroundGradient from "./backgroundGradient";
 import border from "./border";
-import boxShadow from "./box-shadow";
 import grid from "./grid";
 import interactivity from "./interactivity";
 import layout from "./layout";
@@ -24,7 +23,6 @@ export const processClassSystem = compose(
   accessibility,
   background,
   border,
-  boxShadow,
   grid,
   interactivity,
   layout,

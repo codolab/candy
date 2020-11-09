@@ -8,7 +8,6 @@ const parse = createStyleParser(processSystem, processVariant);
 
 const sx = (obj) => {
   const styles = parse(obj);
-  console.log("sx", styles);
   return css(styles);
 };
 
