@@ -14,7 +14,6 @@ setup({
     aspectRatio,
     boxShadow,
     textShadow,
-    // letterSpacing,
   }),
   variants: {},
 });
