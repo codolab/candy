@@ -1,36 +1,20 @@
-import {
-  createClassParser,
-  setup,
-  getDefaultConfig,
-  globalTheme,
-  processClassSystem as processSystem,
-} from "@candy-moon/engine";
-import css2rn from "css-to-react-native";
+import { createClassParser } from "@candy-moon/engine";
+
 import css from "./css";
+import { getStylesRN } from "./util";
+import { processClassSystem as processSystem } from "./system/class";
 
-const defaultConfig = getDefaultConfig(globalTheme);
 const parse = createClassParser(processSystem);
-
-setup({
-  theme: defaultConfig.theme,
-  variants: {},
-});
 
 const cx = (...args) => {
   const parsed = parse(...args);
-  const styles = Object.keys(parsed).reduce((acc, prop) => {
-    const newVal = [prop, parsed[prop] + ""];
-    acc.push(newVal);
-    return [...acc];
-  }, []);
-
-  const stylesRN = css2rn(styles);
-  console.log({
-    parsed,
-    styles,
-    // stylesRN,
-  });
+  const stylesRN = getStylesRN(parsed);
   return css(stylesRN);
+};
+
+cx.raw = (...args) => {
+  const parsed = parse(...args);
+  return getStylesRN(parsed);
 };
 
 export default cx;

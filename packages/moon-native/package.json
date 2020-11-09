@@ -18,6 +18,8 @@
   "license": "MIT",
   "dependencies": {
     "@candy-moon/engine": "0.1.0",
+    "@candy/system": "0.1.0",
+    "@candy/utils": "0.1.0",
     "css-to-react-native": "^3.0.0"
   },
   "devDependencies": {

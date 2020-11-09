@@ -1,10 +1,8 @@
 import pkg from "./package.json";
-import { getUMDConfig, getBrowserConfig } from "../../rollup.common";
+import { createCoreConfig } from "../../rollup.common";
 
-const { PRODUCTION } = process.env;
+// const umd = createUMDConfig(pkg, "moonNative");
 
-const umdConfig = getUMDConfig(pkg, "CandyMoonRN", PRODUCTION);
+const core = createCoreConfig({ pkg });
 
-const browserConfig = getBrowserConfig(pkg);
-
-export default [umdConfig, browserConfig];
+export default [core];
