@@ -36,6 +36,8 @@ const layout = ["container", "clearfix", "visible", "invisible"];
 
 const position = ["static", "fixed", "absolute", "relative", "sticky"];
 
+const direction = ["ltr", "rtl"];
+
 const flexShrink = ["flex-shrink"];
 
 const flexGrow = ["flex-grow"];
@@ -56,7 +58,19 @@ const fontVariantNumeric = [
   "stacked-fractions",
 ];
 
-const textDecoration = ["underline", "line-through", "no-underline"];
+const textDecoration = [
+  "underline", 
+  "line-through", 
+  "no-underline",
+  // rn
+  "no-decoration",
+  "underline-double",
+  "line-through-double",
+  "underline-dotted",
+  "line-through-dotted",
+  "underline-dashed",
+  "line-through-dashed",
+];
 
 const textTransform = ["uppercase", "lowercase", "capitalize", "normal-case"];
 
@@ -114,6 +128,13 @@ const radii = {
   roundedBr: ["rounded-br"],
   roundedL: ["rounded-l"],
   roundedR: ["rounded-r"],
+  // rn
+  roundedE: ["rounded-e"],
+  roundedS: ["rounded-s"],
+  roundedBs: ["rounded-bs"],
+  roundedBe: ["rounded-be"],
+  roundedTs: ["rounded-ts"],
+  roundedTe: ["rounded-te"],
 };
 
 const borders = {
@@ -122,6 +143,9 @@ const borders = {
   borderL: ["border-l"],
   borderR: ["border-r"],
   borderB: ["border-b"],
+  // rn
+  borderE: ["border-e"],
+  borderS: ["border-s"],
 };
 
 const divide = {
@@ -130,6 +154,10 @@ const divide = {
 };
 
 const shadow = ["shadow"];
+
+const textShadow = ["text-shadow"];
+
+const fontPadding = ["font-padding"];
 
 const transition = ["transition"];
 
@@ -144,6 +172,7 @@ export const utilityClassType1 = {
   ...converter(display, "display"),
   ...converter(layout, "layout"),
   ...converter(position, "position"),
+  ...converter(direction, "direction"),
   ...converter(flexShrink, "flex"),
   ...converter(flexGrow, "flex"),
   ...converter(fontSmoothing, "fontSmoothing"),
@@ -151,6 +180,7 @@ export const utilityClassType1 = {
   ...converter(fontVariantNumeric, "fontVariantNumeric"),
   ...converter(textDecoration, "textDecoration"),
   ...converter(textTransform, "textTransform"),
+  ...converter(fontPadding, "fontPadding"),
   ...converter(verticalAlign, "verticalAlign"),
   ...converter(whiteSpace, "whiteSpace"),
   ...converter(workBreak, "break"),
@@ -162,6 +192,7 @@ export const utilityClassType1 = {
   ...convert2Config(borders),
   ...convert2Config(divide),
   ...converter(shadow, "shadow"),
+  ...converter(textShadow, "textShadow"),
   ...converter(transition, "transition"),
   ...converter(transform, "transform"),
   ...converter(resize, "resize"),
@@ -283,14 +314,22 @@ export const utilityClassType3 = [
   "rounded-r",
   "rounded-b",
   "rounded-l",
+  "rounded-s",
+  "rounded-e",
   "rounded-tl",
   "rounded-tr",
+  "rounded-ts",
+  "rounded-te",
   "rounded-bl",
   "rounded-br",
+  "rounded-bs",
+  "rounded-be",
   "border-t",
   "border-r",
   "border-b",
   "border-l",
+  "border-s",
+  "border-e",
   "border-opacity",
   "divide-y",
   "divide-x",
@@ -306,4 +345,11 @@ export const utilityClassType3 = [
   "-skew-x",
   "-skew-y",
   "pointer-events",
+  // rn
+  "text-shadow",
+  "text-align",
+  "decoration-opacity",
+  "font-padding",
+  "tint-opacity",
+  "overlay-opacity",
 ];

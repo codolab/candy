@@ -1,6 +1,6 @@
 import pkg from "./package.json";
-import { getBrowserConfig } from "../../rollup.common";
+import { createCoreConfig } from "../../rollup.common";
 
-const browserConfig = getBrowserConfig(pkg);
+const core = createCoreConfig({ pkg });
 
-export default [browserConfig];
+export default [core];

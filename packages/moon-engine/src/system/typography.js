@@ -39,7 +39,7 @@ export const config = {
   listStylePosition: true,
   // text
   textAlign: true,
-  color: getColorConfig("color"),
+  color: getColorConfig("color", "--text-opacity"),
   textOpacity: {
     property: "--text-opacity",
     scale: "opacity",

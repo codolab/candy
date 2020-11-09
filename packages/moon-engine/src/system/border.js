@@ -5,7 +5,7 @@ export const config = {
   border: true,
   borderWidth: true,
   borderStyle: true,
-  borderColor: getColorConfig("borderColor"),
+  borderColor: getColorConfig("borderColor", "--border-opacity"),
   //
   borderTop: true,
   borderTopWidth: {
@@ -13,7 +13,7 @@ export const config = {
     scale: "borderWidth",
   },
   borderTopStyle: true,
-  borderTopColor: getColorConfig("borderTopColor"),
+  borderTopColor: getColorConfig("borderTopColor", "--border-opacity"),
   //
   borderRight: true,
   borderRightWidth: {
@@ -21,7 +21,7 @@ export const config = {
     scale: "borderWidth",
   },
   borderRightStyle: true,
-  borderRightColor: getColorConfig("borderRightColor"),
+  borderRightColor: getColorConfig("borderRightColor", "--border-opacity"),
   //
   borderBottom: true,
   borderBottomWidth: {
@@ -29,7 +29,7 @@ export const config = {
     scale: "borderWidth",
   },
   borderBottomStyle: true,
-  borderBottomColor: getColorConfig("borderBottomColor"),
+  borderBottomColor: getColorConfig("borderBottomColor", "--border-opacity"),
   //
   borderLeft: true,
   borderLeftWidth: {
@@ -37,7 +37,7 @@ export const config = {
     scale: "borderWidth",
   },
   borderLeftStyle: true,
-  borderLeftColor: getColorConfig("borderLeftColor"),
+  borderLeftColor: getColorConfig("borderLeftColor", "--border-opacity"),
   //
   borderX: {
     properties: ["borderLeft", "borderRight"],

@@ -2,8 +2,8 @@ import { system } from "@candy/system";
 import { getColorConfig } from "./util";
 
 const config = {
-  bg: getColorConfig("background"),
-  bgColor: getColorConfig("backgroundColor"),
+  bg: getColorConfig("background", "--bg-opacity"),
+  bgColor: getColorConfig("backgroundColor", "--bg-opacity"),
   backgroundAttachment: true,
   bgAttachment: {
     property: "backgroundAttachment",

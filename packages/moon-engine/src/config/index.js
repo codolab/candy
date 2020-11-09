@@ -13,7 +13,7 @@ const screens = {
   // "2xl": "1536px",
 };
 
-export const spacing = {
+export const space = {
   px: "1px",
   0: "0",
   0.5: "0.125rem",
@@ -53,11 +53,11 @@ export const spacing = {
 export const globalTheme = {
   screens,
   colors,
-  spacing,
+  space,
   sizing: {
     none: "none",
     auto: "auto",
-    ...spacing,
+    ...space,
     "1/2": "50%",
     "1/3": "33.333333%",
     "2/3": "66.666667%",
@@ -138,7 +138,7 @@ export { colors };
 export const getDefaultConfig = ({
   screens,
   colors,
-  spacing,
+  space,
   sizing,
   opacity,
   borderWidth,
@@ -146,7 +146,6 @@ export const getDefaultConfig = ({
   theme: {
     screens: screens,
     colors: colors,
-    spacing: spacing,
     backgroundSize: {
       auto: "auto",
       cover: "cover",
@@ -246,8 +245,8 @@ export const getDefaultConfig = ({
     },
     inset: {
       auto: "auto",
-      ...spacing,
-      ...negative(spacing),
+      ...space,
+      ...negative(space),
       "1/2": "50%",
       "1/3": "33.333333%",
       "2/3": "66.666667%",
@@ -300,8 +299,8 @@ export const getDefaultConfig = ({
     },
     space: {
       auto: "auto",
-      ...spacing,
-      ...negative(spacing),
+      ...space,
+      ...negative(space),
     },
     width: {
       ...sizing,
