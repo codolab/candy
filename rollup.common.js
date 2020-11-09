@@ -28,13 +28,6 @@ const plugins = [
   nodeResolve(),
   commonjs(),
   json(),
-  babel({
-    exclude: /node_modules/,
-    babelHelpers: "runtime",
-    sourceMaps: true,
-    presets: ["@babel/preset-env"],
-    plugins: [["@babel/transform-runtime", { useESModules: true }]],
-  }),
 ];
 
 const minifierPlugin = terser({
@@ -64,6 +57,13 @@ export const createUMDConfig = ({ input = "src/index.js", pkg, name }) => ({
   },
   external: false,
   plugins: configBase.plugins.concat(
+    babel({
+      exclude: /node_modules/,
+      babelHelpers: "runtime",
+      sourceMaps: true,
+      presets: ["@babel/preset-env"],
+      plugins: [["@babel/transform-runtime", { useESModules: true }]],
+    }),
     replace({
       "process.env.NODE_ENV": JSON.stringify(
         PRODUCTION ? "production" : "development"
@@ -73,10 +73,32 @@ export const createUMDConfig = ({ input = "src/index.js", pkg, name }) => ({
   ),
 });
 
-export const createCoreConfig = ({ pkg, minify = true, size = true }) => ({
+export const createCJSConfig = ({ pkg, minify = true, size = true }) => ({
   ...configBase,
-  output: [getESM({ file: pkg.module }), getCJS({ file: pkg.main })],
+  output: getCJS({ file: pkg.main }),
   plugins: configBase.plugins.concat(
-    clear([minify && minifierPlugin, size && filesize()])
+    clear([
+      babel({ exclude: /node_modules/, sourceMaps: true,  presets: ["@babel/preset-env"], }),
+      minify && minifierPlugin, 
+      size && filesize()
+    ])
+  ),
+});
+
+export const createESMConfig = ({ pkg, minify = true, size = true }) => ({
+  ...configBase,
+  output: getESM({ file: pkg.module }),
+  plugins: configBase.plugins.concat(
+    clear([
+      babel({
+        exclude: /node_modules/,
+        babelHelpers: "runtime",
+        sourceMaps: true,
+        presets: ["@babel/preset-env"],
+        plugins: [["@babel/transform-runtime", { useESModules: true }]],
+      }),
+      minify && minifierPlugin, 
+      size && filesize()
+    ])
   ),
 });

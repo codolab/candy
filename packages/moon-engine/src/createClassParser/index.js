@@ -1,4 +1,5 @@
-import clsx from "./clsx";
+import clsx from "clsx";
+
 import { createLookup } from "./lookup";
 import { Configuration } from "../configure";
 

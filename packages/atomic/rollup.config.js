@@ -1,5 +1,5 @@
 import pkg from "./package.json";
-import { createUMDConfig, createCoreConfig } from "../../rollup.common";
+import { createUMDConfig, createCJSConfig, createESMConfig } from "../../rollup.common";
 
 const umd = createUMDConfig({
   input: "src/index-standalone",
@@ -7,6 +7,8 @@ const umd = createUMDConfig({
   name: "atomic",
 });
 
-const core = createCoreConfig({ pkg });
+const cjs = createCJSConfig({ pkg });
 
-export default [umd, core];
+const esm = createESMConfig({ pkg });
+
+export default [umd, cjs, esm];

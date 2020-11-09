@@ -1,6 +1,7 @@
 import pkg from "./package.json";
-import { createCoreConfig } from "../../rollup.common";
+import { createCJSConfig, createESMConfig } from "../../rollup.common";
 
-const core = createCoreConfig({ pkg });
+const cjs = createCJSConfig({ pkg });
+const esm = createESMConfig({ pkg });
 
-export default [core];
+export default [cjs, esm];

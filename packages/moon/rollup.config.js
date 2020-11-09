@@ -1,12 +1,13 @@
 import pkg from "./package.json";
-import { createUMDConfig, createCoreConfig } from "../../rollup.common";
+import { createUMDConfig, createCJSConfig, createESMConfig } from "../../rollup.common";
 
 const umd = createUMDConfig({
   pkg,
   name: "moon",
 });
 
-const core = createCoreConfig({ pkg });
+const cjs = createCJSConfig({ pkg });
+const esm = createESMConfig({ pkg });
 
 // const umdWindConfig = {
 //   ...getUMDConfig({ browser: "wind/dist/index.umd.js" }, "cx", PRODUCTION),
@@ -24,4 +25,4 @@ const core = createCoreConfig({ pkg });
 //   ],
 // };
 
-export default [umd, core];
+export default [umd, cjs, esm];
