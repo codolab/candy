@@ -1,6 +1,5 @@
 {
   "name": "@candy/atomic",
-  "private": true,
   "version": "0.1.4",
   "description": "",
   "main": "dist/index.js",
