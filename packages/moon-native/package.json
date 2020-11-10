@@ -1,6 +1,6 @@
 {
   "name": "@candy-moon/native",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -16,9 +16,9 @@
   "author": "tranbathanhtung",
   "license": "MIT",
   "dependencies": {
-    "@candy-moon/engine": "^0.1.8",
-    "@candy/system": "^0.1.8",
-    "@candy/utils": "^0.1.8",
+    "@candy-moon/engine": "^0.1.9",
+    "@candy/system": "^0.1.9",
+    "@candy/utils": "^0.1.9",
     "css-to-react-native": "^3.0.0",
     "match-all": "^1.2.6"
   },
@@ -28,5 +28,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "6d1ac05f71a5dd8da9ce7325dd4e1710e7876d75"
+  "gitHead": "aabc7f2422d995abb1c5595b14d911f1ceb154bd"
 }
