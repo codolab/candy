@@ -1,7 +1,7 @@
 {
   "name": "candy-classic",
   "private": false,
-  "version": "0.1.16",
+  "version": "0.1.17",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -17,8 +17,8 @@
   "author": "tranbathanhtung",
   "license": "MIT",
   "dependencies": {
-    "candy-sheet": "^0.1.16",
-    "candy-utils": "^0.1.16"
+    "candy-sheet": "^0.1.17",
+    "candy-utils": "^0.1.17"
   },
   "publishConfig": {
     "access": "public"
