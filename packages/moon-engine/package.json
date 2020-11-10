@@ -17,7 +17,7 @@
   "author": "tranbathanhtung",
   "license": "MIT",
   "dependencies": {
-    "@candy/system": "0.1.0",
+    "@candy/system": "^0.1.0",
     "clsx": "^1.1.1"
   }
 }
