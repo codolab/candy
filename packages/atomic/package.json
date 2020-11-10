@@ -19,7 +19,7 @@
   "author": "tranbathanhtung",
   "license": "MIT",
   "publishConfig": {
-    "access": "public",
-    "directory": "dist"
-  }
+    "access": "public"
+  },
+  "gitHead": "10caf40846e1c27463e15419163e18e41ca8529c"
 }

@@ -23,7 +23,7 @@
     "fast-memoize": "^2.5.2"
   },
   "publishConfig": {
-    "access": "public",
-    "directory": "dist"
-  }
+    "access": "public"
+  },
+  "gitHead": "10caf40846e1c27463e15419163e18e41ca8529c"
 }
