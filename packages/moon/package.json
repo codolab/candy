@@ -1,6 +1,6 @@
 {
   "name": "@candy-moon/core",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -16,10 +16,10 @@
   "author": "tranbathanhtung",
   "license": "MIT",
   "dependencies": {
-    "@candy-moon/engine": "^0.1.5",
-    "@candy/atomic": "^0.1.5",
-    "@candy/classic": "^0.1.5",
-    "@candy/system": "^0.1.5",
+    "@candy-moon/engine": "^0.1.6",
+    "@candy/atomic": "^0.1.6",
+    "@candy/classic": "^0.1.6",
+    "@candy/system": "^0.1.6",
     "fast-memoize": "^2.5.2"
   },
   "publishConfig": {
