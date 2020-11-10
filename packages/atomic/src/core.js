@@ -3,8 +3,8 @@ import {
   createClassName,
   hyphenateStyleName,
   px,
-  sheet,
 } from "candy-utils";
+import sheet from "candy-sheet";
 
 import keyframes from "./keyframes";
 import createRule from "./rule";

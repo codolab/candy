@@ -1,4 +1,5 @@
-import { stringify, createClassName, sheet } from "candy-utils";
+import { stringify, createClassName } from "candy-utils";
+import sheet from "candy-sheet";
 
 import css2obj from "./css2obj";
 import { createBlocks } from "./rule";

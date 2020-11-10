@@ -1,4 +1,4 @@
-import { sheet } from "candy-utils";
+import sheet from "candy-sheet";
 import { createCompile } from "./core";
 import css, { createCSS } from "./css";
 

@@ -1,5 +1,5 @@
 {
-  "name": "candy-classic",
+  "name": "candy-sheet",
   "private": false,
   "version": "0.1.14",
   "description": "",
@@ -16,12 +16,7 @@
   },
   "author": "tranbathanhtung",
   "license": "MIT",
-  "dependencies": {
-    "candy-sheet": "^0.1.14",
-    "candy-utils": "^0.1.14"
-  },
   "publishConfig": {
     "access": "public"
-  },
-  "gitHead": "533e9788a86826e00e9619d64c6ef55a0d9ee4c9"
+  }
 }

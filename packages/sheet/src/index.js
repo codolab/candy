@@ -1,22 +1,27 @@
 const ID = "__candy";
+const ssr = { textContent: "" };
 
 const createSheet = (target) => {
   let sheet,
     rules = [];
 
   const init = () => {
-    let tag = target ? target.querySelector("#" + ID) : self[ID];
-    if (!tag) {
-      tag = (target || document.head).appendChild(
-        document.createElement("style")
-      );
-      tag.textContent = " ";
-      tag.id = ID;
-      tag.type = "text/css";
-    }
+    try {
+      let tag = target ? target.querySelector("#" + ID) : self[ID];
+      if (!tag) {
+        tag = (target || document.head).appendChild(
+          document.createElement("style")
+        );
+        tag.textContent = " ";
+        tag.id = ID;
+        tag.type = "text/css";
+      }
 
-    // sheet = tag.sheet;
-    sheet = tag;
+      // sheet = tag.sheet;
+      sheet = tag;
+    } catch (e) {
+      sheet = ssr;
+    }
   };
   init();
   return {
