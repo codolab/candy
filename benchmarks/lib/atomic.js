@@ -1,6 +1,6 @@
 const h = require("react").createElement;
 const { render } = require("react-dom");
-const { css } = require("../../packages/atomic/dist/index.js");
+const css = require("../../packages/atomic/dist/index.js");
 
 const app = document.createElement("div");
 

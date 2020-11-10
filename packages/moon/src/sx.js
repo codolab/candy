@@ -1,4 +1,4 @@
-import { css } from "candy-atomic";
+import css from "candy-atomic";
 import { createStyleParser } from "candy-moon-engine";
 
 import { processStyleSystem as processSystem } from "./system";
