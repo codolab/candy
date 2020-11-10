@@ -1,7 +1,7 @@
 {
   "name": "candy-atomic",
   "private": false,
-  "version": "0.1.17",
+  "version": "0.1.18",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -15,8 +15,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "candy-sheet": "^0.1.17",
-    "candy-utils": "^0.1.17"
+    "candy-sheet": "^0.1.18",
+    "candy-utils": "^0.1.18"
   },
   "author": "tranbathanhtung",
   "license": "MIT",
