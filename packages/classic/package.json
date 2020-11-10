@@ -1,7 +1,7 @@
 {
   "name": "@candy/classic",
   "private": false,
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -17,7 +17,7 @@
   "author": "tranbathanhtung",
   "license": "MIT",
   "dependencies": {
-    "@candy/utils": "^0.1.10"
+    "@candy/utils": "^0.1.11"
   },
   "publishConfig": {
     "access": "public"
