@@ -17,15 +17,15 @@ This repository contains the following packages:
 
 # Motivation
 
-I'm big fan of [TailwindCSS](https://tailwindcss.com). But, during working with TailwindCSS, I got some problems with PurgeCSS and class precedence rules.
+I'm big fan of [TailwindCSS](https://tailwindcss.com). But, during working with TailwindCSS, I got some problems with PurgeCSS and class precedence rules. Read more about [Atomic CSS-in-JS](https://sebastienlorber.com/atomic-css-in-js)
 
-So, I created a css-in-js framework that:
+So, I created a CSS-in-JS framework that:
 
 - 👀Supports all existing Tailwind shorthand syntax.
 - 🛠️Fully configurable theme & variants.
 - 🔥Generates only the styles required.
 - ✋No conflict precedence rules.
-- ✨Work with any framework.
+- ✨Works with any framework.
 - 📱Supports React Native.
 
 If you aren't familiar with the Tailwind's syntax. Give a try to object syntax. It's also based on your configuration and provide helpful shorthand ways to style components.
@@ -47,7 +47,7 @@ When the css rule is injected in your application, It's mapped with a class and 
 
 ## Performance
 
-- [babel-plugin-candy-moon](/packages): Transpile shorthand syntax at build time (🚧 Researching)
+- [babel-plugin-candy-moon](/packages): Translate shorthand syntax at build time? (🚧 Researching)
 
 # Acknowledgements
 

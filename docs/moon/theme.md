@@ -1,8 +1,8 @@
 # Theme Configuration
 
-Theming with candy-moon is based on [Tailwind Theme](). It's where you define your color palette, typographic, breakpoints, v..v for use in CSS styles.
+Theming with candy-moon is based on [Tailwind Theme](https://tailwindcss.com/docs/theme). It's where you define your color palette, typographic, breakpoints, v..v for use in CSS styles.
 
-# Theme Configuration reference
+# Theme Configuration Reference
 
 The `theme` object:
 
@@ -89,7 +89,7 @@ _Then you need to import your config file in top level of your entry file. eg: `
 import "./moon.config";
 ```
 
-# Default theme
+# Default Theme
 
 ```js
 export const space = {

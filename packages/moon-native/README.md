@@ -1,6 +1,6 @@
 # candy-moon-native
 
-Use candy-moon in React Native projects
+Use candy-moon in React Native
 
 # Install
 
@@ -19,34 +19,32 @@ yarn add candy-moon-native
 ## Style Object syntax
 
 ```jsx
-import { SafeAreaView, View, Text } from 'react-native';
+import { SafeAreaView, View, Text } from "react-native";
 import { sx } from "candy-moon-native";
 
 const App = () => (
-	<SafeAreaView style={sx({ w: "full", h: "full" })}>
-		<View style={sx({ bg: "blue.200", px: 3, py: 1, rounded: "full" })}>
-			<Text style={sx({ color: "blue.800", fontWeight: "semibold" })}>
-				Hello World
-			</Text>
-		</View>
-	</SafeAreaView>
+  <SafeAreaView style={sx({ w: "full", h: "full" })}>
+    <View style={sx({ bg: "blue.200", px: 3, py: 1, rounded: "full" })}>
+      <Text style={sx({ color: "blue.800", fontWeight: "semibold" })}>
+        Hello World
+      </Text>
+    </View>
+  </SafeAreaView>
 );
 ```
 
 ## Tagged template syntax
 
 ```jsx
-import { SafeAreaView, View, Text } from 'react-native';
-import { cs } from "candy-moon-native";
+import { SafeAreaView, View, Text } from "react-native";
+import { cx } from "candy-moon-native";
 
 const App = () => (
-	<SafeAreaView style={cx`w-full h-full`}>
-		<View style={cx`bg-blue-200 px-3 py-1 rounded-full`}>
-			<Text style={cx`text-blue-800 font-semibold`}>
-				Hello World
-			</Text>
-		</View>
-	</SafeAreaView>
+  <SafeAreaView style={cx`w-full h-full`}>
+    <View style={cx`bg-blue-200 px-3 py-1 rounded-full`}>
+      <Text style={cx`text-blue-800 font-semibold`}>Hello World</Text>
+    </View>
+  </SafeAreaView>
 );
 ```
 
@@ -142,11 +140,11 @@ _Note: Both `sx` or `cx` function return id created by StyleSheet. If you want t
 
 [Read more →](/docs/moon-native/theme.md)
 
-# What's missing
+# What's missing?
 
 ## Variants
 
-Basically, candy-moon-native currently doesn't support variants. But, I have a few ideas about them:
+Basically, candy-moon-native doesn't support variants. But, I have a few ideas about them:
 
 For example about platform variants: `web:`, `ios:`, `android:`
 
