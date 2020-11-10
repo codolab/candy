@@ -17,6 +17,6 @@
   "author": "tranbathanhtung",
   "license": "MIT",
   "dependencies": {
-    "@candy/utils": "0.1.0"
+    "@candy/utils": "^0.1.0"
   }
 }
