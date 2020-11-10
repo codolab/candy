@@ -1,5 +1,10 @@
+import postcss from "rollup-plugin-postcss";
 import pkg from "./package.json";
-import { createUMDConfig, createCJSConfig, createESMConfig } from "../../rollup.common";
+import {
+  createUMDConfig,
+  createCJSConfig,
+  createESMConfig,
+} from "../../rollup.common";
 
 const umd = createUMDConfig({
   pkg,
@@ -8,6 +13,25 @@ const umd = createUMDConfig({
 
 const cjs = createCJSConfig({ pkg });
 const esm = createESMConfig({ pkg });
+const resetCss = {
+  input: "src/_reset.css",
+  output: {
+    file: "dist/reset.min.css",
+  },
+  plugins: [
+    postcss({
+      extract: true,
+      minimize: true,
+      modules: false,
+      sourceMap: false,
+      plugins: [],
+    }),
+  ],
+  onwarn(warning, warn) {
+    if (warning.code === "FILE_NAME_CONFLICT") return;
+    warn(warning);
+  },
+};
 
 // const umdWindConfig = {
 //   ...getUMDConfig({ browser: "wind/dist/index.umd.js" }, "cx", PRODUCTION),
@@ -25,4 +49,4 @@ const esm = createESMConfig({ pkg });
 //   ],
 // };
 
-export default [umd, cjs, esm];
+export default [umd, cjs, esm, resetCss];
