@@ -18,5 +18,9 @@
     "@candy/utils": "^0.1.0"
   },
   "author": "tranbathanhtung",
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
+  }
 }

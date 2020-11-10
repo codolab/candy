@@ -18,5 +18,9 @@
   "license": "MIT",
   "dependencies": {
     "@candy/utils": "^0.1.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
   }
 }

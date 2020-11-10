@@ -25,5 +25,9 @@
   },
   "devDependencies": {
     "react-native": "^0.63.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
   }
 }

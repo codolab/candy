@@ -22,5 +22,9 @@
     "@candy/classic": "^0.1.0",
     "@candy/system": "^0.1.0",
     "fast-memoize": "^2.5.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
   }
 }
