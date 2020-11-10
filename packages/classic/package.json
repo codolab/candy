@@ -1,6 +1,6 @@
 {
   "name": "@candy/classic",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -16,10 +16,10 @@
   "author": "tranbathanhtung",
   "license": "MIT",
   "dependencies": {
-    "@candy/utils": "^0.1.6"
+    "@candy/utils": "^0.1.7"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "10caf40846e1c27463e15419163e18e41ca8529c"
+  "gitHead": "bd03acf8ae004dd9f646946edcbef16b7a1fffd0"
 }
