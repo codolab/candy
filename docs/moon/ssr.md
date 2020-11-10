@@ -3,7 +3,7 @@
 For SSR, use the sheet.extractCss() method to return the static CSS string after rendering a view.
 
 ```jsx
-import { sheet } from "@candy-moon/core"
+import { sheet } from "candy-moon"
 import React from "react"
 import ReactDOMServer from "react-dom/server"
 import App from "./App"

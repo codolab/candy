@@ -33,7 +33,7 @@ To customize the variant, create a `moon.config.js` and use the `configure` func
 
 ```js
 // moon.config.js
-import { configure } from "@candy-moon/core";
+import { configure } from "candy-moon";
 
 configure({
   variants: {

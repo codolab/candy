@@ -18,7 +18,8 @@
   "license": "MIT",
   "dependencies": {
     "candy-system": "^0.1.13",
-    "clsx": "^1.1.1"
+    "clsx": "^1.1.1",
+    "color-rgba": "^2.2.3"
   },
   "publishConfig": {
     "access": "public"

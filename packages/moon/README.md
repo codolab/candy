@@ -1,4 +1,4 @@
-# @candy-moon/core
+# candy-moon
 
 Styled API for building fully configurable, theme aware components. Supports all existing Tailwind shorthand syntax
 
@@ -6,11 +6,11 @@ Styled API for building fully configurable, theme aware components. Supports all
 
 Using [npm](https://www.npmjs.com/):
 
-    $ npm install @candy-moon/core
+    $ npm install candy-moon
 
 Using [yarn]():
 
-    $ yarn add @candy-moon/core
+    $ yarn add candy-moon
 
 # Basic Usage
 
@@ -21,7 +21,7 @@ Use `sx` or `cx` function throughout your application to add styles based on you
 The `sx` function lets you add any valid CSS or style values from your theme.
 
 ```jsx
-import { sx } from "@candy-moon/core";
+import { sx } from "candy-moon";
 
 const className = sx({
   // pick space.4 from theme => padding: 1rem;
@@ -59,7 +59,7 @@ const className = sx({
 `cx` function supports all existing Tailwind shorthand syntax base on your config.
 
 ```jsx
-import cx from "@candy-moon/core";
+import cx from "candy-moon";
 
 const className = cx`p-4 bg-gray-800`;
 

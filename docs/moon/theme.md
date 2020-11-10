@@ -1,6 +1,6 @@
 # Theme Configuration
 
-Theming with @candy-moon/core is based on [Tailwind Theme](). It's where you define your color palette, typographic, breakpoints, v..v for use in CSS styles.
+Theming with candy-moon is based on [Tailwind Theme](). It's where you define your color palette, typographic, breakpoints, v..v for use in CSS styles.
 
 # Theme Configuration reference
 
@@ -69,7 +69,7 @@ To customize the theme, create a `moon.config.js` and use the `configure` functi
 
 ```js
 // moon.config.js
-import { configure } from "@candy-moon/core";
+import { configure } from "candy-moon";
 
 configure({
   theme: {

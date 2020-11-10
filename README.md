@@ -12,8 +12,8 @@ This repository contains the following packages:
 | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
 | [`candy-atomic`](/packages/atomic)   | | [![](https://img.shields.io/badge/API%20Docs-readme-orange.svg?style=flat-square)](/packages/atomic/#readme) | 1KB Atomic CSS-in-JS                                                           |
 | [`candy-classic`](/packages/classic) | | [![](https://img.shields.io/badge/API%20Docs-readme-orange.svg?style=flat-square)](/packages/classic/#readme) | Compile style objects to classic CSS rules                                                      |
-| [`@candy-moon/core`](/packages/moon) | | [![](https://img.shields.io/badge/API%20Docs-readme-orange.svg?style=flat-square)](/packages/moon/#readme) | Styled API for building fully configurable, theme aware components |
-| [`@candy-moon/native`](/packages/moon-native) | | [![](https://img.shields.io/badge/API%20Docs-readme-orange.svg?style=flat-square)](/packages/moon-native/#readme) | @candy-moon for [React Native]() |
+| [`candy-moon`](/packages/moon) | | [![](https://img.shields.io/badge/API%20Docs-readme-orange.svg?style=flat-square)](/packages/moon/#readme) | Styled API for building fully configurable, theme aware components |
+| [`candy-moon-native`](/packages/moon-native) | | [![](https://img.shields.io/badge/API%20Docs-readme-orange.svg?style=flat-square)](/packages/moon-native/#readme) | @candy-moon for [React Native]() |
 
 # Motivation
 

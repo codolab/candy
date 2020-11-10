@@ -7,7 +7,7 @@ See all classes and variants available [here](https://tailwindcss.com/docs/insta
 # Usage
 
 ```js
-import { cx } from "@candy-moon/core";
+import { cx } from "candy-moon";
 document.body.className = cx`h-screen h-screen bg-pink-500 color-white`;
 ```
 
@@ -35,7 +35,7 @@ Responsive Design
 Usage with Pseudo-Class Variants
 
 ```jsx
-import { cx } from "@candy-moon/core";
+import { cx } from "candy-moon";
 
 render(
   <button class={cx`bg-transparent hover:bg-blue-500 text-blue-700 hover:text-white`}>
@@ -47,7 +47,7 @@ render(
 Combine with responsive also support `{screen}:{pseudo}`
 
 ```jsx
-import { cx } from "@candy-moon/core";
+import { cx } from "candy-moon";
 
 render(
   <input class={cx`border md:border-gray-400 md:focus:border-blue-500 bg-white text-gray-900 appearance-none inline-block w-full rounded py-3 px-4 focus:outline-none`} placeholder="Focus me">
@@ -59,7 +59,7 @@ render(
 The `cx` function can be called in different ways:
 
 ```js
-import { cx } from "@candy-moon/core";
+import { cx } from "candy-moon";
 
 // Strings (variadic)
 cx("bg-pink-500", true && "rounded", "p-4");
