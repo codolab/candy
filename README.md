@@ -1,6 +1,6 @@
 <div align="center">
   <h1>🍭 candy</h1>
-   Styling modern apps with atomic CSS-in-JS based on constraint-based design principles
+   Styling modern apps with Atomic CSS-in-JS for constraint-based design principles
   <br />
 </div>
 
@@ -27,6 +27,8 @@ So, I created a css-in-js framework that:
 - ✋No conflict precedence rules.
 - 📱Supports React Native.
 
+If you aren't familiar with the Tailwind's syntax. Give a try to object syntax. It's also based on your configuration and provide helpful shorthand ways to style components.
+
 # Sandbox Demo
 
 # Next.js Templates (Update later)
@@ -34,10 +36,6 @@ So, I created a css-in-js framework that:
 # Performance
 
 When the css rule is injected in your application, it's mapped with a class and cached. That's mean it will never be injected again. So, Candy avoids unnecessary computation. It's just return the same class for the next render times.
-
-# The Runtime Trade-off
-
-Candy is hight performance. However, It's still javascript. Even if you use candy-moon, The runtime footprint need to compute style with the `styled-system` before generating class. So, you will need to consider using more lazy load or other alternatives.
 
 # What's next?
 
