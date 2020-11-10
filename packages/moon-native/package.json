@@ -25,6 +25,5 @@
   },
   "devDependencies": {
     "react-native": "^0.63.3"
-  },
-  "gitHead": "f4ffb90dea85c49c49a1d6a18a6a8c161a450f71"
+  }
 }

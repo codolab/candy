@@ -1,0 +1,9 @@
+47 error Error: Command failed: git commit -F /private/var/folders/9p/kr2m32zs73dfj9n7tb73yzqc0000gn/T/baaef3bc-01ab-482b-a8a1-63ad20140b9d/lerna-commit.txt
+47 error On branch main
+47 error Your branch is up to date with 'origin/main'.
+47 error
+47 error nothing to commit, working tree clean
+47 error
+47 error     at makeError (/Users/mac/Project/candy/node_modules/execa/index.js:174:9)
+47 error     at /Users/mac/Project/candy/node_modules/execa/index.js:278:16
+47 error     at processTicksAndRejections (node:internal/process/task_queues:93:5)
