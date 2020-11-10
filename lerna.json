@@ -5,7 +5,7 @@
   "useWorkspaces": true,
   "command": {
     "publish": {
-      "ignore": ["*.md", "test/**"]
+      "ignoreChanges": ["*.md", "test/**"]
     }
   },
   "ignoreChanges": [
