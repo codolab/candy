@@ -1,6 +1,6 @@
 {
   "name": "@candy-moon/native",
-  "private": false,
+  "private": true,
   "version": "0.1.0",
   "description": "",
   "main": "dist/index.js",
