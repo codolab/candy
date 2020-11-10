@@ -44,6 +44,9 @@
           zIndex: {
             hide: -1,
           },
+          flexShrink: {
+            none: "10",
+          }
         },
         variants: {
           dark: ".mode-dark &",
@@ -119,7 +122,6 @@
       //   },
       // };
 
-      const className = cx`text-xl tracking-wide`;
       // const className = sx({
       //   color: "primary",
       //   _sm: {
@@ -139,7 +141,7 @@
 
       render(
         html`
-          <section className=${cx`bg-white`}>
+          <section className=${cx`bg-white flex-col flex-shrink-none`}>
             <div
               className=${cx`container h-full px-5 py-24 mx-auto overflow-hidden`}
             >

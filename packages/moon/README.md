@@ -16,6 +16,14 @@ Using [yarn]():
 
 Use `sx` or `cx` function throughout your application to add styles based on your theme. It provides helpful shorthand to style components.
 
+## Reset css
+
+First of all, you need to import reset css file in top level of your entry file.
+
+```js
+import "candy-moon/dist/reset.min.css";
+```
+
 ## Object syntax (sx)
 
 The `sx` function lets you add any valid CSS or style values from your theme.

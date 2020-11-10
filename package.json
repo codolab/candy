@@ -8,7 +8,7 @@
   "scripts": {
     "bootstrap": "yarn install && yarn build",
     "build": "yarn lerna:run-deps build",
-    "dev": "yarn lerna:run-deps --scope candy/* --scope candy-moon/* --parallel dev",
+    "dev": "yarn lerna:run-deps --scope candy-* --parallel dev",
     "clean": "run-p clean:*",
     "clean:build": "lerna run clean:build --parallel",
     "clean:node_modules": "lerna run clean:node_modules --parallel && rimraf node_modules",

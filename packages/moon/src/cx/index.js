@@ -11,7 +11,6 @@ const parse = createClassParser(processSystem, lookupWithVariant);
 // create css with sort function
 const css = createCSS(createCompile(sortStyles));
 
-// experiment with memoize
 const cx = (...args) => {
   const styles = parse(...args);
   const { classic: c = {}, ...finalStyles } = styles;

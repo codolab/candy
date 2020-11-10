@@ -2,7 +2,8 @@ import hash from "./hash";
 
 export { default as hyphenateStyleName } from "./hyphenate-style-name";
 
-export const IS_NON_DIMENSIONAL = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;
+// export const IS_NON_DIMENSIONAL = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;
+export const IS_NON_DIMENSIONAL = /^(-|f[lo].*?[^se]$|g.{6,}[^ps]$|z|o[pr]|(-w.{6})?li.*?(t|mp)$|an|(bo|s).{5}im|sca|m.{7}[ds]|ta|c.*?[st]$|wido|ini)/;
 
 export const px = (val, property) => {
   if (typeof val === "number" && !IS_NON_DIMENSIONAL.test(property)) {

@@ -15,9 +15,11 @@ export const config = {
         // direction
         case "row":
         case "row-reverse":
-        case "col":
-        case "col-reverse":
           return { flexDirection: val };
+        case "col":
+          return { flexDirection: "column" };
+        case "col-reverse":
+          return { flexDirection: "column-reverse" };
         // wrap
         case "wrap":
         case "wrap-reverse":

@@ -24,7 +24,7 @@ export const createCompile = (sort = noop) => (obj, parent = "", media = null) =
   return sort(Object.keys(obj))
     .map((key) => {
       const val = obj[key];
-      if (!val) return "";
+      if (val === null || val === undefined) return "";
       if (key === "keyframes") {
         for (let name in val) {
           keyframes.call({ name }, val[name]);
@@ -63,6 +63,7 @@ export const createCompile = (sort = noop) => (obj, parent = "", media = null) =
         className,
         val: normalizedVal,
       });
+
       sheet.insert(rule);
       return className;
     })
