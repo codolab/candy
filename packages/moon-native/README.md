@@ -1,17 +1,17 @@
-# @candy-moon/native
+# candy-moon-native
 
-Use @candy-moon in React Native projects
+Use candy-moon in React Native projects
 
 # Install
 
 ```sh
-npm install @candy-moon/native
+npm install candy-moon-native
 ```
 
 Or:
 
 ```sh
-yarn add @candy-moon/native
+yarn add candy-moon-native
 ```
 
 # Usage
@@ -20,7 +20,7 @@ yarn add @candy-moon/native
 
 ```jsx
 import { SafeAreaView, View, Text } from 'react-native';
-import { sx } from "@candy-moon/native";
+import { sx } from "candy-moon-native";
 
 const App = () => (
 	<SafeAreaView style={sx({ w: "full", h: "full" })}>
@@ -37,7 +37,7 @@ const App = () => (
 
 ```jsx
 import { SafeAreaView, View, Text } from 'react-native';
-import { cs } from "@candy-moon/native";
+import { cs } from "candy-moon-native";
 
 const App = () => (
 	<SafeAreaView style={cx`w-full h-full`}>
@@ -146,7 +146,7 @@ _Note: Both `sx` or `cx` function return id created by StyleSheet. If you want t
 
 ## Variants
 
-Basically, @candy-moon/native currently doesn't support variants. But, I have a few ideas about them:
+Basically, candy-moon-native currently doesn't support variants. But, I have a few ideas about them:
 
 For example about platform variants: `web:`, `ios:`, `android:`
 

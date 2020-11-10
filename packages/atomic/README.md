@@ -1,6 +1,6 @@
 # candy-atomic
 
-1kb atomic css-in-js solution
+Atomic CSS-in-JS solution
 
 # Install
 

@@ -10,14 +10,14 @@ This repository contains the following packages:
 
 | Package                                                | Version                                                                                                                             | Docs                                                                                                                                                                                                                                                                          | Description                                                                        |
 | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| [`candy-atomic`](/packages/atomic)   | | [![](https://img.shields.io/badge/API%20Docs-readme-orange.svg?style=flat-square)](/packages/atomic/#readme) | 1KB Atomic CSS-in-JS                                                           |
-| [`candy-classic`](/packages/classic) | | [![](https://img.shields.io/badge/API%20Docs-readme-orange.svg?style=flat-square)](/packages/classic/#readme) | Compile style objects to classic CSS rules                                                      |
-| [`candy-moon`](/packages/moon) | | [![](https://img.shields.io/badge/API%20Docs-readme-orange.svg?style=flat-square)](/packages/moon/#readme) | Styled API for building fully configurable, theme aware components |
-| [`candy-moon-native`](/packages/moon-native) | | [![](https://img.shields.io/badge/API%20Docs-readme-orange.svg?style=flat-square)](/packages/moon-native/#readme) | @candy-moon for [React Native]() |
+| [`candy-atomic`](/packages/atomic)   | [![npm](https://img.shields.io/npm/v/candy-atomic.svg?style=flat-square)](https://www.npmjs.com/package/candy-atomic) | [![](https://img.shields.io/badge/API%20Docs-readme-orange.svg?style=flat-square)](/packages/atomic/#readme) | Atomic CSS-in-JS                                                           |
+| [`candy-classic`](/packages/classic) | [![npm](https://img.shields.io/npm/v/candy-classic.svg?style=flat-square)](https://www.npmjs.com/package/candy-classic) | [![](https://img.shields.io/badge/API%20Docs-readme-orange.svg?style=flat-square)](/packages/classic/#readme) | Compile style objects to classic CSS rules                                                      |
+| [`candy-moon`](/packages/moon) | [![npm](https://img.shields.io/npm/v/candy-moon.svg?style=flat-square)](https://www.npmjs.com/package/candy-moon) | [![](https://img.shields.io/badge/API%20Docs-readme-orange.svg?style=flat-square)](/packages/moon/#readme) | Styled API for building fully configurable, theme aware components |
+| [`candy-moon-native`](/packages/moon-native) | [![npm](https://img.shields.io/npm/v/candy-moon-native.svg?style=flat-square)](https://www.npmjs.com/package/candy-moon-native) | [![](https://img.shields.io/badge/API%20Docs-readme-orange.svg?style=flat-square)](/packages/moon-native/#readme) | Use candy-moon in [React Native](https://reactnative.dev/) |
 
 # Motivation
 
-I'm big fan of [TailwindCSS](). But, during working with TailwindCSS, I got some problems with PurgeCSS and class precedence rules.
+I'm big fan of [TailwindCSS](https://tailwindcss.com). But, during working with TailwindCSS, I got some problems with PurgeCSS and class precedence rules.
 
 So, I created a css-in-js framework that:
 
@@ -25,6 +25,7 @@ So, I created a css-in-js framework that:
 - 🛠️Fully configurable theme & variants.
 - 🔥Generates only the styles required.
 - ✋No conflict precedence rules.
+- ✨Work with any framework.
 - 📱Supports React Native.
 
 If you aren't familiar with the Tailwind's syntax. Give a try to object syntax. It's also based on your configuration and provide helpful shorthand ways to style components.
@@ -41,16 +42,16 @@ When the css rule is injected in your application, It's mapped with a class and 
 
 ## Development Experience
 
-- [babel-preset-candy](): Support for the `css`, `sx` and `cx` props (🚧 WIP)
+- [babel-preset-candy](/packages): Support for the `css`, `sx` and `cx` props (🚧 WIP)
 - [candy-devtools](/packages/devtools): Less painful atomic styles debugger (🚧 Researching)
 
 ## Performance
 
-- [babel-plugin-candy-moon](): Transpile shorthand syntax at build time (🚧 Researching)
+- [babel-plugin-candy-moon](/packages): Transpile shorthand syntax at build time (🚧 Researching)
 
 # Acknowledgements
 
-Candy was heavily inspired by [styled-system]() and [TailwindCSS](https://tailwindcss.com/docs/installation). It also synthesizes ideas from many different CSS-in-JS frameworks. I'd like to thank all of them for their amazing work.
+Candy was heavily inspired by [styled-system](https://styled-system.com/) and [TailwindCSS](https://tailwindcss.com/docs/installation). It also synthesizes ideas from many different CSS-in-JS frameworks. I'd like to thank all of them for their amazing work.
 
 # License
 

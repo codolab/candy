@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import memoize from "fast-memoize";
 
 import { createLookup } from "./lookup";
 import { Configuration } from "../configure";
@@ -21,33 +22,42 @@ export const createClassParser = (
   const lookup = createLookup(processSystem);
   const lookupWithVariant = _lookupWithVariant;
 
-  return function parse(values, ...exprs) {
-    let strings = values;
-    const isTag = checkIsTag(values, ...exprs);
-    if (!isTag) {
-      strings = [clsx(values, ...exprs)];
+  return memoize(
+    function parse(values, ...exprs) {
+      let strings = values;
+      const isTag = checkIsTag(values, ...exprs);
+      if (!isTag) {
+        strings = [clsx(values, ...exprs)];
+      }
+      const rules = strings
+        .reduce(
+          (str, rule, i) =>
+            (str += [rule || "", (isTag && exprs[i]) || "" || ""].join(" ")),
+          ""
+        )
+        .replace(/\s\s+/g, " ")
+        .trim()
+        .split(" ");
+
+      const styles = rules.reduce((acc, val) => {
+        if (!val) return acc;
+        const variant = val.match(/.*:/g) ? val.match(/.*:/g)[0] : "";
+        const className = val.replace(variant, "");
+        const translated = lookup(className);
+        const translatedWithVariant = lookupWithVariant(
+          variant,
+          translated,
+          acc
+        );
+
+        if (translatedWithVariant) return translatedWithVariant;
+
+        return { ...acc, ...translated };
+      }, {});
+      return styles;
+    },
+    {
+      strategy: memoize.strategies.variadic,
     }
-    const rules = strings
-      .reduce(
-        (str, rule, i) =>
-          (str += [rule || "", (isTag && exprs[i]) || "" || ""].join(" ")),
-        ""
-      )
-      .replace(/\s\s+/g, " ")
-      .trim()
-      .split(" ");
-      
-    const styles = rules.reduce((acc, val) => {
-      if (!val) return acc;
-      const variant = val.match(/.*:/g) ? val.match(/.*:/g)[0] : "";
-      const className = val.replace(variant, "");
-      const translated = lookup(className);
-      const translatedWithVariant = lookupWithVariant(variant, translated, acc);
-
-      if (translatedWithVariant) return translatedWithVariant;
-
-      return { ...acc, ...translated };
-    }, {});
-    return styles;
-  };
+  );
 };

@@ -1,10 +1,12 @@
+import memoize from "fast-memoize";
 import { Configuration } from "./configure";
 
 const noop = () => null;
 
 const createLookup = (val) => val;
 
-const camelToKebab = (str) => str.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase();
+const camelToKebab = (str) =>
+  str.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, "$1-$2").toLowerCase();
 
 export const createStyleParser = (
   processSystem = noop,
@@ -14,33 +16,39 @@ export const createStyleParser = (
   const lookup = createLookup(processSystem);
   const lookupWithVariant = _lookupWithVariant;
 
-  return (styles) => {
-    const translate = (property, value) => {
-      const config = Configuration.get();
-      const { theme } = config;
-      if (property.startsWith("_")) {
-        const processedProperty = lookupWithVariant({
-          variant: camelToKebab(property.slice(1)),
-          config,
-        });
-        if (!processedProperty) return { [property]: translateStyles(value) };
-        return {
-          [processedProperty[0]]: translateStyles(value),
-        };
-      }
-      if (typeof value === "object") return { [property]: translateStyles(value) };
-      const translated = lookup({ theme, property, value });
-      return translated;
-    };
+  return memoize(
+    (styles) => {
+      const translate = (property, value) => {
+        const config = Configuration.get();
+        const { theme } = config;
+        if (property.startsWith("_")) {
+          const processedProperty = lookupWithVariant({
+            variant: camelToKebab(property.slice(1)),
+            config,
+          });
+          if (!processedProperty) return { [property]: translateStyles(value) };
+          return {
+            [processedProperty[0]]: translateStyles(value),
+          };
+        }
+        if (typeof value === "object")
+          return { [property]: translateStyles(value) };
+        const translated = lookup({ theme, property, value });
+        return translated;
+      };
 
-    const translateStyles = (obj) => {
-      return Object.keys(obj).reduce((acc, property) => {
-        const value = obj[property];
-        const translation = translate(property, value);
-        return { ...acc, ...translation };
-      }, {});;
-    };
+      const translateStyles = (obj) => {
+        return Object.keys(obj).reduce((acc, property) => {
+          const value = obj[property];
+          const translation = translate(property, value);
+          return { ...acc, ...translation };
+        }, {});
+      };
 
-    return translateStyles(styles);
-  };
+      return translateStyles(styles);
+    },
+    {
+      strategy: memoize.strategies.variadic,
+    }
+  );
 };
