@@ -1,5 +1,5 @@
-import { compose } from "@candy/system";
-import { processStyleSystem as defaultProcessStyleSystem } from "@candy-moon/engine";
+import { compose } from "candy-system";
+import { processStyleSystem as defaultProcessStyleSystem } from "candy-moon-engine";
 
 import animation from "./animation";
 import grid from "./grid";

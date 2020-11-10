@@ -1,4 +1,4 @@
-import { system } from "@candy/system";
+import { system } from "candy-system";
 
 export const config = {
   table: {

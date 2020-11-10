@@ -1,4 +1,4 @@
-import { createClassParser } from "@candy-moon/engine";
+import { createClassParser } from "candy-moon-engine";
 
 import css from "./css";
 import { getStylesRN } from "./util";

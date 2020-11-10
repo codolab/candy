@@ -1,4 +1,4 @@
-import { system } from "@candy/system";
+import { system } from "candy-system";
 import { getColorConfig } from "./util";
 
 export const config = {

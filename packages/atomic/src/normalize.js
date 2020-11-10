@@ -1,4 +1,4 @@
-import { hyphenateStyleName } from "@candy/utils";
+import { hyphenateStyleName } from "candy-utils";
 
 export const normalizeSelByProp = (selector, property) => {
   let out = selector;

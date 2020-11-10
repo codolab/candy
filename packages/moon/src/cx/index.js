@@ -1,6 +1,6 @@
-import { createCompile, createCSS } from "@candy/atomic";
-import classic from "@candy/classic";
-import { createClassParser } from "@candy-moon/engine";
+import { createCompile, createCSS } from "candy-atomic";
+import classic from "candy-classic";
+import { createClassParser } from "candy-moon-engine";
 import memoize from "fast-memoize";
 
 import { lookupWithVariant } from "./lookupWithVariant";

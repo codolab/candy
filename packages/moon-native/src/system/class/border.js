@@ -1,4 +1,4 @@
-import { system, getValue } from "@candy/system";
+import { system, getValue } from "candy-system";
 
 export const config = borders.reduce((acc, { name, prefix, properties }) => {
   return {

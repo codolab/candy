@@ -1,5 +1,5 @@
-import { system, get, getValue } from "@candy/system";
-import { toRgba } from "@candy-moon/engine";
+import { system, get, getValue } from "candy-system";
+import { toRgba } from "candy-moon-engine";
 
 const convert2Gradient = (p1, p2) => ({
   scale: "colors",

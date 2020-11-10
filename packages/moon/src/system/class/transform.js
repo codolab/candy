@@ -1,4 +1,4 @@
-import { system, getValue } from "@candy/system";
+import { system, getValue } from "candy-system";
 
 const scales = [
   { name: "scale", properties: ["--transform-scale-x", "--transform-scale-y"] },

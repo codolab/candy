@@ -2,7 +2,7 @@ import {
   colors as defaultColors,
   space as defaultSpace,
   negative,
-} from "@candy-moon/engine";
+} from "candy-moon-engine";
 
 export const backgroundGradient = (colors = defaultColors) => ({
   backgroundImage: {

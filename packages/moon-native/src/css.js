@@ -1,4 +1,4 @@
-import { stringify, createClassName } from "@candy/utils";
+import { stringify, createClassName } from "candy-utils";
 const rn = require("react-native");
 
 const sheet = rn.StyleSheet;

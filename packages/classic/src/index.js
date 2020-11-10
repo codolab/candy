@@ -1,4 +1,4 @@
-import { stringify, createClassName, sheet } from "@candy/utils";
+import { stringify, createClassName, sheet } from "candy-utils";
 import obj2css from "./obj2css";
 
 export default function classic(style, name) {

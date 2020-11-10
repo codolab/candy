@@ -1,4 +1,4 @@
-import { compose } from "@candy/system";
+import { compose } from "candy-system";
 import { processStyleSystem as defaultProcessStyleSystem } from "../";
 
 import background from "./background";

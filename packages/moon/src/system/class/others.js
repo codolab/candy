@@ -1,4 +1,4 @@
-import { system, get } from "@candy/system";
+import { system, get } from "candy-system";
 
 export const config = {
   layout: {

@@ -1,27 +1,27 @@
-# @candy/atomic
+# candy-atomic
 
 1kb atomic css-in-js solution
 
 # Install
 
 ```sh
-npm install @candy/atomic
+npm install candy-atomic
 ```
 
 Or:
 
 ```sh
-yarn add @candy/atomic
+yarn add candy-atomic
 ```
 
 # Usage
 
-@candy/atomic works with any framework, support both object styles and string syntax.
+candy-atomic works with any framework, support both object styles and string syntax.
 
 ## Basic Usage
 
 ```jsx
-import { css } from "@candy/atomic";
+import { css } from "candy-atomic";
 
 const className = css`
   padding: 32px;
@@ -40,7 +40,7 @@ render(<div className={className}>Box</div>);
 ## Pseudoclasses
 
 ```jsx
-import { css } from "@candy/atomic";
+import { css } from "candy-atomic";
 
 const className = css`
   padding: 32px;
@@ -65,7 +65,7 @@ render(<div className={className}>Box</div>);
 ## Media Queries
 
 ```jsx
-import { css } from "@candy/atomic";
+import { css } from "candy-atomic";
 
 const className = css`
   padding: 32px;
@@ -96,7 +96,7 @@ render(<div className={className}>Box</div>);
 ## Child Selectors
 
 ```jsx
-import { css } from "@candy/atomic";
+import { css } from "candy-atomic";
 
 const className = css`
   padding: 32px;
@@ -135,7 +135,7 @@ render(<div className={className}>Box</div>);
 For SSR, use the sheet.extractCss() method to return the static CSS string after rendering a view.
 
 ```jsx
-import { sheet } from "@candy/atomic"
+import { sheet } from "candy-atomic"
 import React from "react"
 import ReactDOMServer from "react-dom/server"
 import App from "./App"

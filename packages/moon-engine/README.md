@@ -1,1 +1,1 @@
-# @candy-moon/engine
+# candy-moon-engine

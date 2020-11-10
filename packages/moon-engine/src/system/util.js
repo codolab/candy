@@ -1,4 +1,4 @@
-import { getValue } from "@candy/system";
+import { getValue } from "candy-system";
 import { transformColor } from "../util";
 
 export const getColorConfig = (property, variable) => ({

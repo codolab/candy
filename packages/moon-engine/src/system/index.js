@@ -1,4 +1,4 @@
-import { compose } from "@candy/system";
+import { compose } from "candy-system";
 
 import background from "./background";
 import borderRadius from "./border-radius";

@@ -1,5 +1,5 @@
-import { compose } from "@candy/system";
-import { processClassSystem as defaultProcessClassSystem } from "@candy-moon/engine";
+import { compose } from "candy-system";
+import { processClassSystem as defaultProcessClassSystem } from "candy-moon-engine";
 
 import accessibility from "./accessibility";
 import background from "./background";

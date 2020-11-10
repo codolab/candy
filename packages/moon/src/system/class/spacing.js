@@ -1,4 +1,4 @@
-import { system, getValue } from "@candy/system";
+import { system, getValue } from "candy-system";
 
 const config = {
   // space-between

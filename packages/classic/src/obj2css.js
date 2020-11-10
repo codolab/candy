@@ -1,4 +1,4 @@
-import { hyphenateStyleName, px } from "@candy/utils";
+import { hyphenateStyleName, px } from "candy-utils";
 
 const toObj = (a) => (key) => ({
   key: key,

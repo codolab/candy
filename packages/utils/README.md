@@ -1,1 +1,1 @@
-# @candy/utils
+# candy-utils

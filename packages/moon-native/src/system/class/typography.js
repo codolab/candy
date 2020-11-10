@@ -1,4 +1,4 @@
-import { system } from "@candy/system";
+import { system } from "candy-system";
 import matchAll from "match-all";
 
 const FONT_VARIANT_REGEX = /(oldstyle-nums|lining-nums|tabular-nums|proportional-nums)/g;

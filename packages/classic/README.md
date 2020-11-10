@@ -1,23 +1,23 @@
-# @candy/classic
+# candy-classic
 
 Dangerous css-in-js
 
 # Install
 
 ```sh
-npm install @candy/classic
+npm install candy-classic
 ```
 
 Or:
 
 ```sh
-yarn add @candy/classic
+yarn add candy-classic
 ```
 
 # Usage
 
 ```jsx
-import classic from "@candy/classic";
+import classic from "candy-classic";
 
 const className = classic({
   padding: "32px",

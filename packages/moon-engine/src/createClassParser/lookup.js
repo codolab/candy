@@ -1,4 +1,4 @@
-import { get } from "@candy/system";
+import { get } from "candy-system";
 
 import { utilityClassType1, utilityClassType3 } from "./utilities-class.js";
 import { capitalizeFirstLetter } from "../util";

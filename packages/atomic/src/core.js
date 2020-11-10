@@ -4,7 +4,7 @@ import {
   hyphenateStyleName,
   px,
   sheet,
-} from "@candy/utils";
+} from "candy-utils";
 
 import keyframes from "./keyframes";
 import createRule from "./rule";

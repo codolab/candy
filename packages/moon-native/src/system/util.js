@@ -1,5 +1,5 @@
-import { getValue } from "@candy/system";
-import { transformColor } from "@candy-moon/engine";
+import { getValue } from "candy-system";
+import { transformColor } from "candy-moon-engine";
 
 export const getColorConfig = (property, variable) => ({
   property,

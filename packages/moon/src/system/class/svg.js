@@ -1,4 +1,4 @@
-import { system, get, getValue } from "@candy/system";
+import { system, get, getValue } from "candy-system";
 
 export const config = {
   stroke: {

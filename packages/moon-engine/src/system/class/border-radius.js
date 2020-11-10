@@ -1,4 +1,4 @@
-import { system, getValue } from "@candy/system";
+import { system, getValue } from "candy-system";
 
 const radii = [
   { name: "rounded", prefix: "rounded", properties: ["borderRadius"] },

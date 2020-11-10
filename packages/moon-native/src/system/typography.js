@@ -1,5 +1,5 @@
-import { system, getValue } from "@candy/system";
-import { transformColor } from "@candy-moon/engine";
+import { system, getValue } from "candy-system";
+import { transformColor } from "candy-moon-engine";
 
 export const config = {
   fontVariant: true,

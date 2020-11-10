@@ -3,7 +3,7 @@ import {
   getDefaultConfig,
   globalTheme,
   merge,
-} from "@candy-moon/engine";
+} from "candy-moon-engine";
 
 import { aspectRatio, boxShadow, textShadow } from "./theme";
 

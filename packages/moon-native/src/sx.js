@@ -1,4 +1,4 @@
-import { createStyleParser } from "@candy-moon/engine";
+import { createStyleParser } from "candy-moon-engine";
 import css2rn from "css-to-react-native";
 
 import css from "./css";

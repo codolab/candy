@@ -1,4 +1,4 @@
-import { system, getValue, get } from "@candy/system";
+import { system, getValue, get } from "candy-system";
 
 export const config = {
   animation: {
