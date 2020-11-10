@@ -1,5 +1,6 @@
 {
   "name": "@candy/candy",
+  "private": true,
   "workspaces": {
     "packages": [
       "packages/*"
