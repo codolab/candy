@@ -52,7 +52,7 @@ const className = sx({
 });
 ```
 
-[Read more >]()
+[Read more →](/docs/moon/sx.md)
 
 ## Tagged template syntax (cx)
 
@@ -74,8 +74,8 @@ Composing variants
 const className = cx`text-gray-700 font-normal text-base md:hover:text-gray-800 md:hover:font-semibold md:text-2xl`;
 ```
 
-[Read more >]()
+[Read more →](/docs/moon/cx.md)
 
 # Different between `cx` and `sx` function
 
-The `cx` provide class like TailwindCSS. That's mean if you want to add more styles, you must to customize your config. Unlike `cx` function. It not only supports you to style values from your theme but also allows you add any valid CSS.
+The `cx` provide class like TailwindCSS. That's mean if you want to add more styles, you must to customize your config. Unlike `cx` function. It not only supports you add style values from your theme but also allows you add any valid CSS.

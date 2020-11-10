@@ -140,7 +140,7 @@ _Note: Both `sx` or `cx` function return id created by StyleSheet. If you want t
 
 # Theme
 
-[Read more →]()
+[Read more →](/docs/moon-native/theme.md)
 
 # What's missing
 
@@ -150,4 +150,4 @@ Basically, @candy-moon/native currently doesn't support variants. But, I have a 
 
 For example about platform variants: `web:`, `ios:`, `android:`
 
-Happy to see you open if you have any ideas.
+Happy to see you open issue if you have any ideas.
