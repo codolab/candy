@@ -35,7 +35,7 @@ If you aren't familiar with the Tailwind's syntax. Give a try to object syntax. 
 
 # Performance
 
-When the css rule is injected in your application, it's mapped with a class and cached. That's mean it will never be injected again. So, Candy avoids unnecessary computation. It's just return the same class for the next render times.
+When the css rule is injected in your application, It's mapped with a class and cached. That's mean It will never be injected again. So, Candy avoids unnecessary computation. It's just return the same class for the next render times.
 
 # What's next?
 
