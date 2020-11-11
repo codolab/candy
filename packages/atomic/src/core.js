@@ -7,17 +7,6 @@ import { cache } from "./cache";
 import { normalizeSelByProp } from "./normalize";
 
 const noop = (val) => val;
-
-// const prefix = (property, value): string => {
-//   const declaration = `${property}:${prefixValue(property, value)}`;
-//   let cssText = declaration;
-//   const flag = prefixProperty(property);
-//   if (flag & 0b001) cssText += `;-ms-${declaration}`;
-//   if (flag & 0b010) cssText += `;-moz-${declaration}`;
-//   if (flag & 0b100) cssText += `;-webkit-${declaration}`;
-//   return cssText;
-// };
-
 /**
  *
  * Compile css style object into a class
