@@ -1,6 +1,6 @@
 <div align="center">
   <h1>🍭 candy</h1>
-   Styling modern apps with Atomic CSS-in-JS for constraint-based design principles
+   Styling modern apps with Atomic CSS-in-JS focus on constraint-based design principles
   <br />
 </div>
 
@@ -32,7 +32,8 @@ If you aren't familiar with the Tailwind's syntax. Give a try to object syntax. 
 
 # Sandbox Demo
 
-[Demo](https://codesandbox.io/s/react-candy-moon-demo-l85vt)
+- [React](https://codesandbox.io/s/react-candy-moon-demo-l85vt)
+- [React Native](https://snack.expo.io/@tungtbt/react-candy-moon-native)
 
 # Next.js Templates (Update later)
 
