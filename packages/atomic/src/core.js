@@ -49,7 +49,7 @@ export const createCompile = (sort = noop) => (
 
       const cached = cache.get(_key, val);
       if (cached) {
-        sheet.insert(cached.rule);
+        sheet.insert(cached.rule, !!media);
         return cached.className;
       }
 
@@ -62,8 +62,7 @@ export const createCompile = (sort = noop) => (
         className,
         val: normalizedVal,
       });
-
-      sheet.insert(rule);
+      sheet.insert(rule, !!media);
       return className;
     })
     .join(" ");

@@ -3,7 +3,7 @@ const ssr = { textContent: "" };
 
 const createSheet = (target) => {
   let sheet,
-    rules = [];
+    injected = { rules: [], media: [] };
 
   const init = () => {
     try {
@@ -25,17 +25,15 @@ const createSheet = (target) => {
   };
   init();
   return {
-    insert(css, append = false) {
+    // FIXME:
+    insert(css, media = false) {
       try {
         if (!sheet) init();
-        if (rules.indexOf(css) !== -1) return;
-        rules.push(css);
-        // FIXME
-        // sheet.insertRule(css, sheet.cssRules.length);
-        if (sheet.textContent.indexOf(css) < 0)
-          sheet.textContent = append
-            ? css + sheet.textContent
-            : sheet.textContent + css;
+        if (sheet.textContent.indexOf(css) < 0) {
+          if (media) injected.media.push(css);
+          else injected.rules.push(css);
+          sheet.textContent = injected.rules.join("") + injected.media.join("");
+        }
       } catch (e) {
         if (process.env.NODE_ENV !== "production") {
           console.warn(`Something went wrong: "${css}"`, e);
@@ -44,8 +42,9 @@ const createSheet = (target) => {
     },
     extractCSS() {
       const css = sheet.textContent;
-      rules = [];
+      injected = { rules: [], media: [] };
       sheet.textContent = " ";
+      console.log(injected)
       return css;
     },
   };

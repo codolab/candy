@@ -12,7 +12,7 @@ export default function keyframes(val, ...exprs) {
   const valueString = stringify(keyframe);
   const cached = cache.get(_key, valueString);
   if (cached) {
-    sheet.insert(cached.rule);
+    sheet.insert(cached.rule, true);
     return cached.className;
   }
   const className = ctx.name || createClassName("_", _key, valueString, "");
@@ -33,6 +33,6 @@ export default function keyframes(val, ...exprs) {
     className,
     val: valueString,
   });
-  sheet.insert(rule);
+  sheet.insert(rule, true);
   return className;
 }
