@@ -1,9 +1,4 @@
-import {
-  minifier,
-  createClassName,
-  hyphenateStyleName,
-  px,
-} from "candy-utils";
+import { minifier, createClassName, hyphenateStyleName, px } from "candy-utils";
 import sheet from "candy-sheet";
 
 import keyframes from "./keyframes";
@@ -11,16 +6,31 @@ import createRule from "./rule";
 import { cache } from "./cache";
 import { normalizeSelByProp } from "./normalize";
 
-const noop = val => val;
+const noop = (val) => val;
+
+// const prefix = (property, value): string => {
+//   const declaration = `${property}:${prefixValue(property, value)}`;
+//   let cssText = declaration;
+//   const flag = prefixProperty(property);
+//   if (flag & 0b001) cssText += `;-ms-${declaration}`;
+//   if (flag & 0b010) cssText += `;-moz-${declaration}`;
+//   if (flag & 0b100) cssText += `;-webkit-${declaration}`;
+//   return cssText;
+// };
+
 /**
- * 
+ *
  * Compile css style object into a class
  * @param {Object} obj
  * @param {String} parent
  * @param {Array|null} media
  * @returns {String} classes
  */
-export const createCompile = (sort = noop) => (obj, parent = "", media = null) => {
+export const createCompile = (sort = noop) => (
+  obj,
+  parent = "",
+  media = null
+) => {
   return sort(Object.keys(obj))
     .map((key) => {
       const val = obj[key];
@@ -71,4 +81,3 @@ export const createCompile = (sort = noop) => (obj, parent = "", media = null) =
 };
 
 export const compile = createCompile();
-

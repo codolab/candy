@@ -16,7 +16,8 @@
   },
   "dependencies": {
     "candy-sheet": "^0.2.1",
-    "candy-utils": "^0.2.1"
+    "candy-utils": "^0.2.1",
+    "tiny-css-prefixer": "^1.1.4"
   },
   "author": "tranbathanhtung",
   "license": "MIT",
