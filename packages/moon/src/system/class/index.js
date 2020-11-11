@@ -22,6 +22,7 @@ export const processClassSystem = compose(
   defaultProcessClassSystem,
   accessibility,
   background,
+  backgroundGradient,
   border,
   grid,
   interactivity,
