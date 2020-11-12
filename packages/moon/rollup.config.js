@@ -1,11 +1,16 @@
 import postcss from "rollup-plugin-postcss";
 import pkg from "./package.json";
+import jsxPkg from "./jsx/package.json";
+
 import {
   createUMDConfig,
   createCJSConfig,
   createESMConfig,
+  getCJS,
+  getESM,
 } from "../../rollup.common";
 
+// core
 const umd = createUMDConfig({
   pkg,
   name: "moon",
@@ -33,6 +38,19 @@ const resetCss = {
   },
 };
 
+// jsx
+const jsxCJS = {
+  ...createCJSConfig({ pkg: jsxPkg }),
+  input: "jsx/index.js",
+  output: getCJS({ file: "jsx/dist/index.js" }),
+};
+
+const jsxESM = {
+  ...createESMConfig({ pkg: jsxPkg }),
+  input: "jsx/index.js",
+  output: getESM({ file: "jsx/dist/index.esm.js" }),
+};
+
 // const umdWindConfig = {
 //   ...getUMDConfig({ browser: "wind/dist/index.umd.js" }, "cx", PRODUCTION),
 //   input: "src/index-wind.js",
@@ -49,4 +67,4 @@ const resetCss = {
 //   ],
 // };
 
-export default [umd, cjs, esm, resetCss];
+export default [umd, cjs, esm, resetCss, jsxCJS, jsxESM];

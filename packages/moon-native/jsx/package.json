@@ -1,0 +1,9 @@
+{
+  "name": "candy-moon-native/jsx",
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "peerDependencies": {
+    "candy-moon-native": "^0.2.3"
+  }
+}

@@ -3,7 +3,7 @@ const ssr = { textContent: "" };
 
 const createSheet = (target) => {
   let sheet,
-    injected = { rules: [], media: [] };
+    injected = { rules: "", media: "" };
 
   const init = () => {
     try {
@@ -30,9 +30,9 @@ const createSheet = (target) => {
       try {
         if (!sheet) init();
         if (sheet.textContent.indexOf(css) < 0) {
-          if (media) injected.media.push(css);
-          else injected.rules.push(css);
-          sheet.textContent = injected.rules.join("") + injected.media.join("");
+          if (media) injected.media = injected.media + css;
+          else injected.rules = injected.rules + css;
+          sheet.textContent = injected.rules + injected.media;
         }
       } catch (e) {
         if (process.env.NODE_ENV !== "production") {
@@ -42,9 +42,8 @@ const createSheet = (target) => {
     },
     extractCSS() {
       const css = sheet.textContent;
-      injected = { rules: [], media: [] };
+      injected = { rules: "", media: "" };
       sheet.textContent = " ";
-      console.log(injected)
       return css;
     },
   };
