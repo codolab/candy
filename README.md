@@ -45,7 +45,7 @@ When the css rule is injected in your application, It's mapped with a class and 
 
 ## Development Experience
 
-- [babel-preset-candy](/packages): Support for the `css`, `sx` and `cx` props (🚧 WIP)
+- [babel-preset-candy](/packages): Support for the `css`, `sx` and `cls` props (🚧 WIP)
 - [candy-devtools](/packages/devtools): Less painful atomic styles debugger (🚧 Researching)
 
 ## Performance

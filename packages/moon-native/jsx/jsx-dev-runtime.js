@@ -6,7 +6,7 @@ export const Fragment = ReactJSXRuntimeDev.Fragment;
 export function jsxDEV(type, _props, key, isStaticChildren, source, self) {
   if (
     _props == null ||
-    (!hasOwnProperty.call(_props, "cx") &&
+    (!hasOwnProperty.call(_props, "cls") &&
       !hasOwnProperty.call(_props, "sx") &&
       !hasOwnProperty.call(_props, "css"))
   ) {

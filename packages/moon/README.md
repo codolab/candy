@@ -14,7 +14,7 @@ Using [yarn]():
 
 # Basic Usage
 
-Use `sx` or `cx` function throughout your application to add styles based on your theme. It provides helpful shorthand to style components.
+Use `sx` or `cls` function throughout your application to add styles based on your theme. It provides helpful shorthand to style components.
 
 ## Reset css
 
@@ -62,28 +62,28 @@ const className = sx({
 
 [Read more →](/docs/moon/sx.md)
 
-## Tagged template syntax (cx)
+## Tagged template syntax (cls)
 
-`cx` function supports all existing Tailwind shorthand syntax base on your config.
+`cls` function supports all existing Tailwind shorthand syntax base on your config.
 
 ```jsx
-import cx from "candy-moon";
+import cls from "candy-moon";
 
-const className = cx`p-4 bg-gray-800`;
+const className = cls`p-4 bg-gray-800`;
 
 render(<div className={className}>Box</div>);
 ```
 
-## Variants (cx)
+## Variants (cls)
 
 Composing variants
 
 ```js
-const className = cx`text-gray-700 font-normal text-base md:hover:text-gray-800 md:hover:font-semibold md:text-2xl`;
+const className = cls`text-gray-700 font-normal text-base md:hover:text-gray-800 md:hover:font-semibold md:text-2xl`;
 ```
 
-[Read more →](/docs/moon/cx.md)
+[Read more →](/docs/moon/cls.md)
 
-# Different between `cx` and `sx` function
+# Different between `cls` and `sx` function
 
-The `cx` provide class like TailwindCSS. That's mean if you want to add more styles, you must to customize your config. Unlike `cx` function. The `sx` function not only supports you add style values from your theme but also allows you add any valid CSS.
+The `cls` provide class like TailwindCSS. That's mean if you want to add more styles, you must to customize your config. Unlike `cls` function. The `sx` function not only supports you add style values from your theme but also allows you add any valid CSS.

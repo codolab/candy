@@ -1,3 +1,3 @@
-import cx from "./cx";
+import cls from "./cls";
 
-export default cx;
+export default cls;

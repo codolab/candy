@@ -37,18 +37,18 @@ const App = () => (
 
 ```jsx
 import { SafeAreaView, View, Text } from "react-native";
-import { cx } from "candy-moon-native";
+import { cls } from "candy-moon-native";
 
 const App = () => (
-  <SafeAreaView style={cx`w-full h-full`}>
-    <View style={cx`bg-blue-200 px-3 py-1 rounded-full`}>
-      <Text style={cx`text-blue-800 font-semibold`}>Hello World</Text>
+  <SafeAreaView style={cls`w-full h-full`}>
+    <View style={cls`bg-blue-200 px-3 py-1 rounded-full`}>
+      <Text style={cls`text-blue-800 font-semibold`}>Hello World</Text>
     </View>
   </SafeAreaView>
 );
 ```
 
-_Note: Both `sx` or `cx` function return id created by StyleSheet. If you want to return simple object with style try: `sx.raw` or `cx.raw`_
+_Note: Both `sx` or `cls` function return id created by StyleSheet. If you want to return simple object with style try: `sx.raw` or `cls.raw`_
 
 # Supported Utilities
 

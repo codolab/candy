@@ -1,13 +1,13 @@
 const h = require("react").createElement;
 const { render } = require("react-dom");
-const { cx } = require("../../packages/moon/dist/index.js");
+const { cls } = require("../../packages/moon/dist/index.js");
 
 const app = document.createElement("div");
 
 module.exports = () => {
   const counter = Math.random();
 
-  const className = cx`
+  const className = cls`
     ${counter > 0 ? "opacity-50" : "opacity-100"}
     font-sans
     font-xl

@@ -77,22 +77,6 @@ const jsxRuntimeESM = {
   output: getESM({ file: "jsx-runtime/dist/index.esm.js" }),
 };
 
-// const umdWindConfig = {
-//   ...getUMDConfig({ browser: "wind/dist/index.umd.js" }, "cx", PRODUCTION),
-//   input: "src/index-wind.js",
-// }
-
-// const windConfig = {
-//   ...getBrowserConfig({}),
-//   input: "src/index-wind.js",
-//   output: [
-//     getESM({ file: "wind/dist/index.esm.js" }),
-//     getCJS({
-//       file: "wind/dist/index.js",
-//     }),
-//   ],
-// };
-
 export default [
   umd,
   cjs,

@@ -6,15 +6,15 @@ import { processClassSystem as processSystem } from "./system/class";
 
 const parse = createClassParser(processSystem);
 
-const cx = (...args) => {
+const cls = (...args) => {
   const parsed = parse(...args);
   const stylesRN = getStylesRN(parsed);
   return css(stylesRN);
 };
 
-cx.raw = (...args) => {
+cls.raw = (...args) => {
   const parsed = parse(...args);
   return getStylesRN(parsed);
 };
 
-export default cx;
+export default cls;

@@ -78,17 +78,17 @@ sx({
 })
 ```
 
-With the `cx` function syntax is: {variant}:
+With the `cls` function syntax is: {variant}:
 
 ```js
 // hover variant
-cx`hover:`
+cls`hover:`
 // group-hover variant
-cx`group-hover:`
+cls`group-hover:`
 ```
 
 Combine variants
 
 ```js
-cx`md:hover:`
+cls`md:hover:`
 ```

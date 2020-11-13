@@ -30,9 +30,9 @@
     ></script> -->
     <script>
       const { h, render } = preact;
-      const { Configuration, configure, sheet, css, cx, sx } = moon;
+      const { Configuration, configure, sheet, css, cls, sx } = moon;
       console.log({ moon, atomic, classic });
-      // const { configure, Configuration, css, cx, sx } = moonNative;
+      // const { configure, Configuration, css, cls, sx } = moonNative;
       const html = htm.bind(h);
       const counter = Math.random();
 
@@ -141,31 +141,31 @@
 
       render(
         html`
-          <section className=${cx`bg-white flex-col flex-shrink-none`}>
+          <section className=${cls`bg-white flex-col flex-shrink-none`}>
             <div
-              className=${cx`container h-full px-5 py-24 mx-auto overflow-hidden`}
+              className=${cls`container h-full px-5 py-24 mx-auto overflow-hidden`}
             >
-              <div className=${cx`sm:flex rounded-lg shadow`}>
+              <div className=${cls`sm:flex rounded-lg shadow`}>
                 <div
-                  className=${cx`w-full p-10 rounded-none sm:rounded md:w-1/3 sm:bg-gray-100`}
+                  className=${cls`w-full p-10 rounded-none sm:rounded md:w-1/3 sm:bg-gray-100`}
                 >
                   <h2
-                    className=${cx`text-2xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-2xl sm:leading-9`}
+                    className=${cls`text-2xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-2xl sm:leading-9`}
                   >
                     Contact Us
                   </h2>
-                  <p className=${cx`mt-2 mb-5 text-sm text-gray-600`}>
+                  <p className=${cls`mt-2 mb-5 text-sm text-gray-600`}>
                     You can find our contact info below or you can feel free to
                     leave us a quick message in the form.
                   </p>
-                  <div className=${cx`flex items-start py-3 pt-5`}>
-                    <div className=${cx`flex-shrink`}>
+                  <div className=${cls`flex items-start py-3 pt-5`}>
+                    <div className=${cls`flex-shrink`}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        className=${cx`w-8 h-8 mt-1 text-gray-700`}
+                        className=${cls`w-8 h-8 mt-1 text-gray-700`}
                       >
                         <path
                           stroke-linecap="round"
@@ -175,21 +175,21 @@
                         />
                       </svg>
                     </div>
-                    <div className=${cx`flex-grow ml-10 md:ml-5`}>
-                      <div className=${cx`text-base font-medium`}>Phone</div>
-                      <span className=${cx`text-gray-500 text-base`}
+                    <div className=${cls`flex-grow ml-10 md:ml-5`}>
+                      <div className=${cls`text-base font-medium`}>Phone</div>
+                      <span className=${cls`text-gray-500 text-base`}
                         >+123-456-7890</span
                       >
                     </div>
                   </div>
-                  <div className=${cx`flex items-start py-3`}>
-                    <div className=${cx`flex-shrink`}>
+                  <div className=${cls`flex items-start py-3`}>
+                    <div className=${cls`flex-shrink`}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        className=${cx`w-8 h-8 text-gray-700`}
+                        className=${cls`w-8 h-8 text-gray-700`}
                       >
                         <path
                           stroke-linecap="round"
@@ -205,17 +205,17 @@
                         />
                       </svg>
                     </div>
-                    <div className=${cx`flex-grow ml-10 md:ml-5`}>
-                      <div className=${cx`text-base font-medium`}>Address</div>
-                      <span className=${cx`text-gray-500 text-base`}>
+                    <div className=${cls`flex-grow ml-10 md:ml-5`}>
+                      <div className=${cls`text-base font-medium`}>Address</div>
+                      <span className=${cls`text-gray-500 text-base`}>
                         2503 Washington Avenue, Hattiesburg, Mississippi 39402
                       </span>
                     </div>
                   </div>
-                  <div className=${cx`flex items-start py-3 pb-5`}>
-                    <div className=${cx`flex-shrink`}>
+                  <div className=${cls`flex items-start py-3 pb-5`}>
+                    <div className=${cls`flex-shrink`}>
                       <svg
-                        className=${cx`w-8 h-8 text-gray-700`}
+                        className=${cls`w-8 h-8 text-gray-700`}
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -229,43 +229,43 @@
                         />
                       </svg>
                     </div>
-                    <div className=${cx`flex-grow ml-10 md:ml-5`}>
-                      <div className=${cx`text-base font-medium`}>Email</div>
-                      <span className=${cx`text-gray-500 text-base`}>
+                    <div className=${cls`flex-grow ml-10 md:ml-5`}>
+                      <div className=${cls`text-base font-medium`}>Email</div>
+                      <span className=${cls`text-gray-500 text-base`}>
                         jonh.switch@gmail.com
                       </span>
                     </div>
                   </div>
                 </div>
                 <div
-                  className=${cx`flex items-center justify-center w-full p-10 bg-white md:w-2/3`}
+                  className=${cls`flex items-center justify-center w-full p-10 bg-white md:w-2/3`}
                 >
-                  <div className=${cx`w-full`}>
-                    <div className=${cx`pb-3`}>
+                  <div className=${cls`w-full`}>
+                    <div className=${cls`pb-3`}>
                       <input
-                        className=${cx`w-full flex items-center relative transition-all duration-200 outline-none appearance-none text-lg px-4 h-12 rounded-md border-2 border-transparent bg-gray-200 hover:bg-gray-300 focus:bg-transparent focus:shadow-outline`}
+                        className=${cls`w-full flex items-center relative transition-all duration-200 outline-none appearance-none text-lg px-4 h-12 rounded-md border-2 border-transparent bg-gray-200 hover:bg-gray-300 focus:bg-transparent focus:shadow-outline`}
                         placeholder="Email Address"
                         type="text"
                       />
                     </div>
-                    <div className=${cx`py-3`}>
+                    <div className=${cls`py-3`}>
                       <input
-                        className=${cx`w-full flex items-center relative transition-all duration-200 outline-none appearance-none text-lg px-4 h-12 rounded-md border-2 border-transparent bg-gray-200 hover:bg-gray-300 focus:bg-transparent focus:shadow-outline`}
+                        className=${cls`w-full flex items-center relative transition-all duration-200 outline-none appearance-none text-lg px-4 h-12 rounded-md border-2 border-transparent bg-gray-200 hover:bg-gray-300 focus:bg-transparent focus:shadow-outline`}
                         placeholder="Subject"
                         type="text"
                       />
                     </div>
-                    <div className=${cx`py-3`}>
+                    <div className=${cls`py-3`}>
                       <textarea
                         row="4"
-                        className=${cx`w-full h-40 flex items-center relative transition-all duration-200 outline-none appearance-none text-lg px-4 py-3 rounded-md border-2 border-transparent bg-gray-200 hover:bg-gray-300 focus:bg-transparent focus:shadow-outline`}
+                        className=${cls`w-full h-40 flex items-center relative transition-all duration-200 outline-none appearance-none text-lg px-4 py-3 rounded-md border-2 border-transparent bg-gray-200 hover:bg-gray-300 focus:bg-transparent focus:shadow-outline`}
                         name="message"
                         placeholder="Your message here..."
                       ></textarea>
                     </div>
-                    <div className=${cx`pt-3`}>
+                    <div className=${cls`pt-3`}>
                       <button
-                        className=${cx`inline-flex appearance-none items-center justify-center transition-all duration-200 select-none relative whitespace-no-wrap align-middle leading-tight outline-none focus:outline-none h-12 text-lg px-6 focus:shadow-outline text-gray-100 bg-gray-800 hover:bg-gray-700 active:bg-gray-800 font-semibold rounded-md`}
+                        className=${cls`inline-flex appearance-none items-center justify-center transition-all duration-200 select-none relative whitespace-no-wrap align-middle leading-tight outline-none focus:outline-none h-12 text-lg px-6 focus:shadow-outline text-gray-100 bg-gray-800 hover:bg-gray-700 active:bg-gray-800 font-semibold rounded-md`}
                       >
                         Submit Message
                       </button>

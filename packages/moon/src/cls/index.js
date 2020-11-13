@@ -11,7 +11,7 @@ const parse = createClassParser(processSystem, lookupWithVariant);
 // create css with sort function
 const css = createCSS(createCompile(sortStyles));
 
-const cx = (...args) => {
+const cls = (...args) => {
   const styles = parse(...args);
   const { classic: c = {}, ...finalStyles } = styles;
   let classicClass = "";
@@ -21,4 +21,4 @@ const cx = (...args) => {
   return (classicClass || "") + css(finalStyles);
 };
 
-export default cx;
+export default cls;

@@ -12,7 +12,7 @@ export function jsx(type, _props, ...children) {
   }
   if (
     _props == null ||
-    (!hasOwnProperty.call(_props, "cx") &&
+    (!hasOwnProperty.call(_props, "cls") &&
       !hasOwnProperty.call(_props, "sx") &&
       !hasOwnProperty.call(_props, "css"))
   ) {
