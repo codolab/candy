@@ -87,3 +87,71 @@ const className = cls`text-gray-700 font-normal text-base md:hover:text-gray-800
 # Different between `cls` and `sx` function
 
 The `cls` provide class like TailwindCSS. That's mean if you want to add more styles, you must to customize your config. Unlike `cls` function. The `sx` function not only supports you add style values from your theme but also allows you add any valid CSS.
+
+# The `cls`, `sx` and `css` Prop
+
+## JSX Pragma
+
+`candy-moon` isn't built in to support react pragma. So, you need to set up before using custom jsx.
+
+Eg: React
+
+```js
+import * as React from "react";
+import { setup } from "candy-moon/jsx";
+
+// Should be called just once
+setup(React.createElement);
+```
+
+Eg: Preact
+
+```js
+import { h } from "preact";
+import { setup } from "candy-moon/jsx";
+
+// Should be called just once
+setup(h);
+```
+
+To use the `cls`, `sx` and `css` prop, set the custom jsx pragma comment at the top your module and import the jsx function.
+
+```jsx
+/** @jsx jsx */
+import { jsx } from "candy-moon/jsx"
+
+export default props => (
+  <div 
+    {...props}
+    cls="bg-pink-500 p-4"
+    sx={{
+      bg: "pink.500",
+      p: 4,
+    }}
+  />
+)
+```
+
+**Note: The `cls`, `sx` or `css` prop return classNames and append `className` prop. Be careful when using them at the same time **
+
+Use the css prop to render raw CSS values.
+
+```jsx
+/** @jsx jsx */
+import { jsx } from "candy-moon/jsx"
+
+export default props => (
+  <div 
+    {...props}
+    css={{
+      background: "hotpink",
+      padding: 16,
+    }}
+  />
+)
+```
+
+[JSX Pragma Babel Document](https://babeljs.io/docs/en/babel-plugin-transform-react-jsx)
+
+
+_Note: If you use React or Next.js version that has [New JSX Transform](https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html) (Eg: CRA4 & Next.js 10) then /** @jsx jsx */ pragma might not work and you should use /** @jsxImportSource candy-moon */ instead._
