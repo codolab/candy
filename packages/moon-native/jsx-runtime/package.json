@@ -2,8 +2,5 @@
   "name": "candy-moon-native/jsx-runtime",
   "private": false,
   "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "peerDependencies": {
-    "candy-moon-native": "^0.2.5"
-  }
+  "module": "dist/index.es.js"
 }

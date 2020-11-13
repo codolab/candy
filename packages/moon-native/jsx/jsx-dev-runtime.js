@@ -21,5 +21,5 @@ export function jsxDEV(type, _props, key, isStaticChildren, source, self) {
   }
   const props = createProps(type, _props);
 
-  return ReactJSXRuntime.jsx(type, props, key, isStaticChildren, source, self);
+  return ReactJSXRuntimeDev.jsx(type, props, key, isStaticChildren, source, self);
 }
