@@ -51,6 +51,32 @@ const jsxESM = {
   output: getESM({ file: "jsx/dist/index.esm.js" }),
 };
 
+// jsx-dev-runtime
+const jsxDevRuntimeCJS = {
+  ...createCJSConfig({ pkg: jsxPkg }),
+  input: "jsx/jsx-dev-runtime.js",
+  output: getCJS({ file: "jsx-dev-runtime/dist/index.js" }),
+};
+
+const jsxDevRuntimeESM = {
+  ...createESMConfig({ pkg: jsxPkg }),
+  input: "jsx/jsx-dev-runtime.js",
+  output: getESM({ file: "jsx-dev-runtime/dist/index.esm.js" }),
+};
+
+// jsx-runtime
+const jsxRuntimeCJS = {
+  ...createCJSConfig({ pkg: jsxPkg }),
+  input: "jsx/jsx-runtime.js",
+  output: getCJS({ file: "jsx-runtime/dist/index.js" }),
+};
+
+const jsxRuntimeESM = {
+  ...createESMConfig({ pkg: jsxPkg }),
+  input: "jsx/jsx-runtime.js",
+  output: getESM({ file: "jsx-runtime/dist/index.esm.js" }),
+};
+
 // const umdWindConfig = {
 //   ...getUMDConfig({ browser: "wind/dist/index.umd.js" }, "cx", PRODUCTION),
 //   input: "src/index-wind.js",
@@ -67,4 +93,15 @@ const jsxESM = {
 //   ],
 // };
 
-export default [umd, cjs, esm, resetCss, jsxCJS, jsxESM];
+export default [
+  umd,
+  cjs,
+  esm,
+  resetCss,
+  jsxCJS,
+  jsxESM,
+  jsxDevRuntimeCJS,
+  jsxDevRuntimeESM,
+  jsxRuntimeCJS,
+  jsxRuntimeESM,
+];

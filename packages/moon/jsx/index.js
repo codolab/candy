@@ -1,21 +1,9 @@
-import { cx as cxFunc, sx as sxFunc, css as cssFunc, clsx } from "candy-moon";
+import { createProps, hasOwnProperty } from "./createProps";
 
-const hasOwnProperty = Object.hasOwnProperty;
 let h;
 
 export function setup(pragma) {
   h = pragma;
-}
-
-function createProps(type, _props) {
-  const { cx, sx, css, ...props } = _props;
-  const prevClass = _props.className || type.className;
-  const cssClass = css ? cssFunc(css) : "";
-  const cxClass = cx ? cxFunc(cx) : "";
-  const sxClass = sx ? sxFunc(sx) : "";
-  props.className = clsx(cssClass, cxClass, sxClass, prevClass);
-
-  return props;
 }
 
 export function jsx(type, _props, ...children) {
@@ -28,9 +16,7 @@ export function jsx(type, _props, ...children) {
       !hasOwnProperty.call(_props, "sx") &&
       !hasOwnProperty.call(_props, "css"))
   ) {
-    const args = arguments;
-    // $FlowFixMe
-    return h.apply(undefined, args);
+    return h(type, _props, ...children);
   }
   const props = createProps(type, _props);
 
