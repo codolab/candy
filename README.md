@@ -58,7 +58,7 @@ When the css rule is injected in your application, It's mapped with a class and 
 
 # Contribute
 
-All contributions are welcome. Even, if you notice wrong information, typos, or grammar mistake (English is not my primary language). Happy to see you open an issue.
+All contributions are welcome. Even, if you notice wrong information, typos, or grammar mistake (English is not my primary language). Feel free to open an issue or create a pull request.
 
 # Acknowledgements
 
@@ -66,4 +66,4 @@ Candy was heavily inspired by [styled-system](https://styled-system.com/) and [T
 
 # License
 
-MIT
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
