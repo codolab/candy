@@ -86,13 +86,13 @@ const className = cls`text-gray-700 font-normal text-base md:hover:text-gray-800
 
 # Different between `cls` and `sx` function
 
-The `cls` provide class like TailwindCSS. That's mean if you want to add more styles, you must to customize your config. Unlike `cls` function. The `sx` function not only supports you add style values from your theme but also allows you add any valid CSS.
+The `cls` provide class like TailwindCSS. That's mean if you want to add more styles, you must to customize your config. Unlike `cls` function, the `sx` function not only supports you add style values from your theme but also allows you add any valid CSS.
 
 # The `cls`, `sx` and `css` Prop
 
 ## JSX Pragma
 
-`candy-moon` isn't built in to support react pragma. So, you need to set up before using custom jsx.
+`candy-moon` isn't built in to support any pragma. So, you need to set up before using custom jsx.
 
 Eg: React
 
@@ -155,3 +155,36 @@ export default props => (
 
 
 _Note: If you use React or Next.js version that has [New JSX Transform](https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html) (Eg: CRA4 & Next.js 10) then /** @jsx jsx */ pragma might not work and you should use /** @jsxImportSource candy-moon */ instead._
+
+# API
+
+## sx(styles: object)
+
+Accepts styles objects and returns classNames string.
+
+## cls(...input: mixed)
+
+returns classNames string.
+
+## css(taggedTemplate | styles: object)
+
+Accepts styles objects or tagged template and returns classNames string.
+
+[Read more →](/packages/atomic/README.md)
+
+## clsx(...input: mixed)
+
+Returns classNames string
+
+[Read more →](https://github.com/lukeed/clsx)
+
+## sheet.extractCSS()
+
+Returns the rendered CSS string for static and server-side rendering.
+
+## configure(config: { theme: Object, variants: Object })
+
+Define your color palette, typographic, breakpoints, v..v or add variants
+
+[Read more →](/docs/moon/theme.md)
+

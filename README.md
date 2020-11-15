@@ -43,17 +43,18 @@ When the css rule is injected in your application, It's mapped with a class and 
 
 # What's next?
 
-## Development Experience
+## Developer Experience
 
 - [candy-devtools](/packages/devtools): Less painful atomic styles debugger (🚧 Researching)
 
 ## Performance
 
-- [babel-plugin-candy-moon](/packages): Translate shorthand syntax at build time? (🚧 Researching)
+- Translate shorthand syntax at compile-time instead of runtime (🚧 Researching)
 
 ## Core
 
-- Writing Plugins.
+- Writing Plugins. (🚧 WIP)
+- Strict mode for warning or catching error.
 
 # Contribute
 
