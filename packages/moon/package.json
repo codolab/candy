@@ -1,7 +1,7 @@
 {
   "name": "candy-moon",
   "private": false,
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -17,10 +17,10 @@
   "author": "tranbathanhtung",
   "license": "MIT",
   "dependencies": {
-    "candy-atomic": "^0.2.8",
-    "candy-classic": "^0.2.8",
-    "candy-moon-engine": "^0.2.8",
-    "candy-system": "^0.2.8"
+    "candy-atomic": "^0.2.9",
+    "candy-classic": "^0.2.9",
+    "candy-moon-engine": "^0.2.9",
+    "candy-system": "^0.2.9"
   },
   "publishConfig": {
     "access": "public"
