@@ -4,7 +4,6 @@ const ssr = { textContent: "" };
 const createSheet = (target) => {
   let sheet,
     injected = { rules: "", media: "" };
-
   const init = () => {
     try {
       let tag = target ? target.querySelector("#" + ID) : self[ID];
@@ -19,20 +18,28 @@ const createSheet = (target) => {
 
       // sheet = tag.sheet;
       sheet = tag;
+      
     } catch (e) {
       sheet = ssr;
     }
   };
+
+  const updateInject = () => {
+    const splitted = sheet.textContent.split("/*media*/")
+    injected.rules = splitted[0];
+    injected.media = splitted[1] || "";
+  }
   init();
   return {
     // FIXME:
     insert(css, media = false) {
       try {
         if (!sheet) init();
+        updateInject();
         if (sheet.textContent.indexOf(css) < 0) {
           if (media) injected.media = injected.media + css;
           else injected.rules = injected.rules + css;
-          sheet.textContent = injected.rules + injected.media;
+          sheet.textContent = injected.rules + "/*media*/" + injected.media;
         }
       } catch (e) {
         if (process.env.NODE_ENV !== "production") {
