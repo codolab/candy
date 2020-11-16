@@ -17,7 +17,7 @@ This repository contains the following packages:
 
 # Motivation
 
-I'm big fan of [TailwindCSS](https://tailwindcss.com). But, during working with TailwindCSS, I got some problems with PurgeCSS and class precedence rules. Read more about [Atomic CSS-in-JS](https://sebastienlorber.com/atomic-css-in-js)
+I'm a big fan of [TailwindCSS](https://tailwindcss.com). But, during working with TailwindCSS, I got some problems with PurgeCSS and class precedence rules. Read more about [Atomic CSS-in-JS](https://sebastienlorber.com/atomic-css-in-js)
 
 So, I created a CSS-in-JS framework that:
 
@@ -28,7 +28,7 @@ So, I created a CSS-in-JS framework that:
 - ✨Works with any framework.
 - 📱Supports React Native.
 
-If you aren't familiar with the Tailwind's syntax. Give a try to object syntax. It's also based on your configuration and provide helpful shorthand ways to style components.
+If you aren't familiar with the Tailwind's syntax. Give a try to object syntax. It's also based on your configuration and provides helpful shorthand ways to style components.
 
 # Sandbox Demo
 
