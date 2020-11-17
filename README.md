@@ -30,6 +30,45 @@ So, I created a CSS-in-JS framework that:
 
 If you aren't familiar with the Tailwind's syntax. Give a try to object syntax. It's also based on your configuration and provides helpful shorthand ways to style components.
 
+# Installation
+
+Using [npm](https://www.npmjs.com/):
+
+    $ npm install candy-moon
+
+Using [yarn]():
+
+    $ yarn add candy-moon
+
+# Basic Usage
+
+## Object syntax (sx)
+
+```js
+import { sx } from "candy-moon";
+
+const className = sx({
+  color: "gray.700",
+  fontWeight: "normal",
+  fontSize: "base",
+  _hover: {
+    color: "gray.800",
+    fontWeight: "semibold",
+  },
+  _md: {
+    fontSize: "2xl"
+  }
+});
+```
+
+## Tagged template syntax (cls)
+
+```js
+import { cls } from "candy-moon";
+
+const className = cls`text-gray-700 font-normal text-base md:hover:text-gray-800 md:hover:font-semibold md:text-2xl`;
+```
+
 # Sandbox Demo
 
 - [React](https://codesandbox.io/s/react-candy-moon-demo-l85vt)
