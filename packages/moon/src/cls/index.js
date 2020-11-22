@@ -21,4 +21,9 @@ const cls = (...args) => {
   return (classicClass || "") + css(finalStyles);
 };
 
+cls.raw = (...args) => {
+  const styles = parse(...args);
+  return styles;
+};
+
 export default cls;

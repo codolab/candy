@@ -32,13 +32,13 @@ const createSheet = (target) => {
   init();
   return {
     // FIXME:
-    insert(css, media = false) {
+    insert(css, media = false, append = false) {
       try {
         if (!sheet) init();
         updateInject();
         if (sheet.textContent.indexOf(css) < 0) {
-          if (media) injected.media = injected.media + css;
-          else injected.rules = injected.rules + css;
+          if (media) injected.media = append ? css + injected.media :  injected.media + css;
+          else injected.rules = append ? css + injected.rules : injected.rules + css;
           sheet.textContent = injected.rules + "/*media*/" + injected.media;
         }
       } catch (e) {
