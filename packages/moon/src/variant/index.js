@@ -15,7 +15,7 @@ export const processVariant = ({ config, variant }) => {
       foundVariant.push(result);
     }
     if (!breakpoint && !variants[v])
-      console.warn(`Can't not find variant ${v}`);
+      console.warn(`Can't find variant ${v}`);
   });
 
   if (foundVariant.length > 0) return foundVariant;
