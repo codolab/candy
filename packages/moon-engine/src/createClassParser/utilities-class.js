@@ -32,7 +32,7 @@ const display = [
   "hidden",
 ];
 
-const layout = ["container", "clearfix", "visible", "invisible"];
+const layout = ["container", "visible", "invisible"];
 
 const position = ["static", "fixed", "absolute", "relative", "sticky"];
 
@@ -83,15 +83,9 @@ const verticalAlign = [
   "align-text-bottom",
 ];
 
-const whiteSpace = [
-  "whitespace-normal",
-  "whitespace-no-wrap",
-  "whitespace-pre",
-  "whitespace-pre-line",
-  "whitespace-pre-wrap",
-];
+const textOverflow = ["truncate", "overflow-ellipsis", "overflow-clip"];
 
-const workBreak = ["break-normal", "break-words", "break-all", "truncate"];
+const workBreak = ["break-normal", "break-words", "break-all"];
 
 const bgAttachment = ["bg-fixed", "bg-local", "bg-scroll"];
 
@@ -181,8 +175,8 @@ export const utilityClassType1 = {
   ...converter(textDecoration, "textDecoration"),
   ...converter(textTransform, "textTransform"),
   ...converter(fontPadding, "fontPadding"),
+  ...converter(textOverflow, "textOverflow"),
   ...converter(verticalAlign, "verticalAlign"),
-  ...converter(whiteSpace, "whiteSpace"),
   ...converter(workBreak, "break"),
   ...converter(bgAttachment, "bgAttachment"),
   ...converter(bgPosition, "bgPosition"),

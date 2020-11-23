@@ -23,9 +23,8 @@ export const config = {
         // wrap
         case "wrap":
         case "wrap-reverse":
+        case "nowrap":
           return { flexWrap: val };
-        case "no-wrap":
-          return { flexWrap: "nowrap" };
         default:
           const n = getValue(val, scale, _props);
           if (n) return { flex: n };
