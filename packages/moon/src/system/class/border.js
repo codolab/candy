@@ -3,7 +3,7 @@ import { transformColor } from "candy-moon-engine";
 
 export const config = {
   divideX: {
-    property: "& > :not(template) ~ :not(template)",
+    property: "& > :not([hidden]) ~ :not([hidden])",
     scale: "borderWidth",
     transform(value, scale, _props) {
       const finalVal = value === "divide-x" ? "base" : value;
@@ -14,7 +14,7 @@ export const config = {
     },
   },
   divideY: {
-    property: "& > :not(template) ~ :not(template)",
+    property: "& > :not([hidden]) ~ :not([hidden])",
     scale: "borderWidth",
     transform(value, scale, _props) {
       const finalVal = value === "divide-y" ? "base" : value;
@@ -26,7 +26,7 @@ export const config = {
   },
   // handle divide-style divide-color
   divide: {
-    property: "& > :not(template) ~ :not(template)",
+    property: "& > :not([hidden]) ~ :not([hidden])",
     scale: "colors",
     transform(val, scale, _props) {
       switch (val) {
@@ -47,7 +47,7 @@ export const config = {
     },
   },
   divideOpacity: {
-    property: "& > :not(template) ~ :not(template)",
+    property: "& > :not([hidden]) ~ :not([hidden])",
     scale: "opacity",
     transform(val, scale, _props) {
       const n = getValue(val, scale, _props);
