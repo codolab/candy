@@ -4,7 +4,7 @@ import { Configuration } from "candy-moon-engine";
 import { mergeStyles, wrapByProps, normalizeByVariant } from "./util";
 import { processVariant } from "../variant";
 
-const betweenVariant = "& > :not(template) ~ :not(template)";
+const betweenVariant = "& > :not([hidden]) ~ :not([hidden])";
 const placeholderVariant = "&::placeholder";
 const classic = "classic";
 

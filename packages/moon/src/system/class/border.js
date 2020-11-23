@@ -1,9 +1,9 @@
-import { system, getValue } from "candy-system";
+import { system, get, getValue } from "candy-system";
 import { transformColor } from "candy-moon-engine";
 
 export const config = {
   divideX: {
-    property: "& > :not(template) ~ :not(template)",
+    property: "& > :not([hidden]) ~ :not([hidden])",
     scale: "borderWidth",
     transform(value, scale, _props) {
       const finalVal = value === "divide-x" ? "base" : value;
@@ -14,7 +14,7 @@ export const config = {
     },
   },
   divideY: {
-    property: "& > :not(template) ~ :not(template)",
+    property: "& > :not([hidden]) ~ :not([hidden])",
     scale: "borderWidth",
     transform(value, scale, _props) {
       const finalVal = value === "divide-y" ? "base" : value;
@@ -26,7 +26,7 @@ export const config = {
   },
   // handle divide-style divide-color
   divide: {
-    property: "& > :not(template) ~ :not(template)",
+    property: "& > :not([hidden]) ~ :not([hidden])",
     scale: "colors",
     transform(val, scale, _props) {
       switch (val) {
@@ -39,17 +39,85 @@ export const config = {
       }
 
       const divideColor = getValue(val, scale, _props);
-      return transformColor({ color: divideColor, property: "borderColor", variable: "--divide-opacity" });
+      return transformColor({
+        color: divideColor,
+        property: "borderColor",
+        variable: "--divide-opacity",
+      });
     },
   },
   divideOpacity: {
-    property: "& > :not(template) ~ :not(template)",
+    property: "& > :not([hidden]) ~ :not([hidden])",
     scale: "opacity",
     transform(val, scale, _props) {
       const n = getValue(val, scale, _props);
       return {
         "--divide-opacity": n,
       };
+    },
+  },
+  // handle ring
+  ring: {
+    scale: "colors",
+    transform(val, scale, _props) {
+      const finalVal = val === "ring" ? "base" : val;
+      if (finalVal === "inset") {
+        return {
+          "--tw-ring-inset": "inset",
+        };
+      }
+
+      const ringWidthScale = get(_props.theme, "ringWidth") || {};
+      const ringWidthValue = ringWidthScale[finalVal];
+      if (ringWidthValue) {
+        return {
+          classic: {
+            ring: {
+              "--tw-ring-offset-shadow":
+                "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+              "--tw-ring-shadow": `var(--tw-ring-inset) 0 0 0 calc(${ringWidthValue} + var(--tw-ring-offset-width)) var(--tw-ring-color)`,
+              boxShadow:
+                "var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)",
+            },
+          },
+        };
+      }
+
+      const ringColor = getValue(finalVal, scale, _props);
+
+      return transformColor({
+        color: ringColor,
+        property: "--tw-ring-color",
+        variable: "--tw-ring-opacity",
+      });
+    },
+    translate(val) {
+      return val;
+    },
+  },
+  ringOpacity: {
+    property: "--tw-ring-opacity",
+    scale: "opacity",
+  },
+  ringOffset: {
+    scale: "colors",
+    transform(val, scale, _props) {
+      const ringOffsetWidthScale = get(_props.theme, "ringOffsetWidth") || {};
+      const ringOffsetWidthValue = ringOffsetWidthScale[val];
+      if (ringOffsetWidthValue) {
+        return {
+          "--tw-ring-offset-width": ringOffsetWidthValue,
+        };
+      }
+
+      const ringOffsetColor = getValue(val, scale, _props);
+
+      return {
+        "--tw-ring-offset-color": ringOffsetColor,
+      };
+    },
+    translate(val) {
+      return val;
     },
   },
 };

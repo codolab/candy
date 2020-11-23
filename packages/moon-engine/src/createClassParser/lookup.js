@@ -13,6 +13,14 @@ const findStyle = (className, theme) => {
     className.startsWith(`${val}-`)
   );
   if (foundClassType3 !== -1) {
+    // case: x-y-z-w => xY: "z.w"
+    if (get(theme, `colors.${splitted[2]}`)) {
+      const val = splitted.filter((_, idx) => idx > 1).join(".");
+      return {
+        property: `${splitted[0]}${capitalizeFirstLetter(splitted[1])}`,
+        value: val,
+      };
+    }
     // case: -x-y-z => xY: "-z"
     if (splitted[0] === "") {
       const val = splitted.filter((_, idx) => idx > 2).join("-");

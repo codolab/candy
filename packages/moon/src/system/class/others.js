@@ -26,18 +26,6 @@ export const config = {
               ),
             },
           };
-        case "clearfix":
-          return {
-            classic: {
-              clearfix: {
-                "&::after": {
-                  content: '""',
-                  display: "table",
-                  clear: "both",
-                },
-              },
-            },
-          };
         case "invisible":
           return { visibility: "hidden" };
         case "visible":
@@ -69,16 +57,6 @@ export const config = {
           return { overflowWrap: "break-word" };
         case "break-all":
           return { wordBreak: "break-all" };
-        case "truncate":
-          return {
-            classic: {
-              truncate: {
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-                whiteSpace: "nowrap",
-              },
-            },
-          };
         default:
           return { wordBreak: value };
       }
