@@ -90,12 +90,12 @@ When the css rule is injected in your application, It's mapped with a class and 
 
 ## Core
 
-- Writing Plugins. (🚧 WIP)
+- Presets. (👷 Experiment)
 - Strict mode for warning or catching error.
 
 ## Playground
 
-- [next-candy-ladi](https://next-candy-ladi-two.vercel.app/) (🚧 WIP)
+- [next-candy-ladi](https://next-candy-ladi-two.vercel.app/)
 - Frames UI: `Colorless` Candy blocks.
 
 # Contribute
