@@ -147,6 +147,8 @@ const divide = {
   divideY: ["divide-y"],
 };
 
+const ring = ["ring"];
+
 const shadow = ["shadow"];
 
 const textShadow = ["text-shadow"];
@@ -185,6 +187,7 @@ export const utilityClassType1 = {
   ...convert2Config(radii),
   ...convert2Config(borders),
   ...convert2Config(divide),
+  ...converter(ring, "ring"),
   ...converter(shadow, "shadow"),
   ...converter(textShadow, "textShadow"),
   ...converter(transition, "transition"),
@@ -328,6 +331,8 @@ export const utilityClassType3 = [
   "divide-y",
   "divide-x",
   "divide-opacity",
+  "ring-opacity",
+  "ring-offset",
   "scale-y",
   "scale-x",
   "translate-x",

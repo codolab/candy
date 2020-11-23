@@ -3,10 +3,7 @@
     <title></title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://unpkg.com/tailwindcss@1.9.6/dist/base.min.css"
-      rel="stylesheet"
-    />
+    <link href="../packages/moon/dist/reset.min.css" rel="stylesheet" />
   </head>
   <body class="mode-dark">
     <div id="root"></div>
@@ -233,14 +230,14 @@
                   <div className=${cls`w-full`}>
                     <div className=${cls`pb-3`}>
                       <input
-                        className=${cls`w-full flex items-center relative transition-all duration-200 outline-none appearance-none text-lg px-4 h-12 rounded-md border-2 border-transparent bg-gray-200 hover:bg-gray-300 focus:bg-transparent focus:shadow-outline`}
+                        className=${cls`w-full flex items-center relative transition-all duration-200 outline-none appearance-none text-lg px-4 h-12 rounded-md border-2 border-transparent bg-gray-200 hover:bg-gray-300 focus:bg-transparent focus:ring`}
                         placeholder="Email Address"
                         type="text"
                       />
                     </div>
                     <div className=${cls`py-3`}>
                       <input
-                        className=${cls`w-full flex items-center relative transition-all duration-200 outline-none appearance-none text-lg px-4 h-12 rounded-md border-2 border-transparent bg-gray-200 hover:bg-gray-300 focus:bg-transparent focus:shadow-outline`}
+                        className=${cls`w-full flex items-center relative transition-all duration-200 outline-none appearance-none text-lg px-4 h-12 rounded-md border-2 border-transparent bg-gray-200 hover:bg-gray-300 focus:bg-transparent focus:ring`}
                         placeholder="Subject"
                         type="text"
                       />
@@ -248,14 +245,14 @@
                     <div className=${cls`py-3`}>
                       <textarea
                         row="4"
-                        className=${cls`w-full h-40 flex items-center relative transition-all duration-200 outline-none appearance-none text-lg px-4 py-3 rounded-md border-2 border-transparent bg-gray-200 hover:bg-gray-300 focus:bg-transparent focus:shadow-outline`}
+                        className=${cls`w-full h-40 flex items-center relative transition-all duration-200 outline-none appearance-none text-lg px-4 py-3 rounded-md border-2 border-transparent bg-gray-200 hover:bg-gray-300 focus:bg-transparent focus:ring`}
                         name="message"
                         placeholder="Your message here..."
                       ></textarea>
                     </div>
                     <div className=${cls`pt-3`}>
                       <button
-                        className=${cls`inline-flex appearance-none items-center justify-center transition-all duration-200 select-none relative whitespace-nowrap align-middle leading-tight outline-none focus:outline-none h-12 text-lg px-6 focus:shadow-outline text-gray-100 bg-gray-800 hover:bg-gray-700 active:bg-gray-800 font-semibold rounded-md`}
+                        className=${cls`inline-flex appearance-none items-center justify-center transition-all duration-200 select-none relative whitespace-nowrap align-middle leading-tight outline-none focus:outline-none h-12 text-lg px-6 focus:ring text-gray-100 bg-gray-800 hover:bg-gray-700 active:bg-gray-800 font-semibold rounded-md`}
                       >
                         Submit Message
                       </button>
