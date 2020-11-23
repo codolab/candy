@@ -2,7 +2,7 @@ import { get } from "candy-system";
 
 import { utilityClassType1, utilityClassType3 } from "./utilities-class.js";
 import { capitalizeFirstLetter } from "../util";
-import { Configuration } from "../configure";
+import { Configuration } from "../Configuration";
 
 let cache = {};
 

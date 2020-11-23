@@ -22,7 +22,7 @@ export default function classic(style, name) {
   const css = obj2css(style, {
     selector: `.${className}`,
   });
-  const rules = `.${className}${css}`;
+  const rules = ctx.global ? css.slice(1, -1) : `.${className}${css}`;
   cache.set(className, stringifiedStyle, {
     rules,
     className,

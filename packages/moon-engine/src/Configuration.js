@@ -33,7 +33,6 @@ const mergeConfiguration = (presets, config) => {
 export class Configuration {
   static init(configuration) {
     const preset = configuration;
-    // const newConfig = getNewConfig(configuration);
     const newConfig = { theme: {}, variants: {}, base: {}, components: {} };
     mergeConfiguration([preset], newConfig);
     const { theme = {}, variants = {}, base = {}, components = {} } = newConfig;
@@ -57,10 +56,3 @@ export class Configuration {
     return _configuration[key];
   }
 }
-
-// user configure
-function configure(configuration = {}) {
-  Configuration.init(configuration);
-}
-
-export default configure;

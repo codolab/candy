@@ -2,7 +2,7 @@ import clsx from "clsx";
 import memoize from "fast-memoize";
 
 import { createLookup } from "./lookup";
-import { Configuration } from "../configure";
+import { Configuration } from "../Configuration";
 
 const noop = () => null;
 
