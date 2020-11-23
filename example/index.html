@@ -64,7 +64,11 @@
         components: {
           Button: {
             root: "flex items-center justify-center",
-            label: ({ color }) => `text-${color}-500 text-opacity-75`,
+            // label: ({ color }) => `text-${color}-500 text-opacity-75`,
+            label: ({ color }) => ({
+              color: `${color}.500`,
+              textOpacity: "0.65",
+            }),
             icon: "px-4",
             variants: {
               appearance: {
@@ -207,6 +211,7 @@
         `,
         document.getElementById("root")
       );
+      const styles1 = useButtonStyles({});
       // render(
       //   html`
       //     <section className=${cls`bg-white flex-col flex-shrink-none`}>

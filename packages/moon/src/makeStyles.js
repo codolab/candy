@@ -2,29 +2,26 @@ import { Configuration } from "candy-moon-engine";
 import _classic from "candy-classic";
 
 import cls from "./cls";
+import sx from "./sx";
 
 const classic = _classic.bind({ append: true });
 
-export function omit(object, keys) {
-  const result = {};
-
-  Object.keys(object).forEach((key) => {
-    if (keys.includes(key)) result[key] = object[key];
-    return;
-  });
-
-  return result;
-}
-
 const obj2class = (styles) => {
-  const parsed = cls.raw(styles);
+  const parsed = typeof styles === "object" ? sx.raw(styles) : cls.raw(styles);
   const { classic: c, ...finalStyles } = parsed;
   let classicClass = "";
   for (let i in c) {
     classicClass += classic(c[i], i) + " ";
   }
   return (classicClass || "") + classic(finalStyles);
-}
+};
+
+const getStylesCreator = (stylesOrCreator, props) => {
+  if (typeof stylesOrCreator === "function") {
+    return obj2class(stylesOrCreator(props));
+  }
+  return obj2class(stylesOrCreator);
+};
 
 function useStyles(key, props, keys) {
   const config = Configuration.get();
@@ -45,23 +42,27 @@ function useStyles(key, props, keys) {
 
   const { variants = {}, ...component } = _component;
   for (let k in component) {
-    const styleCreator = component[k];
-    if (typeof styleCreator === "function") {
-      styles[k] = obj2class(styleCreator(options.props));
-    } else styles[k] = obj2class(styleCreator);
+    if (Array.isArray(options.keys) && !options.keys.includes(k)) {
+      continue;
+    }
+    const stylesOrCreator = component[k];
+    const stylesCreator = getStylesCreator(stylesOrCreator, options.props);
+    styles[k] = stylesCreator;
   }
 
   for (let k in variants) {
-    const styleCreator = variants[k][props[k]];
-    if (!styleCreator) {
-      console.warn(`Can't find variant ${k}.${props[k]} in ${key}`);
+    if (Array.isArray(options.keys) && !options.keys.includes(k)) {
       continue;
     }
-    if (typeof styleCreator === "function") {
-      styles[k] = obj2class(styleCreator(options.props));
-    } else styles[k] = obj2class(styleCreator);
+    const stylesOrCreator = variants[k][options.props[k]];
+    if (!stylesOrCreator) {
+      if (process.env.NODE_ENV !== "production")
+        console.warn(`Can't find variant ${k}.${options.props[k]} in ${key}`);
+      continue;
+    }
+    const stylesCreator = getStylesCreator(stylesOrCreator, options.props);
+    styles[k] = stylesCreator;
   }
-  if (options.keys) return omit(styles, options.keys);
   return styles;
 }
 
