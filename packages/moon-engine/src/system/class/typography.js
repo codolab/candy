@@ -92,7 +92,11 @@ export const config = {
     scale: "colors",
     transform(val, scale, _props) {
       const n = getValue(val, scale, _props);
-      return transformColor({ color: n, property: "color", variable: "--placeholder-opacity" });
+      return transformColor({
+        color: n,
+        property: "color",
+        variable: "--placeholder-opacity",
+      });
     },
   },
   placeholderOpacity: {
@@ -129,7 +133,11 @@ export const config = {
       }
 
       const textColor = getValue(value, get(_props.theme, "colors"), _props);
-      return transformColor({ color: textColor, property: "color", variable: "--text-opacity" });
+      return transformColor({
+        color: textColor,
+        property: "color",
+        variable: "--text-opacity",
+      });
     },
     translate(val) {
       return val;
@@ -162,6 +170,31 @@ export const config = {
     },
   },
   // others
+  textOverflow: {
+    transform(value) {
+      switch (value) {
+        case "overflow-ellipsis":
+          return { textOverflow: "ellipsis" };
+        case "overflow-clip":
+          return { textOverflow: "clip" };
+        case "truncate":
+          return {
+            classic: {
+              truncate: {
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                whiteSpace: "nowrap",
+              },
+            },
+          };
+        default:
+          return { textOverflow: value };
+      }
+    },
+    translate(val) {
+      return val;
+    },
+  },
   verticalAlign: {
     transform(value) {
       return { verticalAlign: value.replace("align-", "") };
@@ -170,18 +203,8 @@ export const config = {
       return val;
     },
   },
-  whiteSpace: {
-    transform(value) {
-      switch (value) {
-        case "whitespace-no-wrap":
-          return { whiteSpace: "nowrap" };
-        default:
-          return { whiteSpace: value.replace("whitespace-", "") };
-      }
-    },
-    translate(val) {
-      return val;
-    },
+  whitespace: {
+    property: "whiteSpace",
   },
 };
 

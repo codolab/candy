@@ -8,7 +8,7 @@ const config = {
       const n = getValue(value, scale, _props);
       if (value === "reverse") {
         return {
-          "& > :not(template) ~ :not(template)": {
+          "& > :not([hidden]) ~ :not([hidden])": {
             "--space-x-reverse": "1 !important",
           },
         };
@@ -16,7 +16,7 @@ const config = {
       return {
         classic: {
           [`space-x-${value}`]: {
-            ["& > :not(template) ~ :not(template)"]: {
+            ["& > :not([hidden]) ~ :not([hidden])"]: {
               "--space-x-reverse": "0",
               marginRight: `calc(${n} * var(--space-x-reverse))`,
               marginLeft: `calc(${n} * calc(1 - var(--space-x-reverse)))`,
@@ -34,7 +34,7 @@ const config = {
     transform(value, scale, _props) {
       if (value === "reverse") {
         return {
-          "& > :not(template) ~ :not(template)": {
+          "& > :not([hidden]) ~ :not([hidden])": {
             "--space-y-reverse": "1 !important",
           },
         };
@@ -43,7 +43,7 @@ const config = {
       return {
         classic: {
           [`space-y-${value}`]: {
-            ["& > :not(template) ~ :not(template)"]: {
+            ["& > :not([hidden]) ~ :not([hidden])"]: {
               "--space-y-reverse": "0",
               marginTop: `calc(${n} * calc(1 - var(--space-y-reverse)))`,
               marginBottom: `calc(${n} * var(--space-y-reverse))`,

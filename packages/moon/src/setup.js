@@ -17,6 +17,8 @@ import {
   transform,
   transition,
   animate,
+  ringWidth,
+  ringOffsetWidth,
 } from "./theme";
 import { defaultVariants } from "./variant";
 
@@ -29,6 +31,8 @@ setup({
     fill,
     objectPosition,
     outline,
+    ringWidth,
+    ringOffsetWidth,
     stroke,
     strokeWidth,
     ...grid(),
