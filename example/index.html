@@ -21,15 +21,19 @@
       type="text/javascript"
       src="../packages/moon/dist/index.umd.js"
     ></script>
-    <!-- <script
-      type="text/javascript"
-      src="../packages/moon-native/dist/index.umd.js"
-    ></script> -->
     <script>
       const { h, render } = preact;
-      const { Configuration, configure, sheet, css, cls, sx } = moon;
+      const {
+        Configuration,
+        configure,
+        makeStyles,
+        sheet,
+        css,
+        cls,
+        clsx,
+        sx,
+      } = moon;
       console.log({ moon, atomic, classic });
-      // const { configure, Configuration, css, cls, sx } = moonNative;
       const html = htm.bind(h);
       const counter = Math.random();
 
@@ -49,81 +53,193 @@
           dark: ".mode-dark &",
           "dark:hover": ".mode-dark &:hover",
         },
+        components: {
+          Button: {
+            root: "flex items-center justify-center",
+            // label: ({ color }) => `text-${color}-500 text-opacity-75`,
+            label: ({ color }) => ({
+              color: `${color}.500`,
+              textOpacity: "0.65",
+            }),
+            icon: "px-4",
+            variants: {
+              appearance: {
+                solid: "border border-red-500",
+                outline: "bg-transparent",
+              },
+              size: {
+                sm: "h-4 w-4",
+                md: "h-6 w-6",
+              },
+            },
+          },
+          Alert: {
+            base: "flex items-center relative overflow-hidden px-4 py-3",
+            title: "font-bold leading-normal",
+            icon: ({ appearance, color }) => {
+              if (
+                ["left-accent", "top-accent", "subtle"].includes(appearance)
+              ) {
+                return `text-${color}-500 text-${color}-200`;
+              }
+            },
+            variants: {
+              appearance: {
+                solid: ({ color }) =>
+                  `bg-${color}-500 text-white dark:bg-${color}-200 dark:text-gray-900`,
+                subtle: ({ color }) =>
+                  `bg-${color}-200 dark:bg-${color}-200 dark:bg-opacity-16`,
+              },
+            },
+          },
+          Prose: {
+            base: {
+              color: "gray.700",
+              maxWidth: "65ch",
+              '& [class~="lead"]': {
+                color: "gray.600",
+              },
+              "& a": {
+                color: "gray.900",
+                textDecoration: "underline",
+                fontWeight: "medium",
+              },
+              "& strong": {
+                color: "gray.900",
+                fontWeight: "600",
+              },
+              "& ol": {
+                counterReset: "list-counter",
+              },
+              "& ol > li": {
+                position: "relative",
+                counterIncrement: "list-counter",
+              },
+              "& ol > li::before": {
+                content: 'counter(list-counter) "."',
+                position: "absolute",
+                fontWeight: "400",
+                color: "gray.500",
+              },
+              "& ul > li": {
+                position: "relative",
+              },
+              "& ul > li::before": {
+                content: '""',
+                position: "absolute",
+                backgroundColor: "gray.300",
+                borderRadius: "50%",
+              },
+              "& hr": {
+                borderColor: "gray.200",
+                borderTopWidth: 1,
+              },
+              "& blockquote": {
+                fontWeight: "500",
+                fontStyle: "italic",
+                color: "gray.900",
+                borderLeftWidth: "0.25rem",
+                borderLeftColor: "gray.200",
+                quotes: '"\\201C""\\201D""\\2018""\\2019"',
+              },
+              "& blockquote p:first-of-type::before": {
+                content: "open-quote",
+              },
+              "& blockquote p:last-of-type::after": {
+                content: "close-quote",
+              },
+              "& h1": {
+                color: "gray.900",
+                fontWeight: "800",
+              },
+              "& h2": {
+                color: "gray.900",
+                fontWeight: "700",
+              },
+              "& h3": {
+                color: "gray.900",
+                fontWeight: "600",
+              },
+              "& h4": {
+                color: "gray.900",
+                fontWeight: "600",
+              },
+              "& figure figcaption": {
+                color: "gray.500",
+              },
+              "& code": {
+                color: "gray.900",
+                fontWeight: "600",
+              },
+              "& code::before": {
+                content: '"`"',
+              },
+              "& code::after": {
+                content: '"`"',
+              },
+              "& a code": {
+                color: "gray.900",
+              },
+              "& pre": {
+                color: "gray.200",
+                backgroundColor: "gray.800",
+                overflowX: "auto",
+              },
+              "& pre code": {
+                backgroundColor: "transparent",
+                borderWidth: "0",
+                borderRadius: "0",
+                padding: "0",
+                fontWeight: "400",
+                color: "inherit",
+                fontSize: "inherit",
+                fontFamily: "inherit",
+                lineHeight: "inherit",
+              },
+              "& pre code::before": {
+                content: '""',
+              },
+              "& pre code::after": {
+                content: '""',
+              },
+              "& table": {
+                width: "100%",
+                tableLayout: "auto",
+                textAlign: "left",
+              },
+              "& thead": {
+                color: "gray.900",
+                fontWeight: "600",
+                borderBottomWidth: "1px",
+                borderBottomColor: "gray.300",
+              },
+              "& thead th": {
+                verticalAlign: "bottom",
+              },
+              "& tbody tr": {
+                borderBottomWidth: "1px",
+                borderBottomColor: "gray.200",
+              },
+              "& tbody tr:last-child": {
+                borderBottomWidth: "0",
+              },
+              "& tbody td": {
+                verticalAlign: "top",
+              },
+            },
+          },
+        },
+        base: {
+          "html, body": {
+            fontSize: "base",
+            color: "gray.900",
+            lineHeight: "normal",
+          },
+          a: {
+            color: "teal.500",
+          },
+        },
       });
-      // const className = css`
-      //   display: inline-block;
-      //   transform: scale(1.1) translate(10px);
-      //   transition: transform 300ms ease-out;
-      //   background: black;
-      //   color: white;
-      //   border: 0;
-      //   border-radius: 1em;
-      //   padding: 1em;
-      //   margin: 1em;
-
-      //   &:hover {
-      //     background: red;
-      //   }
-
-      //   @media screen and (max-width: 766px) {
-      //     background: dodgerblue;
-      //     &:hover {
-      //       background: purple;
-      //     }
-      //   }
-
-      //   @media (min-width: 1024px) {
-      //     @media (min-width: 640px) {
-      //       max-width: 640px;
-
-      //       @media (min-width: 840px) {
-      //         max-width: 840px;
-      //       }
-      //     }
-
-      //     width: 100%;
-      //     margin: 0 auto;
-      //   }
-      // `;
-
-      // classic = {
-      //   container: {
-      //     "@media (min-width: 1024px)": {
-      //       "@media (min-width: 640px)": { maxWidth: "640px" },
-      //       "@media (min-width: 768px)": { maxWidth: "768px" },
-      //       "@media (min-width: 1024px)": { maxWidth: "1024px" },
-      //       "@media (min-width: 1280px)": { maxWidth: "1280px" },
-      //       "@media (min-width: 1536px)": { maxWidth: "1536px" },
-      //       width: "100%",
-      //       margin: "0 auto",
-      //     },
-      //     "@media (prefers-reduced-motion: no-preference)": {
-      //       "@media (min-width: 640px)": { maxWidth: "640px" },
-      //       "@media (min-width: 768px)": { maxWidth: "768px" },
-      //       "@media (min-width: 1024px)": { maxWidth: "1024px" },
-      //       "@media (min-width: 1280px)": { maxWidth: "1280px" },
-      //       "@media (min-width: 1536px)": { maxWidth: "1536px" },
-      //       width: "100%",
-      //       margin: "0 auto",
-      //     },
-      //   },
-      // };
-
-      // const className = sx({
-      //   color: "primary",
-      //   _sm: {
-      //     color: "green.600"
-      //   },
-      //   _md: {
-      //     color: "indigo.600",
-      //   },
-      //   _lg: {
-      //     color: "red.600",
-      //   },
-      //   _xl: {
-      //     color: "gray.900"
-      //   }
-      // });
       // console.log(sheet.extractCSS());
 
       render(

@@ -1,5 +1,5 @@
 import memoize from "fast-memoize";
-import { Configuration } from "./configure";
+import { Configuration } from "./Configuration";
 
 const noop = () => null;
 

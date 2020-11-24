@@ -1,9 +1,4 @@
-import {
-  setup,
-  getDefaultConfig,
-  globalTheme,
-  merge,
-} from "candy-moon-engine";
+import { setup, getDefaultConfig, globalTheme, merge } from "candy-moon-engine";
 
 import {
   backgroundGradient,
@@ -41,4 +36,6 @@ setup({
     ...animate(),
   }),
   variants: defaultVariants,
+  components: {},
+  base: {},
 });

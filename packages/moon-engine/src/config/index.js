@@ -308,6 +308,7 @@ export const getDefaultConfig = ({
     },
   },
   variants: {},
-  // plugins support?
-  plugins: [],
+  presets: [],
+  base: {},
+  components: {},
 });

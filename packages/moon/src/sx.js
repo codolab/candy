@@ -11,4 +11,9 @@ const sx = (obj) => {
   return css(styles);
 };
 
+sx.raw = (obj) => {
+  const styles = parse(obj);
+  return styles;
+};
+
 export default sx;
