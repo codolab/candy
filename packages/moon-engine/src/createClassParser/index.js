@@ -1,8 +1,8 @@
 import clsx from "clsx";
 import memoize from "fast-memoize";
 
+import warn from "./warn";
 import { createLookup } from "./lookup";
-import { Configuration } from "../Configuration";
 
 const noop = () => null;
 
@@ -44,6 +44,8 @@ export const createClassParser = (
         const variant = val.match(/.*:/g) ? val.match(/.*:/g)[0] : "";
         const className = val.replace(variant, "");
         const translated = lookup(className);
+        if (!translated || Object.keys(translated).length === 0) 
+          warn(`Can't translate "${className}"`)
         const translatedWithVariant = lookupWithVariant(
           variant,
           translated,

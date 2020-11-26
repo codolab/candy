@@ -1,7 +1,6 @@
 import { Configuration } from "candy-moon-engine";
 import _classic from "candy-classic";
 
-import cls from "./cls";
 import sx from "./sx";
 
 const classic = _classic.bind({ global: true, append: true });
