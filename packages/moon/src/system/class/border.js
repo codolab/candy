@@ -1,4 +1,4 @@
-import { system, get, getValue } from "candy-system";
+import { system, get } from "candy-system";
 import { transformColor } from "candy-moon-engine";
 
 export const config = {
@@ -7,7 +7,8 @@ export const config = {
     scale: "borderWidth",
     transform(value, scale, _props) {
       const finalVal = value === "divide-x" ? "base" : value;
-      const n = getValue(finalVal, scale, _props);
+      const n = get(scale, finalVal, null);
+      if (!n) return null;
       return {
         borderLeftWidth: n,
       };
@@ -18,7 +19,8 @@ export const config = {
     scale: "borderWidth",
     transform(value, scale, _props) {
       const finalVal = value === "divide-y" ? "base" : value;
-      const n = getValue(finalVal, scale, _props);
+      const n = get(scale, finalVal, null);
+      if (!n) return null;
       return {
         borderTopWidth: n,
       };
@@ -38,7 +40,9 @@ export const config = {
           return { borderStyle: val };
       }
 
-      const divideColor = getValue(val, scale, _props);
+      const divideColor = get(scale, val, null);
+      if (!divideColor) return null;
+
       return transformColor({
         color: divideColor,
         property: "borderColor",
@@ -50,7 +54,9 @@ export const config = {
     property: "& > :not([hidden]) ~ :not([hidden])",
     scale: "opacity",
     transform(val, scale, _props) {
-      const n = getValue(val, scale, _props);
+      const n = get(scale, val, null);
+      if (!n) return null;
+
       return {
         "--divide-opacity": n,
       };
@@ -83,7 +89,8 @@ export const config = {
         };
       }
 
-      const ringColor = getValue(finalVal, scale, _props);
+      const ringColor = get(scale, finalVal, null);
+      if (!ringColor) return null;
 
       return transformColor({
         color: ringColor,
@@ -110,7 +117,8 @@ export const config = {
         };
       }
 
-      const ringOffsetColor = getValue(val, scale, _props);
+      const ringOffsetColor = get(scale, val, null);
+      if (!ringOffsetColor) return null;
 
       return {
         "--tw-ring-offset-color": ringOffsetColor,
