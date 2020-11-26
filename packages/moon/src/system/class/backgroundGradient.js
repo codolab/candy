@@ -1,10 +1,12 @@
-import { system, get, getValue } from "candy-system";
+import { system, get } from "candy-system";
 import { toRgba } from "candy-moon-engine";
 
 const convert2Gradient = (p1, p2) => ({
   scale: "colors",
   transform(val, scale, _props) {
-    const n = getValue(val, scale, _props);
+    const n = get(scale, val, null);
+    if (!n) return n;
+
     const transparentTo = (() => {
       try {
         const [r, g, b] = toRgba(n);
@@ -26,17 +28,13 @@ const convert2Gradient = (p1, p2) => ({
 
 const config = {
   bgGradient: {
-    transform(val, _scale, _props) {
+    property: "backgroundImage",
+    scale: "backgroundImage",
+    transform(val, scale, _props) {
       const key = `gradient-${val}`;
-      const bgGradient = getValue(
-        key,
-        get(_props.theme, "backgroundImage"),
-        _props
-      );
-      return { backgroundImage: bgGradient };
-    },
-    translate(val) {
-      return val;
+      const bgGradient = get(scale, key, null);
+      if (!bgGradient) return null;
+      return bgGradient;
     },
   },
   from: convert2Gradient(
