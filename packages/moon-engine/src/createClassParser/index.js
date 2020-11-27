@@ -1,8 +1,8 @@
 import clsx from "clsx";
 import memoize from "fast-memoize";
 
-import warn from "./warn";
 import { createLookup } from "./lookup";
+import warn from "../util/warn";
 
 const noop = () => null;
 

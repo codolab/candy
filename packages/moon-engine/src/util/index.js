@@ -3,5 +3,6 @@ export const capitalizeFirstLetter = (string) => {
 };
 
 export { default as merge } from "./merge";
+export { default as warn } from "./warn";
 
 export * from "./alpha";
