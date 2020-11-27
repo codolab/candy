@@ -1,4 +1,4 @@
-import { system, getValue, get } from "candy-system";
+import { system, get } from "candy-system";
 
 export const config = {
   // handle flex-shrink, flex-grow, flex-direction, flex-wrap, flex
@@ -26,7 +26,8 @@ export const config = {
         case "nowrap":
           return { flexWrap: val };
         default:
-          const n = getValue(val, scale, _props);
+          const n = get(scale, val, null);
+          if (!n) return null;
           if (n) return { flex: n };
           return val;
       }
