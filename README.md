@@ -91,7 +91,7 @@ When the css rule is injected in your application, It's mapped with a class and 
 ## Core
 
 - Presets. (👷 Experiment)
-- Strict mode for warning or catching error.
+- ~Strict mode for warning or catching error.~
 
 ## Playground
 
