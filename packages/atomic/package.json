@@ -1,7 +1,7 @@
 {
   "name": "candy-atomic",
   "private": false,
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -15,8 +15,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "candy-sheet": "^0.4.0",
-    "candy-utils": "^0.4.0",
+    "candy-sheet": "^0.5.0",
+    "candy-utils": "^0.5.0",
     "tiny-css-prefixer": "^1.1.4"
   },
   "author": "tranbathanhtung",
