@@ -29,17 +29,17 @@ export const createClassParser = (
       if (!isTag) {
         strings = [clsx(values, ...exprs)];
       }
-
+      
       const rules = strings
         .reduce(
           (str, rule, i) =>
-            (str += [rule || "", (isTag && exprs[i]) || "" || ""].join(" ")),
+            (str += [rule || "", (isTag && exprs[i]) || "" || ""].join("")),
           ""
         )
         .replace(/\s\s+/g, " ")
         .trim()
         .split(" ");
-      
+
       const alreadySeen = {};
       const styles = rules.reduce((acc, val) => {
         if (!val) return acc;
@@ -63,6 +63,7 @@ export const createClassParser = (
 
         return { ...acc, ...translated };
       }, {});
+
       return styles;
     },
     {

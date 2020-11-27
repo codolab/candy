@@ -8,10 +8,10 @@ let cache = {};
 
 const findStyle = (className, theme) => {
   const splitted = className.split("-");
-  // const searchString = splitted[0] + "-" + splitted[1];
   const foundClassType3 = utilityClassType3.findIndex((val) =>
     className.startsWith(`${val}-`)
   );
+  
   if (foundClassType3 !== -1) {
     // case: x-y-z-w => xY: "z.w"
     if (get(theme, `colors.${splitted[2]}`)) {
