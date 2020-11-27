@@ -2,9 +2,10 @@
 export const getValue = (n, scale) => get(scale, n, n);
 
 export const get = (obj, key, def, p, undef) => {
+  if (obj && obj[key]) return obj[key];
   key = key && key.split ? key.split(".") : [key];
   for (p = 0; p < key.length; p++) {
-    obj = obj ? obj[key[p]] : undef;
+    obj = obj && typeof obj === "object" ? obj[key[p]] : undef;
   }
   return obj === undef ? def : obj;
 };
@@ -21,7 +22,7 @@ const createStyleFunction = ({
   const sx = (value, scale, _props) => {
     const result = {};
     const n = transform(value, scale, _props);
-    if (n === null) return;
+    if (!n) return;
     if (typeof translate === "function") {
       const rs = translate(n, properties);
       if (rs) return rs;
