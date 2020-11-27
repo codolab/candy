@@ -25,7 +25,7 @@ export const config = {
         case "right-top":
           return { objectPosition: "right bottom" };
         default:
-          return val;
+          return null;
       }
     },
     translate(transformedVal) {
