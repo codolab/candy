@@ -1,9 +1,6 @@
 import { system, get } from "candy-system";
 import { transformColor } from "../../util";
-
-const transform = (val, scale) => {
-  return get(scale, val, null);
-}
+import transform from "./clsTransform";
 
 export const config = {
   // handle font-weight, font-family

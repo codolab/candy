@@ -1,8 +1,5 @@
-import { system, get } from "candy-system";
-
-const transform = (val, scale) => {
-  return get(scale, val, null);
-}
+import { system } from "candy-system";
+import transform from "./clsTransform";
 
 export const config = {
   display: {

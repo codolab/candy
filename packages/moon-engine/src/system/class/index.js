@@ -1,4 +1,4 @@
-import { compose } from "candy-system";
+import { compose as _compose } from "candy-system";
 import { processStyleSystem as defaultProcessStyleSystem } from "../";
 
 import background from "./background";
@@ -8,7 +8,11 @@ import border from "./border";
 import boxAlignment from "./box-alignment";
 import flexBox from "./flex-box";
 import layout from "./layout";
+import sizing from "./sizing";
+import spacing from "./spacing";
 import typography from "./typography";
+
+const compose = _compose.bind({ strict: true });
 
 export const processClassSystem = compose(
   defaultProcessStyleSystem,
@@ -19,5 +23,7 @@ export const processClassSystem = compose(
   boxAlignment,
   flexBox,
   layout,
+  sizing,
+  spacing,
   typography
 );
