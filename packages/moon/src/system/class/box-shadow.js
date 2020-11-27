@@ -1,4 +1,4 @@
-import { system, getValue } from "candy-system";
+import { system, get } from "candy-system";
 
 export const config = {
   shadow: {
@@ -6,8 +6,10 @@ export const config = {
     scale: "boxShadow",
     transform(val, scale, _props) {
       const finalVal = val === "shadow" ? "base" : val;
-      const n = getValue(finalVal, scale, _props);
+      const n = get(scale, finalVal, null);
+      if (!n) return null;
       if (typeof n === "object") return n;
+
       return {
         "--tw-shadow": finalVal === "none" ? "0 0 #0000" : n,
         boxShadow:
