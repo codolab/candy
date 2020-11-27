@@ -1,13 +1,15 @@
-import { system, get, getValue } from "candy-system";
+import { system, get } from "candy-system";
 
 export const config = {
   stroke: {
-    transform(val, scale, _props) {
+    scale: "stroke",
+    transform(val, strokeScale, _props) {
       const strokeWidthScale = get(_props.theme, "strokeWidth") || {};
       if (strokeWidthScale[val]) {
         return { strokeWidth: strokeWidthScale[val] };
       }
-      const strokeValue = getValue(val, get(_props.theme, "stroke"), _props);
+      const strokeValue = get(strokeScale, val, null);
+      if (!strokeValue) return null;
       return { stroke: strokeValue };
     },
     translate(val) {

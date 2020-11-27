@@ -79,7 +79,7 @@ export const createLookup = (processSystem) => (className) => {
   }
 
   const translated = processSystem({ theme, property, value }) || {};
-  console.log({ translated, property, value })
+
   cache[className] = translated;
   return translated;
 };
