@@ -1,7 +1,7 @@
 import { get } from "candy-system";
 
 import { utilityClassType1, utilityClassType3 } from "./utilities-class.js";
-import { capitalizeFirstLetter } from "../util";
+import { camelCase } from "../util";
 import { Configuration } from "../Configuration";
 
 let cache = {};
@@ -17,7 +17,7 @@ const findStyle = (className, theme) => {
     if (get(theme, `colors.${splitted[2]}`)) {
       const val = splitted.filter((_, idx) => idx > 1).join(".");
       return {
-        property: `${splitted[0]}${capitalizeFirstLetter(splitted[1])}`,
+        property: camelCase(`${splitted[0]}-${splitted[1]}`),
         value: val,
       };
     }
@@ -25,14 +25,14 @@ const findStyle = (className, theme) => {
     if (splitted[0] === "") {
       const val = splitted.filter((_, idx) => idx > 2).join("-");
       return {
-        property: `${splitted[1]}${capitalizeFirstLetter(splitted[2])}`,
+        property: camelCase(`${splitted[1]}-${splitted[2]}`),
         value: `-${val}`,
       };
     }
     // case: x-y-z => xY: "z"
     const val = splitted.filter((_, idx) => idx > 1).join("-");
     return {
-      property: `${splitted[0]}${capitalizeFirstLetter(splitted[1])}`,
+      property: camelCase(`${splitted[0]}-${splitted[1]}`),
       value: val,
     };
   } else {
