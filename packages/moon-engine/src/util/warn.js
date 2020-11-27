@@ -1,6 +1,12 @@
+import { Configuration } from "../Configuration";
+
 export default function warn(message) {
-  if (process.env.NODE_ENV !== "production") {
-    const msg = [message, new Error().stack.split('at ').pop()].join(' ');
+  const strict = Configuration.option("strict");
+  if (process.env.NODE_ENV !== "production" && strict) {
+    const callerLine = new Error().stack.split("\n").pop();
+    const index = callerLine.indexOf("at ");
+    const clean = callerLine.slice(index + 2, callerLine.length);
+    const msg = [message, clean].join("");
     console.warn(msg);
   }
 }
