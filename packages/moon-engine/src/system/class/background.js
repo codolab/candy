@@ -1,16 +1,19 @@
-import { system, get, getValue } from "candy-system";
+import { system, get } from "candy-system";
 import { transformColor } from "../../util";
 
 const config = {
   // handle bg-size bg-colors
   bg: {
-    transform(val, scale, _props) {
+    transform(val, _scale, _props) {
       const bgSizeScale = get(_props.theme, "backgroundSize", {});
       const bgSizeValue = bgSizeScale[val];
       if (bgSizeValue) {
         return { backgroundSize: bgSizeValue };
       }
-      const bgColor = getValue(val, get(_props.theme, "colors"), _props);
+      const bgColorScale = get(_props.theme, "colors");
+      const bgColor = get(bgColorScale, val, null);
+      if (!bgColor) return null;
+      
       return transformColor({
         color: bgColor,
         property: "backgroundColor",

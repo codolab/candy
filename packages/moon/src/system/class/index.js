@@ -1,4 +1,4 @@
-import { compose } from "candy-system";
+import { compose as _compose } from "candy-system";
 import { processClassSystem as defaultProcessClassSystem } from "candy-moon-engine";
 
 import accessibility from "./accessibility";
@@ -17,6 +17,8 @@ import transform from "./transform";
 import transition from "./transition";
 
 import { processStyleSystem } from "../";
+
+const compose = _compose.bind({ strict: true });
 
 export const processClassSystem = compose(
   processStyleSystem,

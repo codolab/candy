@@ -2,7 +2,7 @@ import clsx from "clsx";
 import memoize from "fast-memoize";
 
 import { createLookup } from "./lookup";
-import { Configuration } from "../Configuration";
+import warn from "../util/warn";
 
 const noop = () => null;
 
@@ -29,6 +29,7 @@ export const createClassParser = (
       if (!isTag) {
         strings = [clsx(values, ...exprs)];
       }
+
       const rules = strings
         .reduce(
           (str, rule, i) =>
@@ -38,12 +39,20 @@ export const createClassParser = (
         .replace(/\s\s+/g, " ")
         .trim()
         .split(" ");
-
+      
+      const alreadySeen = {};
       const styles = rules.reduce((acc, val) => {
         if (!val) return acc;
         const variant = val.match(/.*:/g) ? val.match(/.*:/g)[0] : "";
         const className = val.replace(variant, "");
+        if (alreadySeen[val]) 
+          warn(`Duplicate class "${val}"`);
+
+        alreadySeen[val] = true;
         const translated = lookup(className);
+        if (!translated || Object.keys(translated).length === 0) 
+          warn(`Can't translate "${className}"`);
+
         const translatedWithVariant = lookupWithVariant(
           variant,
           translated,

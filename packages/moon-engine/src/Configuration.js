@@ -5,6 +5,7 @@ let _configuration = {
   variants: {},
   base: {},
   components: {},
+  strict: true,
 };
 
 export function setup(_config) {
@@ -40,6 +41,9 @@ export class Configuration {
     newConfig.variants = merge(_configuration.variants, variants);
     newConfig.base = merge(_configuration.base, base);
     newConfig.components = merge(_configuration.components, components);
+    newConfig.strict = typeof configuration.strict === "boolean" 
+      ? configuration.strict 
+      : _configuration.strict;
 
     Object.keys(newConfig).forEach((key) => {
       if (key === "presets") return;

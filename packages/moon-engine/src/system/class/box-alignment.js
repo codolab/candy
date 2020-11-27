@@ -2,122 +2,107 @@ import { system } from "candy-system";
 
 export const config = {
   justify: {
+    property: "justifyContent",
     transform(val) {
       switch (val) {
         case "center":
-          return { justifyContent: "center" };
+          return "center";
         case "start":
-          return { justifyContent: "flex-start" };
+          return "flex-start";
         case "end":
-          return { justifyContent: "flex-end" };
+          return "flex-end";
         case "between":
-          return { justifyContent: "space-between" };
+          return "space-between";
         case "around":
-          return { justifyContent: "space-around" };
+          return "space-around"
         case "evenly":
-          return { justifyContent: "space-evenly" };
+          return "space-evenly";
         default:
-          return val;
+          return null;
       }
-    },
-    translate(transformedVal) {
-      if (typeof transformedVal === "object") return transformedVal;
-      return null;
     },
   },
   content: {
+    property: "alignContent",
     transform(val) {
       switch (val) {
         case "center":
-          return { alignContent: "center" };
+          return "center";
         case "start":
-          return { alignContent: "flex-start" };
+          return "flex-start";
         case "end":
-          return { alignContent: "flex-end" };
+          return "flex-end";
         case "between":
-          return { alignContent: "space-between" };
+          return "space-between";
         case "around":
-          return { alignContent: "space-around" };
+          return "space-around"
         case "evenly":
-          return { alignContent: "space-evenly" };
+          return "space-evenly";
         default:
-          return val;
+          return null;
       }
-    },
-    translate(transformedVal) {
-      if (typeof transformedVal === "object") return transformedVal;
-      return null;
     },
   },
   items: {
+    property: "alignItems",
     transform(val) {
       switch (val) {
         case "center":
-          return { alignItems: "center" };
+          return "center";
         case "start":
-          return { alignItems: "flex-start" };
+          return "flex-start";
         case "end":
-          return { alignItems: "flex-end" };
+          return "flex-end";
         case "baseline":
-          return { alignItems: "baseline" };
+          return "baseline";
         case "stretch":
-          return { alignItems: "stretch" };
+          return "stretch";
         default:
-          return val;
+          return null;
       }
-    },
-    translate(transformedVal) {
-      if (typeof transformedVal === "object") return transformedVal;
-      return null;
-    },
+    }
   },
   self: {
+    property: "alignSelf",
     transform(val) {
       switch (val) {
         case "center":
-          return { alignSelf: "center" };
+          return "center";
         case "start":
-          return { alignSelf: "flex-start" };
+          return"flex-start";
         case "end":
-          return { alignSelf: "flex-end" };
+          return "flex-end";
         case "auto":
-          return { alignSelf: "auto" };
+          return "auto";
         case "stretch":
-          return { alignSelf: "stretch" };
+          return "stretch";
         default:
-          return val;
+          return null;
       }
-    },
-    translate(transformedVal) {
-      if (typeof transformedVal === "object") return transformedVal;
-      return null;
-    },
+    }
   },
   placeContent: {
+    property: "placeContent",
     transform(val) {
       switch (val) {
         case "center":
-          return { placeContent: "center" };
+          return "center";
         case "start":
-          return { placeContent: "start" };
+          return "start";
         case "end":
-          return { placeContent: "end" };
+          return "end";
         case "between":
-          return { placeContent: "space-between" };
+          return "space-between";
         case "around":
-          return { placeContent: "space-around" };
+          return "space-around";
         case "evenly":
-          return { placeContent: "space-evenly" };
+          return "space-evenly";
         case "stretch":
-          return { placeContent: "stretch" };
+          return "stretch";
         default:
-          return val;
+          return null;
       }
-    },
-    translate(transformedVal) {
-      if (typeof transformedVal === "object") return transformedVal;
-      return null;
-    },
+    }
   },
 };
 

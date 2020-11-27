@@ -1,3 +1,4 @@
+import { warn } from "candy-moon-engine";
 import { defaultVariants } from "./variants";
 
 export const processVariant = ({ config, variant }) => {
@@ -15,7 +16,7 @@ export const processVariant = ({ config, variant }) => {
       foundVariant.push(result);
     }
     if (!breakpoint && !variants[v])
-      console.warn(`Can't find variant ${v}`);
+      warn(`Can't find variant ${v}`);
   });
 
   if (foundVariant.length > 0) return foundVariant;

@@ -1,4 +1,4 @@
-import { system, getValue } from "candy-system";
+import { system, get } from "candy-system";
 
 export const config = {
   shadow: {
@@ -7,7 +7,8 @@ export const config = {
     scale: "boxShadow",
     transform(val, scale, _props) {
       const finalVal = val === "shadow" ? "base" : val;
-      const n = getValue(finalVal, scale, _props);
+      const n = get(scale, finalVal, null);
+      if (!n) return null;
       if (typeof n === "object") return n;
       return { boxShadow: n };
     },
@@ -15,6 +16,13 @@ export const config = {
       return val;
     }
   },
+  opacity: {
+    property: "opacity",
+    scale: "opacity",
+    transform(val, scale, _props) {
+      return get(scale, val, null);
+    }
+  }
 };
 
 export const boxShadow = system(config);

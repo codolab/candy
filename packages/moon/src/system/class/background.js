@@ -21,7 +21,7 @@ const config = {
         case "text":
           return { backgroundClip: "text" };
         default:
-          return { backgroundClip: value };
+          return null;
       }
     },
     translate(val) {

@@ -1,4 +1,4 @@
-import { system, getValue } from "candy-system";
+import { system, get } from "candy-system";
 
 const radii = [
   { name: "rounded", prefix: "rounded", properties: ["borderRadius"] },
@@ -52,7 +52,7 @@ export const config = radii.reduce((acc, { name, prefix, properties }) => {
       scale: "borderRadius",
       transform(val, scale, _props) {
         const finalVal = val === prefix ? "base" : val;
-        const n = getValue(finalVal, scale, _props);
+        const n = get(scale, finalVal, null);
         return n;
       },
     },

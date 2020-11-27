@@ -1,11 +1,13 @@
-import { system, getValue } from "candy-system";
+import { system, get } from "candy-system";
 
 const config = {
   // space-between
   spaceX: {
     scale: "space",
-    transform(value, scale, _props) {
-      const n = getValue(value, scale, _props);
+    transform(value, scale) {
+      const n = get(scale, value, null);
+      if (!n) return null;
+      
       if (value === "reverse") {
         return {
           "& > :not([hidden]) ~ :not([hidden])": {
@@ -31,7 +33,7 @@ const config = {
   },
   spaceY: {
     scale: "space",
-    transform(value, scale, _props) {
+    transform(value, scale) {
       if (value === "reverse") {
         return {
           "& > :not([hidden]) ~ :not([hidden])": {
@@ -39,7 +41,9 @@ const config = {
           },
         };
       }
-      const n = getValue(value, scale, _props);
+      const n = get(scale, value, null);
+      if (!n) return null;
+
       return {
         classic: {
           [`space-y-${value}`]: {

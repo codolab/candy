@@ -1,27 +1,25 @@
-import { system, getValue } from "candy-system";
+import { system } from "candy-system";
 
 export const config = {
   resize: {
+    property: "resize",
     transform(val) {
       switch (val) {
         case "none":
-          return { resize: "none" };
+          return "none";
         case "y":
-          return { resize: "vertical" };
+          return "vertical";
         case "x":
-          return { resize: "horizontal" };
+          return "horizontal";
         case "resize":
-          return { resize: "both" };
+          return "both";
         default:
-          return { resize: val };
+          return null;
       }
-    },
-    translate(val) {
-      return val;
-    },
+    }
   },
   select: {
-    properties: ["userSelect"],
+    property: "userSelect",
   },
 };
 

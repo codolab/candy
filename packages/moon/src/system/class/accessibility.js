@@ -9,7 +9,7 @@ export const config = {
         case "content":
           return { boxSizing: "content-box" };
         default:
-          return val;
+          return null;
       }
     },
     translate(val) {

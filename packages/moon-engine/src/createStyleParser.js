@@ -1,12 +1,10 @@
 import memoize from "fast-memoize";
+import { camelToKebab } from "./util";
 import { Configuration } from "./Configuration";
 
 const noop = () => null;
 
 const createLookup = (val) => val;
-
-const camelToKebab = (str) =>
-  str.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, "$1-$2").toLowerCase();
 
 export const createStyleParser = (
   processSystem = noop,

@@ -31,10 +31,7 @@ export const config = {
         case "visible":
           return { visibility: "visible" };
         default:
-          if (process.env !== "production") {
-            console.warn(`Layout not support ${value}`);
-          }
-          return { layout: value };
+          return null;
       }
     },
     translate(val) {
@@ -58,7 +55,7 @@ export const config = {
         case "break-all":
           return { wordBreak: "break-all" };
         default:
-          return { wordBreak: value };
+          return null;
       }
     },
     translate(val) {

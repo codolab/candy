@@ -36,12 +36,13 @@ const createStyleFunction = ({
   return sx;
 };
 
-export const createParser = (config) => {
+export const createParser = (config, strict = false) => {
   let cache = {};
   const parse = (props) => {
     let styles = {};
     const { property, value } = props;
     if (!config[property]) {
+      if (strict) return {};
       return { [property]: value };
     }
     const sx = config[property];
@@ -86,13 +87,14 @@ export const system = (args = {}) => {
   return parser;
 };
 
-export const compose = (...parsers) => {
+export function compose(...parsers) {
+  const ctx = this || {};
   let config = {};
   parsers.forEach((parser) => {
     if (!parser || !parser.config) return;
     Object.assign(config, parser.config);
   });
-  const parser = createParser(config);
+  const parser = createParser(config, ctx.strict);
 
   return parser;
 };

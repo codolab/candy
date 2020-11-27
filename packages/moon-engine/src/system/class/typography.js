@@ -1,20 +1,19 @@
-import { system, get, getValue } from "candy-system";
+import { system, get } from "candy-system";
 import { transformColor } from "../../util";
+import transform from "./clsTransform";
 
 export const config = {
   // handle font-weight, font-family
   font: {
-    transform(value, _scale, _props) {
+    scale: "fontFamily",
+    transform(value, fontFamilyScale, _props) {
       const fontWeightScale = get(_props.theme, "fontWeight") || {};
       const fontWeightValue = fontWeightScale[value];
       if (fontWeightValue) {
         return { fontWeight: fontWeightValue };
       }
-      const fontFamilyValue = getValue(
-        value,
-        get(_props.theme, "fontFamily"),
-        _props
-      );
+      const fontFamilyValue = get(fontFamilyScale, value, null);
+      if (!fontFamilyValue) return null;
       if (fontFamilyValue && fontFamilyValue !== value) {
         return {
           fontFamily: Array.isArray(fontFamilyValue)
@@ -29,56 +28,52 @@ export const config = {
     },
   },
   fontStyle: {
+    property: "fontStyle",
     transform(value) {
       switch (value) {
         case "italic":
-          return { fontStyle: "italic" };
+          return "italic";
         case "not-italic":
-          return { fontStyle: "normal" };
+          return "normal";
         default:
-          return { fontStyle: value };
+          return null;
       }
-    },
-    translate(val) {
-      return val;
-    },
+    }
   },
   fontVariantNumeric: {
+    property: "fontVariantNumeric",
     transform(value) {
       switch (value) {
         case "normal-nums":
-          return { fontVariantNumeric: "normal" };
+          return "normal"
         default:
-          return { fontVariantNumeric: value };
+          return value;
       }
-    },
-    translate(val) {
-      return val;
-    },
+    }
   },
   // letter spacing
   tracking: {
     property: "letterSpacing",
     scale: "letterSpacing",
+    transform,
   },
   // line height
   leading: {
     property: "lineHeight",
     scale: "lineHeight",
+    transform,
   },
   // list
   list: {
-    transform(value, _scale, _props) {
+    scale: "listStyleType",
+    transform(value, listStyleTypeScale) {
       switch (value) {
         case "inside":
         case "outside":
           return { listStylePosition: value };
         default:
-          const listStyleTypeValue = getValue(
-            value,
-            get(_props.theme, "listStyleType"),
-            _props
-          );
+          const listStyleTypeValue = get(listStyleTypeScale, value, null);
+          if (!listStyleTypeValue) return null;
           return { listStyleType: listStyleTypeValue };
       }
     },
@@ -90,8 +85,9 @@ export const config = {
   placeholder: {
     property: "&::placeholder",
     scale: "colors",
-    transform(val, scale, _props) {
-      const n = getValue(val, scale, _props);
+    transform(val, scale) {
+      const n = get(scale, val, null);
+      if (!n) return null;
       return transformColor({
         color: n,
         property: "color",
@@ -102,8 +98,9 @@ export const config = {
   placeholderOpacity: {
     property: "&::placeholder",
     scale: "opacity",
-    transform(val, scale, _props) {
-      const n = getValue(val, scale, _props);
+    transform(val, scale) {
+      const n = get(scale, val, null);
+      if (!n) return null;
 
       return {
         "--placeholder-opacity": n,
@@ -112,7 +109,8 @@ export const config = {
   },
   // handle text-align, font-size, color
   text: {
-    transform(value, _scale, _props) {
+    scale: "colors",
+    transform(value, colorScale, _props) {
       switch (value) {
         case "left":
         case "center":
@@ -132,7 +130,9 @@ export const config = {
         return { fontSize: fontSizeValue };
       }
 
-      const textColor = getValue(value, get(_props.theme, "colors"), _props);
+      const textColor = get(colorScale, value, null);
+      if (!textColor) return null;
+
       return transformColor({
         color: textColor,
         property: "color",
@@ -144,30 +144,26 @@ export const config = {
     },
   },
   textDecoration: {
+    property: "textDecoration",
     transform(value) {
       switch (value) {
         case "no-underline":
-          return { textDecoration: "none" };
+          return "none";
         default:
-          return { textDecoration: value };
+          return value;
       }
-    },
-    translate(val) {
-      return val;
-    },
+    }
   },
   textTransform: {
+    property: "textTransform",
     transform(value) {
       switch (value) {
         case "normal-case":
-          return { textTransform: "none" };
+          return "none"
         default:
-          return { textTransform: value };
+          return value;
       }
-    },
-    translate(val) {
-      return val;
-    },
+    }
   },
   // others
   textOverflow: {
@@ -188,7 +184,7 @@ export const config = {
             },
           };
         default:
-          return { textOverflow: value };
+          return null;
       }
     },
     translate(val) {
@@ -196,12 +192,10 @@ export const config = {
     },
   },
   verticalAlign: {
+    property: "verticalAlign",
     transform(value) {
-      return { verticalAlign: value.replace("align-", "") };
-    },
-    translate(val) {
-      return val;
-    },
+      return value.replace("align-", "");
+    }
   },
   whitespace: {
     property: "whiteSpace",

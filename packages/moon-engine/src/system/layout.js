@@ -8,34 +8,10 @@ export const config = {
   overflow: true,
   // position
   position: true,
-  top: {
-    property: "top",
-    scale: "inset",
-  },
-  left: {
-    property: "left",
-    scale: "inset",
-  },
-  bottom: {
-    property: "bottom",
-    scale: "inset",
-  },
-  right: {
-    property: "right",
-    scale: "inset",
-  },
-  inset: {
-    scale: "inset",
-    properties: ["top", "right", "bottom", "left"],
-  },
-  insetY: {
-    scale: "inset",
-    properties: ["top", "bottom"],
-  },
-  insetX: {
-    scale: "inset",
-    properties: ["right", "left"],
-  },
+  top: true,
+  left: true,
+  bottom: true,
+  right: true,
   // z-index
   z: {
     property: "zIndex",

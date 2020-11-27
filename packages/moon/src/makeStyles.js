@@ -1,4 +1,4 @@
-import { Configuration } from "candy-moon-engine";
+import { Configuration, warn } from "candy-moon-engine";
 import _classic from "candy-classic";
 
 import cls from "./cls";
@@ -36,7 +36,7 @@ function useStyles(key, props, keys) {
   }
   const _component = config.components[key];
   if (!_component) {
-    console.warn(`Can't find component ${key}`);
+    warn(`Can't find component ${key}`);
     return styles;
   }
 
@@ -56,8 +56,7 @@ function useStyles(key, props, keys) {
     }
     const stylesOrCreator = variants[k][options.props[k]];
     if (!stylesOrCreator) {
-      if (process.env.NODE_ENV !== "production")
-        console.warn(`Can't find variant ${k}.${options.props[k]} in ${key}`);
+      warn(`Can't find variant ${k}.${options.props[k]} in ${key}`);
       continue;
     }
     const stylesCreator = getStylesCreator(stylesOrCreator, options.props);

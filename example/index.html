@@ -38,6 +38,7 @@
       const counter = Math.random();
 
       configure({
+        strict: true,
         theme: {
           colors: {
             primary: "var(--primary-color)",
@@ -241,7 +242,6 @@
         },
       });
       // console.log(sheet.extractCSS());
-
       render(
         html`
           <section className=${cls`bg-white flex-col flex-shrink-none`}>

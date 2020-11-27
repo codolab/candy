@@ -1,4 +1,4 @@
-import { system, get, getValue } from "candy-system";
+import { system, get } from "candy-system";
 import { transformColor } from "../../util";
 
 const borders = [
@@ -18,7 +18,7 @@ export const config = {
         scale: "borderWidth",
         transform(val, scale, _props) {
           const finalVal = val === prefix ? "base" : val;
-          const n = getValue(finalVal, scale, _props);
+          const n = get(scale, finalVal, null);
           return n;
         },
       },
@@ -26,6 +26,7 @@ export const config = {
   }, {}),
   border: {
     // handle border-collapse, border-style, border-width, border-color
+    scale: "colors",
     transform(val, scale, _props) {
       const finalVal = val === "border" ? "base" : val;
       switch (finalVal) {
@@ -49,11 +50,9 @@ export const config = {
         return { borderWidth: borderWidthValue };
       }
 
-      const borderColor = getValue(
-        finalVal,
-        get(_props.theme, "colors"),
-        _props
-      );
+      const borderColor = get(scale, finalVal, null);
+      if (!borderColor) return null;
+
       return transformColor({
         color: borderColor,
         property: "borderColor",
