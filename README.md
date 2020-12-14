@@ -86,7 +86,7 @@ When the css rule is injected in your application, It's mapped with a class and 
 
 ## Performance
 
-- Translate shorthand syntax at compile-time instead of runtime (🚧 Researching)
+- Translate shorthand syntax at compile-time instead of runtime (🚧 WIP)
 
 ## Core
 
