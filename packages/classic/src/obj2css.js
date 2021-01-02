@@ -32,8 +32,8 @@ const obj2css = (style = {}, opts = {}) =>
     .reduce(
       (acc, val) => {
         let accc = [...acc];
-        if (/^&/.test(val)) {
-          accc.push(val.replace(/^&/, opts.selector || ""));
+        if (/&/.test(val)) {
+          accc.push(val.replace(/&/, opts.selector || ""));
           return accc;
         }
         if (/^@/.test(val)) {
