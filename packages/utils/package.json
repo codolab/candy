@@ -1,7 +1,7 @@
 {
   "name": "candy-utils",
   "private": false,
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
