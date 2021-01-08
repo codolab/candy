@@ -3,7 +3,7 @@ export const getValue = (n, scale) => get(scale, n, n);
 
 export const get = (obj, key, def, p, undef) => {
   if (obj && obj[key]) return obj[key];
-  key = key && key.split ? key.split(".") : [key];
+  key = Array.isArray(key) ? key : key && key.split ? key.split(".") : [key];
   for (p = 0; p < key.length; p++) {
     obj = obj && typeof obj === "object" ? obj[key[p]] : undef;
   }
@@ -98,4 +98,4 @@ export function compose(...parsers) {
   const parser = createParser(config, ctx.strict);
 
   return parser;
-};
+}

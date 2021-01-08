@@ -18,6 +18,7 @@ const cls = (...args) => {
   for (let i in c) {
     classicClass += classic(c[i], i) + " ";
   }
+  
   return (classicClass || "") + css(finalStyles);
 };
 
