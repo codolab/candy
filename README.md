@@ -93,9 +93,10 @@ When the css rule is injected in your application, It's mapped with a class and 
 - Presets. (👷 Experiment)
 - ~Strict mode for warning or catching error.~
 
-## Playground
+## Awesome
 
 - [next-candy-ladi](https://next-candy-ladi-two.vercel.app/)
+- [gineko](https://github.com/codolab/gineko): Code search extension for GitHub
 - Frames UI: `Colorless` Candy blocks.
 
 # Contribute
