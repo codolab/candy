@@ -5,7 +5,6 @@
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
-  "browser": "dist/index.umd.js",
   "scripts": {
     "clean": "run-p clean:*",
     "clean:node_modules": "rimraf node_modules",
